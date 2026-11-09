@@ -10,7 +10,7 @@
   "templates": [
     {
       "input": "palette.toml",
-      "output": "$XDG_CACHE_HOME/serpantinum/apps/starship.toml"
+      "output": "$XDG_CACHE_HOME/xiuhcoatl/apps/starship.toml"
     }
   ],
   "integrate": [
@@ -19,8 +19,8 @@
       "file": "$HOME/.config/starship.toml",
       "section": "",
       "position": "end",
-      "line": "palette = \"serpantinum\"",
-      "lines_from": "$XDG_CACHE_HOME/serpantinum/apps/starship.toml",
+      "line": "palette = \"xiuhcoatl\"",
+      "lines_from": "$XDG_CACHE_HOME/xiuhcoatl/apps/starship.toml",
       "disable": "^\\s*palette\\s*=",
       "create": true
     }

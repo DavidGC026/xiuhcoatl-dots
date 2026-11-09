@@ -11,14 +11,14 @@
   "templates": [
     {
       "input": "theme.yml",
-      "output": "$XDG_CACHE_HOME/serpantinum/apps/lazygit.yml"
+      "output": "$XDG_CACHE_HOME/xiuhcoatl/apps/lazygit.yml"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/lazygit/config.yml",
-      "lines_from": "$XDG_CACHE_HOME/serpantinum/apps/lazygit.yml",
+      "lines_from": "$XDG_CACHE_HOME/xiuhcoatl/apps/lazygit.yml",
       "skip_if": "^gui\\s*:",
       "create": true
     }

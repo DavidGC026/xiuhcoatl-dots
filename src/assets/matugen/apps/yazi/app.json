@@ -11,11 +11,11 @@
   "templates": [
     {
       "input": "flavor.toml",
-      "output": "$XDG_CONFIG_HOME/yazi/flavors/serpantinum.yazi/flavor.toml"
+      "output": "$XDG_CONFIG_HOME/yazi/flavors/xiuhcoatl.yazi/flavor.toml"
     },
     {
       "input": "tmtheme.xml",
-      "output": "$XDG_CONFIG_HOME/yazi/flavors/serpantinum.yazi/tmtheme.xml"
+      "output": "$XDG_CONFIG_HOME/yazi/flavors/xiuhcoatl.yazi/tmtheme.xml"
     }
   ],
   "integrate": [
@@ -24,8 +24,8 @@
       "file": "$XDG_CONFIG_HOME/yazi/theme.toml",
       "section": "flavor",
       "line": [
-        "dark = \"serpantinum\"",
-        "light = \"serpantinum\""
+        "dark = \"xiuhcoatl\"",
+        "light = \"xiuhcoatl\""
       ],
       "disable": "^\\s*(dark|light)\\s*=",
       "create": true

@@ -10,15 +10,15 @@
   },
   "templates": [
     {
-      "input": "serpantinum.tmTheme",
-      "output": "$XDG_CONFIG_HOME/bat/themes/serpantinum.tmTheme"
+      "input": "xiuhcoatl.tmTheme",
+      "output": "$XDG_CONFIG_HOME/bat/themes/xiuhcoatl.tmTheme"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/bat/config",
-      "line": "--theme=\"serpantinum\"",
+      "line": "--theme=\"xiuhcoatl\"",
       "disable": "^\\s*--theme(=|\\s)",
       "create": true
     }

@@ -773,6 +773,11 @@ case "$1" in
         shift
         exec serpantinum-core brightness "$@"
         ;;
+    notify)
+        # Xiuhcóatl: avisos desde scripts (p. ej. los comandos de Inactividad).
+        shift
+        exec serpantinum-core notify "$@"
+        ;;
 esac
 
 ALLOWED_SCRIPTS=(

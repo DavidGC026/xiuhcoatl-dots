@@ -1,5 +1,5 @@
 [theme]
-name = "serpantinum"
+name = "xiuhcoatl"
 
 [colors]
 AlertInfo = "{{colors.secondary.default.hex}}"

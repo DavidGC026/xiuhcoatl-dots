@@ -11,8 +11,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.vim",
-      "output": "$HOME/.vim/colors/serpantinum.vim"
+      "input": "xiuhcoatl.vim",
+      "output": "$HOME/.vim/colors/xiuhcoatl.vim"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Serpantinum",
-  "author": "Serpantinum",
+  "name": "Xiuhcoatl",
+  "author": "Xiuhcoatl",
   "variables": {
     "bg": "{{colors.surface.default.hex}}",
     "bg_low": "{{colors.surface_container_low.default.hex}}",

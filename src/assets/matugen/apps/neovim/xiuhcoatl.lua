@@ -3,7 +3,7 @@ if vim.fn.exists("syntax_on") == 1 then
   vim.cmd("syntax reset")
 end
 vim.o.termguicolors = true
-vim.g.colors_name = "serpantinum"
+vim.g.colors_name = "xiuhcoatl"
 
 local c = {
   bg = "{{colors.surface.default.hex}}",

@@ -1004,7 +1004,7 @@
       "warning_command": {
         "title": "警告コマンド",
         "desc": "アクションの前に実行するオフセットとコマンド",
-        "placeholder": "例: serpantinum-core notify 'warning'"
+        "placeholder": "例: xiuhcoatl notify 'warning'"
       },
       "before_command": {
         "title": "直前コマンド",
@@ -1014,7 +1014,7 @@
       "resume_command": {
         "title": "復帰時コマンド",
         "desc": "ユーザーのアクティビティが再開されたときに実行されます",
-        "placeholder": "例: serpantinum-core notify 'resumed'"
+        "placeholder": "例: xiuhcoatl notify 'resumed'"
       },
       "dim": {
         "title": "画面の減光",
@@ -1608,16 +1608,16 @@
           "failed": "設定を更新できませんでした: {line}"
         },
         "hint": {
-          "select_in_app": "アプリの設定で Serpantinum テーマを選択してください",
+          "select_in_app": "アプリの設定で Xiuhcoatl テーマを選択してください",
           "restart": "新しい色を反映するには開いているウィンドウを再起動してください",
-          "neovim": ":colorscheme serpantinum を実行すると使えます",
+          "neovim": ":colorscheme xiuhcoatl を実行すると使えます",
           "helix": "新しい色を反映するには開いているエディターで :config-reload を実行してください",
-          "fastfetch": "fastfetch -c serpantinum を実行すると使えます",
-          "spicetify": "spicetify config current_theme Serpantinum を実行してから spicetify apply を実行してください",
-          "discord": "クライアントのテーマ設定で Serpantinum を有効にしてください",
-          "emacs": "M-x load-theme serpantinum を実行すると使えます",
+          "fastfetch": "fastfetch -c xiuhcoatl を実行すると使えます",
+          "spicetify": "spicetify config current_theme Xiuhcoatl を実行してから spicetify apply を実行してください",
+          "discord": "クライアントのテーマ設定で Xiuhcoatl を有効にしてください",
+          "emacs": "M-x load-theme xiuhcoatl を実行すると使えます",
           "steam": "Millennium で Material-Theme をインストールし、その色設定で Matugen を選択してください",
-          "heroic": "Heroic のカスタムテーマのパスをテーマフォルダーに設定し、serpantinum を選択してください",
+          "heroic": "Heroic のカスタムテーマのパスをテーマフォルダーに設定し、xiuhcoatl を選択してください",
           "telegram": "Telegram のチャット設定からテーマファイルを読み込んでください"
         },
         "list": {

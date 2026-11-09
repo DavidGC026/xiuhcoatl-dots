@@ -19,19 +19,19 @@
   },
   "templates": [
     {
-      "input": "Serpantinum.colors",
-      "output": "$XDG_DATA_HOME/color-schemes/Serpantinum.colors"
+      "input": "Xiuhcoatl.colors",
+      "output": "$XDG_DATA_HOME/color-schemes/Xiuhcoatl.colors"
     }
   ],
   "integrate": [
     {
       "type": "ini",
       "file": "$XDG_CONFIG_HOME/kdeglobals",
-      "values_from": "$XDG_DATA_HOME/color-schemes/Serpantinum.colors",
+      "values_from": "$XDG_DATA_HOME/color-schemes/Xiuhcoatl.colors",
       "sections": "^(Colors:|ColorEffects:|WM$)",
       "values": {
         "General": {
-          "ColorScheme": "Serpantinum"
+          "ColorScheme": "Xiuhcoatl"
         }
       },
       "create": true

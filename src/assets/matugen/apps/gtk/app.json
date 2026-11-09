@@ -7,18 +7,18 @@
   "templates": [
     {
       "input": "gtk3.css",
-      "output": "$XDG_CONFIG_HOME/gtk-3.0/serpantinum.css"
+      "output": "$XDG_CONFIG_HOME/gtk-3.0/xiuhcoatl.css"
     },
     {
       "input": "gtk4.css",
-      "output": "$XDG_CONFIG_HOME/gtk-4.0/serpantinum.css"
+      "output": "$XDG_CONFIG_HOME/gtk-4.0/xiuhcoatl.css"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/gtk-3.0/gtk.css",
-      "line": "@import url(\"serpantinum.css\");",
+      "line": "@import url(\"xiuhcoatl.css\");",
       "comment": [
         "/*",
         "*/"
@@ -29,7 +29,7 @@
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/gtk-4.0/gtk.css",
-      "line": "@import url(\"serpantinum.css\");",
+      "line": "@import url(\"xiuhcoatl.css\");",
       "comment": [
         "/*",
         "*/"

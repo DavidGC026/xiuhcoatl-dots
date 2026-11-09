@@ -9,8 +9,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.theme",
-      "output": "$XDG_CONFIG_HOME/btop/themes/serpantinum.theme"
+      "input": "xiuhcoatl.theme",
+      "output": "$XDG_CONFIG_HOME/btop/themes/xiuhcoatl.theme"
     }
   ],
   "integrate": [
@@ -20,7 +20,7 @@
       "sep": " = ",
       "values": {
         "": {
-          "color_theme": "\"serpantinum\""
+          "color_theme": "\"xiuhcoatl\""
         }
       },
       "create": true

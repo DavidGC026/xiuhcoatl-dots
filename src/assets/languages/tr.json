@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Uyarı komutu",
         "desc": "Eylemden önce çalıştırılacak uzaklık ve komut",
-        "placeholder": "örn. serpantinum-core notify 'uyarı'"
+        "placeholder": "örn. xiuhcoatl notify 'uyarı'"
       },
       "before_command": {
         "title": "Önceki komut",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Devam etme komutu",
         "desc": "Kullanıcı etkinliği devam ettiğinde çalıştırılır",
-        "placeholder": "örn. serpantinum-core notify 'devam edildi'"
+        "placeholder": "örn. xiuhcoatl notify 'devam edildi'"
       },
       "dim": {
         "title": "Ekranı karart",
@@ -754,16 +754,16 @@
           "failed": "Yapılandırma güncellenemedi: {line}"
         },
         "hint": {
-          "select_in_app": "Uygulama ayarlarında Serpantinum temasını seçin",
+          "select_in_app": "Uygulama ayarlarında Xiuhcoatl temasını seçin",
           "restart": "Yeni renkleri görmek için açık pencereleri yeniden başlatın",
-          "neovim": "Kullanmak için :colorscheme serpantinum çalıştırın",
+          "neovim": "Kullanmak için :colorscheme xiuhcoatl çalıştırın",
           "helix": "Yeni renkleri görmek için açık düzenleyicilerde :config-reload çalıştırın",
-          "fastfetch": "Kullanmak için fastfetch -c serpantinum çalıştırın",
-          "spicetify": "spicetify config current_theme Serpantinum ve ardından spicetify apply çalıştırın",
-          "discord": "İstemcinin tema ayarlarında Serpantinum'u etkinleştirin",
-          "emacs": "Kullanmak için M-x load-theme serpantinum komutunu çalıştırın",
+          "fastfetch": "Kullanmak için fastfetch -c xiuhcoatl çalıştırın",
+          "spicetify": "spicetify config current_theme Xiuhcoatl ve ardından spicetify apply çalıştırın",
+          "discord": "İstemcinin tema ayarlarında Xiuhcoatl'u etkinleştirin",
+          "emacs": "Kullanmak için M-x load-theme xiuhcoatl komutunu çalıştırın",
           "steam": "Material-Theme'i Millennium ile kurun, ardından renk ayarlarında Matugen'i seçin",
-          "heroic": "Heroic'in özel temalar yolunu tema klasörüne ayarlayın, ardından serpantinum'u seçin",
+          "heroic": "Heroic'in özel temalar yolunu tema klasörüne ayarlayın, ardından xiuhcoatl'u seçin",
           "telegram": "Tema dosyasını Telegram'ın sohbet ayarlarından yükleyin"
         },
         "list": {

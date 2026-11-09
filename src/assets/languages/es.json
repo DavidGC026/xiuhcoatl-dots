@@ -157,7 +157,7 @@
       "warning_command": {
         "title": "Comando de advertencia",
         "desc": "Desfase y comando a ejecutar antes de la acción",
-        "placeholder": "ej. serpantinum-core notify 'advertencia'"
+        "placeholder": "ej. xiuhcoatl notify 'advertencia'"
       },
       "before_command": {
         "title": "Comando previo",
@@ -167,7 +167,7 @@
       "resume_command": {
         "title": "Comando de reanudación",
         "desc": "Se ejecuta cuando se reanuda la actividad del usuario",
-        "placeholder": "ej. serpantinum-core notify 'reanudado'"
+        "placeholder": "ej. xiuhcoatl notify 'reanudado'"
       },
       "dim": {
         "title": "Atenuar pantalla",
@@ -762,16 +762,16 @@
           "failed": "No se pudo actualizar la configuración: {line}"
         },
         "hint": {
-          "select_in_app": "Elige el tema Serpantinum en los ajustes de la aplicación",
+          "select_in_app": "Elige el tema Xiuhcoatl en los ajustes de la aplicación",
           "restart": "Reinicia las ventanas abiertas para ver los nuevos colores",
-          "neovim": "Ejecuta :colorscheme serpantinum para usarlo",
+          "neovim": "Ejecuta :colorscheme xiuhcoatl para usarlo",
           "helix": "Ejecuta :config-reload en los editores abiertos para ver los nuevos colores",
-          "fastfetch": "Ejecuta fastfetch -c serpantinum para usarlo",
-          "spicetify": "Ejecuta spicetify config current_theme Serpantinum y luego spicetify apply",
-          "discord": "Activa Serpantinum en los ajustes de temas del cliente",
-          "emacs": "Ejecuta M-x load-theme serpantinum para usarlo",
+          "fastfetch": "Ejecuta fastfetch -c xiuhcoatl para usarlo",
+          "spicetify": "Ejecuta spicetify config current_theme Xiuhcoatl y luego spicetify apply",
+          "discord": "Activa Xiuhcoatl en los ajustes de temas del cliente",
+          "emacs": "Ejecuta M-x load-theme xiuhcoatl para usarlo",
           "steam": "Instala Material-Theme con Millennium y luego elige Matugen en sus ajustes de color",
-          "heroic": "Configura la ruta de temas personalizados de Heroic en su carpeta de temas y luego elige serpantinum",
+          "heroic": "Configura la ruta de temas personalizados de Heroic en su carpeta de temas y luego elige xiuhcoatl",
           "telegram": "Carga el archivo del tema desde los ajustes de chat de Telegram"
         },
         "list": {

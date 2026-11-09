@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.fish",
-      "output": "$XDG_CONFIG_HOME/fish/conf.d/serpantinum.fish"
+      "input": "xiuhcoatl.fish",
+      "output": "$XDG_CONFIG_HOME/fish/conf.d/xiuhcoatl.fish"
     }
   ]
 }

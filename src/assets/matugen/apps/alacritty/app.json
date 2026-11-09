@@ -10,7 +10,7 @@
   "templates": [
     {
       "input": "alacritty.toml",
-      "output": "$XDG_CONFIG_HOME/alacritty/themes/serpantinum.toml"
+      "output": "$XDG_CONFIG_HOME/alacritty/themes/xiuhcoatl.toml"
     }
   ],
   "integrate": [
@@ -23,7 +23,7 @@
         "$HOME/.alacritty.toml"
       ],
       "section": "general",
-      "line": "import = [\"$TILDE_CONFIG_HOME/alacritty/themes/serpantinum.toml\"]",
+      "line": "import = [\"$TILDE_CONFIG_HOME/alacritty/themes/xiuhcoatl.toml\"]",
       "skip_if": "^\\s*import\\s*=",
       "create": true
     }

@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.yaml",
-      "output": "$XDG_CONFIG_HOME/k9s/skins/serpantinum.yaml"
+      "input": "xiuhcoatl.yaml",
+      "output": "$XDG_CONFIG_HOME/k9s/skins/xiuhcoatl.yaml"
     }
   ]
 }

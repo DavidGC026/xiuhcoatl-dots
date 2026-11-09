@@ -11,8 +11,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.toml",
-      "output": "$XDG_CONFIG_HOME/superfile/theme/serpantinum.toml"
+      "input": "xiuhcoatl.toml",
+      "output": "$XDG_CONFIG_HOME/superfile/theme/xiuhcoatl.toml"
     }
   ],
   "integrate": [
@@ -20,7 +20,7 @@
       "type": "line",
       "file": "$XDG_CONFIG_HOME/superfile/config.toml",
       "section": "",
-      "line": "theme = \"serpantinum\"",
+      "line": "theme = \"xiuhcoatl\"",
       "disable": "^\\s*theme\\s*="
     }
   ]

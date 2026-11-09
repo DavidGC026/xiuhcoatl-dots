@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Lệnh cảnh báo",
         "desc": "Độ trễ và lệnh thực thi trước tác vụ",
-        "placeholder": "VD: serpantinum-core notify 'cảnh báo'"
+        "placeholder": "VD: xiuhcoatl notify 'cảnh báo'"
       },
       "before_command": {
         "title": "Lệnh trước tác vụ",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Lệnh khi khôi phục",
         "desc": "Thực thi khi người dùng tiếp tục hoạt động",
-        "placeholder": "VD: serpantinum-core notify 'đã khôi phục'"
+        "placeholder": "VD: xiuhcoatl notify 'đã khôi phục'"
       },
       "dim": {
         "title": "Làm mờ màn hình",
@@ -754,16 +754,16 @@
           "failed": "Không thể cập nhật cấu hình: {line}"
         },
         "hint": {
-          "select_in_app": "Chọn giao diện Serpantinum trong cài đặt của ứng dụng",
+          "select_in_app": "Chọn giao diện Xiuhcoatl trong cài đặt của ứng dụng",
           "restart": "Khởi động lại các cửa sổ đang mở để thấy màu mới",
-          "neovim": "Chạy :colorscheme serpantinum để sử dụng",
+          "neovim": "Chạy :colorscheme xiuhcoatl để sử dụng",
           "helix": "Chạy :config-reload trong trình soạn thảo đang mở để thấy màu mới",
-          "fastfetch": "Chạy fastfetch -c serpantinum để sử dụng",
-          "spicetify": "Chạy spicetify config current_theme Serpantinum, rồi spicetify apply",
-          "discord": "Bật Serpantinum trong cài đặt giao diện của ứng dụng",
-          "emacs": "Chạy M-x load-theme serpantinum để dùng",
+          "fastfetch": "Chạy fastfetch -c xiuhcoatl để sử dụng",
+          "spicetify": "Chạy spicetify config current_theme Xiuhcoatl, rồi spicetify apply",
+          "discord": "Bật Xiuhcoatl trong cài đặt giao diện của ứng dụng",
+          "emacs": "Chạy M-x load-theme xiuhcoatl để dùng",
           "steam": "Cài Material-Theme bằng Millennium, rồi chọn Matugen trong phần cài đặt màu của nó",
-          "heroic": "Đặt đường dẫn chủ đề tùy chỉnh của Heroic tới thư mục chủ đề của nó, rồi chọn serpantinum",
+          "heroic": "Đặt đường dẫn chủ đề tùy chỉnh của Heroic tới thư mục chủ đề của nó, rồi chọn xiuhcoatl",
           "telegram": "Tải tệp chủ đề từ cài đặt trò chuyện của Telegram"
         },
         "list": {

@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "预警命令",
         "desc": "操作触发前执行的偏移时间与命令",
-        "placeholder": "例如 serpantinum-core notify '警告'"
+        "placeholder": "例如 xiuhcoatl notify '警告'"
       },
       "before_command": {
         "title": "前置命令",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "恢复命令",
         "desc": "用户活动恢复时执行的命令",
-        "placeholder": "例如 serpantinum-core notify '已恢复'"
+        "placeholder": "例如 xiuhcoatl notify '已恢复'"
       },
       "dim": {
         "title": "调暗屏幕",
@@ -754,16 +754,16 @@
           "failed": "无法更新配置：{line}"
         },
         "hint": {
-          "select_in_app": "在应用设置中选择 Serpantinum 主题",
+          "select_in_app": "在应用设置中选择 Xiuhcoatl 主题",
           "restart": "重新启动已打开的窗口以查看新颜色",
-          "neovim": "运行 :colorscheme serpantinum 以使用",
+          "neovim": "运行 :colorscheme xiuhcoatl 以使用",
           "helix": "在已打开的编辑器中运行 :config-reload 以查看新颜色",
-          "fastfetch": "运行 fastfetch -c serpantinum 以使用",
-          "spicetify": "运行 spicetify config current_theme Serpantinum，然后运行 spicetify apply",
-          "discord": "在客户端的主题设置中启用 Serpantinum",
-          "emacs": "运行 M-x load-theme serpantinum 即可使用",
+          "fastfetch": "运行 fastfetch -c xiuhcoatl 以使用",
+          "spicetify": "运行 spicetify config current_theme Xiuhcoatl，然后运行 spicetify apply",
+          "discord": "在客户端的主题设置中启用 Xiuhcoatl",
+          "emacs": "运行 M-x load-theme xiuhcoatl 即可使用",
           "steam": "使用 Millennium 安装 Material-Theme，然后在其颜色设置中选择 Matugen",
-          "heroic": "将 Heroic 的自定义主题路径设为其主题文件夹，然后选择 serpantinum",
+          "heroic": "将 Heroic 的自定义主题路径设为其主题文件夹，然后选择 xiuhcoatl",
           "telegram": "在 Telegram 的聊天设置中加载主题文件"
         },
         "list": {

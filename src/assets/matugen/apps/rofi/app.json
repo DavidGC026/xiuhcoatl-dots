@@ -9,15 +9,15 @@
   },
   "templates": [
     {
-      "input": "serpantinum.rasi",
-      "output": "$XDG_DATA_HOME/rofi/themes/serpantinum.rasi"
+      "input": "xiuhcoatl.rasi",
+      "output": "$XDG_DATA_HOME/rofi/themes/xiuhcoatl.rasi"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/rofi/config.rasi",
-      "line": "@theme \"serpantinum\"",
+      "line": "@theme \"xiuhcoatl\"",
       "comment": "//",
       "disable": "^\\s*@theme\\s",
       "create": true

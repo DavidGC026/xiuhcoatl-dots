@@ -12,8 +12,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.css",
-      "output": "$EACH/.obsidian/snippets/serpantinum.css",
+      "input": "xiuhcoatl.css",
+      "output": "$EACH/.obsidian/snippets/xiuhcoatl.css",
       "each": [
         {
           "json": "$XDG_CONFIG_HOME/obsidian/obsidian.json",
@@ -31,7 +31,7 @@
       "type": "json",
       "file": "$EACH/.obsidian/appearance.json",
       "append": {
-        "enabledCssSnippets": "serpantinum"
+        "enabledCssSnippets": "xiuhcoatl"
       },
       "create": true,
       "each": [

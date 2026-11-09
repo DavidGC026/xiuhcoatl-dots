@@ -9,15 +9,15 @@
   },
   "templates": [
     {
-      "input": "serpantinum.css",
-      "output": "$XDG_CONFIG_HOME/wofi/serpantinum.css"
+      "input": "xiuhcoatl.css",
+      "output": "$XDG_CONFIG_HOME/wofi/xiuhcoatl.css"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/wofi/style.css",
-      "line": "@import url(\"file://$XDG_CONFIG_HOME/wofi/serpantinum.css\");",
+      "line": "@import url(\"file://$XDG_CONFIG_HOME/wofi/xiuhcoatl.css\");",
       "comment": [
         "/*",
         "*/"

@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.json",
-      "output": "$HOME/.claude/themes/serpantinum.json"
+      "input": "xiuhcoatl.json",
+      "output": "$HOME/.claude/themes/xiuhcoatl.json"
     }
   ]
 }

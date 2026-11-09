@@ -10,11 +10,11 @@
   },
   "templates": [
     {
-      "input": "serpantinum.lua",
-      "output": "$XDG_CONFIG_HOME/nvim/colors/serpantinum.lua"
+      "input": "xiuhcoatl.lua",
+      "output": "$XDG_CONFIG_HOME/nvim/colors/xiuhcoatl.lua"
     }
   ],
   "reload": [
-    "for s in \"${XDG_RUNTIME_DIR:-/tmp}\"/nvim.*; do [ -S \"$s\" ] && timeout 2 nvim --server \"$s\" --remote-expr 'execute(\"if get(g:, \\\"colors_name\\\", \\\"\\\") ==# \\\"serpantinum\\\" | colorscheme serpantinum | endif\")' >/dev/null 2>&1; done; true"
+    "for s in \"${XDG_RUNTIME_DIR:-/tmp}\"/nvim.*; do [ -S \"$s\" ] && timeout 2 nvim --server \"$s\" --remote-expr 'execute(\"if get(g:, \\\"colors_name\\\", \\\"\\\") ==# \\\"xiuhcoatl\\\" | colorscheme xiuhcoatl | endif\")' >/dev/null 2>&1; done; true"
   ]
 }

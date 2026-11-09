@@ -1,5 +1,5 @@
 [[themes]]
-name = "serpantinum"
+name = "xiuhcoatl"
 
 [themes.palette]
 background = "{{colors.surface.default.hex}}"

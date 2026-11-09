@@ -12,8 +12,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.toml",
-      "output": "$XDG_CONFIG_HOME/wezterm/colors/serpantinum.toml"
+      "input": "xiuhcoatl.toml",
+      "output": "$XDG_CONFIG_HOME/wezterm/colors/xiuhcoatl.toml"
     }
   ],
   "integrate": [
@@ -23,7 +23,7 @@
         "$XDG_CONFIG_HOME/wezterm/wezterm.lua",
         "$HOME/.wezterm.lua"
       ],
-      "line": "config.color_scheme = \"Serpantinum\"",
+      "line": "config.color_scheme = \"Xiuhcoatl\"",
       "comment": "--",
       "position": {
         "before": "^\\s*return\\s+config\\b"

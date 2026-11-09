@@ -12,8 +12,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.toml",
-      "output": "$XDG_CONFIG_HOME/halloy/themes/serpantinum.toml"
+      "input": "xiuhcoatl.toml",
+      "output": "$XDG_CONFIG_HOME/halloy/themes/xiuhcoatl.toml"
     }
   ],
   "integrate": [
@@ -21,7 +21,7 @@
       "type": "line",
       "file": "$XDG_CONFIG_HOME/halloy/config.toml",
       "section": "",
-      "line": "theme = \"serpantinum\"",
+      "line": "theme = \"xiuhcoatl\"",
       "disable": "^\\s*theme\\s*=",
       "create": true
     }

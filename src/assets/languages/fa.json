@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "دستور هشدار",
         "desc": "فاصله زمانی و دستوری که قبل از کنش اجرا می‌شود",
-        "placeholder": "مانند: serpantinum-core notify 'warning'"
+        "placeholder": "مانند: xiuhcoatl notify 'warning'"
       },
       "before_command": {
         "title": "دستور پیش از کنش",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "دستور ازسرگیری",
         "desc": "هنگام ازسرگیری فعالیت کاربر اجرا می‌شود",
-        "placeholder": "مانند: serpantinum-core notify 'resumed'"
+        "placeholder": "مانند: xiuhcoatl notify 'resumed'"
       },
       "dim": {
         "title": "تاریک کردن صفحه",
@@ -754,16 +754,16 @@
           "failed": "به‌روزرسانی پیکربندی ممکن نشد: {line}"
         },
         "hint": {
-          "select_in_app": "پوسته Serpantinum را در تنظیمات برنامه انتخاب کنید",
+          "select_in_app": "پوسته Xiuhcoatl را در تنظیمات برنامه انتخاب کنید",
           "restart": "برای دیدن رنگ‌های جدید، پنجره‌های باز را دوباره اجرا کنید",
-          "neovim": "برای استفاده، ‎:colorscheme serpantinum را اجرا کنید",
+          "neovim": "برای استفاده، ‎:colorscheme xiuhcoatl را اجرا کنید",
           "helix": "برای دیدن رنگ‌های جدید، ‎:config-reload را در ویرایشگرهای باز اجرا کنید",
-          "fastfetch": "برای استفاده، fastfetch -c serpantinum را اجرا کنید",
-          "spicetify": "spicetify config current_theme Serpantinum و سپس spicetify apply را اجرا کنید",
-          "discord": "Serpantinum را در تنظیمات پوسته کلاینت فعال کنید",
-          "emacs": "برای استفاده، M-x load-theme serpantinum را اجرا کنید",
+          "fastfetch": "برای استفاده، fastfetch -c xiuhcoatl را اجرا کنید",
+          "spicetify": "spicetify config current_theme Xiuhcoatl و سپس spicetify apply را اجرا کنید",
+          "discord": "Xiuhcoatl را در تنظیمات پوسته کلاینت فعال کنید",
+          "emacs": "برای استفاده، M-x load-theme xiuhcoatl را اجرا کنید",
           "steam": "Material-Theme را با Millennium نصب کنید، سپس Matugen را در تنظیمات رنگ آن انتخاب کنید",
-          "heroic": "مسیر پوسته‌های سفارشی Heroic را روی پوشهٔ پوسته‌های آن تنظیم کنید، سپس serpantinum را انتخاب کنید",
+          "heroic": "مسیر پوسته‌های سفارشی Heroic را روی پوشهٔ پوسته‌های آن تنظیم کنید، سپس xiuhcoatl را انتخاب کنید",
           "telegram": "فایل پوسته را از تنظیمات گفتگوی Telegram بارگذاری کنید"
         },
         "list": {

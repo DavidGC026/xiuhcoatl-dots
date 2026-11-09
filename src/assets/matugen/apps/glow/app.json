@@ -9,15 +9,15 @@
   },
   "templates": [
     {
-      "input": "serpantinum.json",
-      "output": "$XDG_CONFIG_HOME/glow/serpantinum.json"
+      "input": "xiuhcoatl.json",
+      "output": "$XDG_CONFIG_HOME/glow/xiuhcoatl.json"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/glow/glow.yml",
-      "line": "style: \"$XDG_CONFIG_HOME/glow/serpantinum.json\"",
+      "line": "style: \"$XDG_CONFIG_HOME/glow/xiuhcoatl.json\"",
       "disable": "^\\s*style\\s*:",
       "create": true
     }

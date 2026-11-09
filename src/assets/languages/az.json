@@ -148,7 +148,7 @@
       "warning_command": {
         "title": "Xəbərdarlıq əmri",
         "desc": "Əməliyyatdan nə qədər əvvəl xəbərdarlıq veriləcəyini və icra olunacaq əmri təyin et",
-        "placeholder": "Məsələn, serpantinum-core notify 'xəbərdarlıq'"
+        "placeholder": "Məsələn, xiuhcoatl notify 'xəbərdarlıq'"
       },
       "before_command": {
         "title": "Əvvəl icra olunan əmr",
@@ -158,7 +158,7 @@
       "resume_command": {
         "title": "Fəaliyyət bərpa olunanda icra olunan əmr",
         "desc": "İstifadəçi fəaliyyəti bərpa olunanda icra olunur",
-        "placeholder": "Məsələn, serpantinum-core notify 'bərpa olundu'"
+        "placeholder": "Məsələn, xiuhcoatl notify 'bərpa olundu'"
       },
       "dim": {
         "title": "Ekranı tutqunlaşdır",
@@ -752,16 +752,16 @@
           "failed": "Konfiqurasiya yenilənmədi: {line}"
         },
         "hint": {
-          "select_in_app": "Tətbiqin ayarlarında Serpantinum mövzusunu seçin",
+          "select_in_app": "Tətbiqin ayarlarında Xiuhcoatl mövzusunu seçin",
           "restart": "Yeni rəngləri görmək üçün açıq pəncərələri yenidən başladın",
-          "neovim": "İstifadə etmək üçün :colorscheme serpantinum işlədin",
+          "neovim": "İstifadə etmək üçün :colorscheme xiuhcoatl işlədin",
           "helix": "Yeni rəngləri görmək üçün açıq redaktorlarda :config-reload işlədin",
-          "fastfetch": "İstifadə etmək üçün fastfetch -c serpantinum işlədin",
-          "spicetify": "spicetify config current_theme Serpantinum, sonra spicetify apply işlədin",
-          "discord": "Müştərinin mövzu ayarlarında Serpantinum-u aktivləşdirin",
-          "emacs": "İstifadə etmək üçün M-x load-theme serpantinum əmrini icra edin",
+          "fastfetch": "İstifadə etmək üçün fastfetch -c xiuhcoatl işlədin",
+          "spicetify": "spicetify config current_theme Xiuhcoatl, sonra spicetify apply işlədin",
+          "discord": "Müştərinin mövzu ayarlarında Xiuhcoatl-u aktivləşdirin",
+          "emacs": "İstifadə etmək üçün M-x load-theme xiuhcoatl əmrini icra edin",
           "steam": "Material-Theme-i Millennium ilə quraşdırın, sonra onun rəng ayarlarında Matugen seçin",
-          "heroic": "Heroic-də fərdi mövzular yolunu onun mövzular qovluğuna təyin edin, sonra serpantinum seçin",
+          "heroic": "Heroic-də fərdi mövzular yolunu onun mövzular qovluğuna təyin edin, sonra xiuhcoatl seçin",
           "telegram": "Mövzu faylını Telegram-ın söhbət ayarlarından yükləyin"
         },
         "list": {

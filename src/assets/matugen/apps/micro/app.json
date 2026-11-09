@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.micro",
-      "output": "$XDG_CONFIG_HOME/micro/colorschemes/serpantinum.micro"
+      "input": "xiuhcoatl.micro",
+      "output": "$XDG_CONFIG_HOME/micro/colorschemes/xiuhcoatl.micro"
     }
   ]
 }

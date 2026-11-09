@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.toml",
-      "output": "$XDG_DATA_HOME/vicinae/themes/serpantinum.toml"
+      "input": "xiuhcoatl.toml",
+      "output": "$XDG_DATA_HOME/vicinae/themes/xiuhcoatl.toml"
     }
   ]
 }

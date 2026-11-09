@@ -10,8 +10,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum",
-      "output": "$XDG_CONFIG_HOME/aerc/stylesets/serpantinum"
+      "input": "xiuhcoatl",
+      "output": "$XDG_CONFIG_HOME/aerc/stylesets/xiuhcoatl"
     }
   ],
   "integrate": [
@@ -20,7 +20,7 @@
       "file": "$XDG_CONFIG_HOME/aerc/aerc.conf",
       "values": {
         "ui": {
-          "styleset-name": "serpantinum"
+          "styleset-name": "xiuhcoatl"
         }
       },
       "create": true

@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Commande d'avertissement",
         "desc": "Délai et commande à exécuter avant l'action",
-        "placeholder": "ex. serpantinum-core notify 'avertissement'"
+        "placeholder": "ex. xiuhcoatl notify 'avertissement'"
       },
       "before_command": {
         "title": "Commande préalable",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Commande de reprise",
         "desc": "Exécutée lorsque l'activité utilisateur reprend",
-        "placeholder": "ex. serpantinum-core notify 'reprise'"
+        "placeholder": "ex. xiuhcoatl notify 'reprise'"
       },
       "dim": {
         "title": "Atténuer l'écran",
@@ -754,16 +754,16 @@
           "failed": "Impossible de mettre à jour la configuration : {line}"
         },
         "hint": {
-          "select_in_app": "Choisissez le thème Serpantinum dans les paramètres de l'application",
+          "select_in_app": "Choisissez le thème Xiuhcoatl dans les paramètres de l'application",
           "restart": "Redémarrez les fenêtres ouvertes pour voir les nouvelles couleurs",
-          "neovim": "Exécutez :colorscheme serpantinum pour l'utiliser",
+          "neovim": "Exécutez :colorscheme xiuhcoatl pour l'utiliser",
           "helix": "Exécutez :config-reload dans les éditeurs ouverts pour voir les nouvelles couleurs",
-          "fastfetch": "Exécutez fastfetch -c serpantinum pour l'utiliser",
-          "spicetify": "Exécutez spicetify config current_theme Serpantinum, puis spicetify apply",
-          "discord": "Activez Serpantinum dans les paramètres de thème du client",
-          "emacs": "Exécutez M-x load-theme serpantinum pour l'utiliser",
+          "fastfetch": "Exécutez fastfetch -c xiuhcoatl pour l'utiliser",
+          "spicetify": "Exécutez spicetify config current_theme Xiuhcoatl, puis spicetify apply",
+          "discord": "Activez Xiuhcoatl dans les paramètres de thème du client",
+          "emacs": "Exécutez M-x load-theme xiuhcoatl pour l'utiliser",
           "steam": "Installez Material-Theme avec Millennium, puis choisissez Matugen dans ses réglages de couleurs",
-          "heroic": "Définissez le chemin des thèmes personnalisés de Heroic sur son dossier de thèmes, puis choisissez serpantinum",
+          "heroic": "Définissez le chemin des thèmes personnalisés de Heroic sur son dossier de thèmes, puis choisissez xiuhcoatl",
           "telegram": "Chargez le fichier de thème depuis les paramètres de discussion de Telegram"
         },
         "list": {

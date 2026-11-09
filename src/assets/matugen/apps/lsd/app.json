@@ -9,8 +9,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.yaml",
-      "output": "$XDG_CONFIG_HOME/lsd/serpantinum.yaml"
+      "input": "xiuhcoatl.yaml",
+      "output": "$XDG_CONFIG_HOME/lsd/xiuhcoatl.yaml"
     }
   ],
   "integrate": [
@@ -22,7 +22,7 @@
       ],
       "line": [
         "color:",
-        "  theme: $XDG_CONFIG_HOME/lsd/serpantinum.yaml"
+        "  theme: $XDG_CONFIG_HOME/lsd/xiuhcoatl.yaml"
       ],
       "skip_if": "^color\\s*:",
       "create": true

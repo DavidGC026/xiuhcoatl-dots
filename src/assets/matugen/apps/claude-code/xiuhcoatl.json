@@ -1,5 +1,5 @@
 {
-  "name": "Serpantinum",
+  "name": "Xiuhcoatl",
   "base": "{{mode}}",
   "overrides": {
     "claude": "{{colors.primary.default.hex}}",

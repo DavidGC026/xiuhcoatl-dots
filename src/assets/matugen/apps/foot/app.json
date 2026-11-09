@@ -11,7 +11,7 @@
   "templates": [
     {
       "input": "foot.ini",
-      "output": "$XDG_CONFIG_HOME/foot/themes/serpantinum",
+      "output": "$XDG_CONFIG_HOME/foot/themes/xiuhcoatl",
       "when": {
         "version": {
           "bin": "foot",
@@ -22,7 +22,7 @@
     },
     {
       "input": "foot-legacy.ini",
-      "output": "$XDG_CONFIG_HOME/foot/themes/serpantinum",
+      "output": "$XDG_CONFIG_HOME/foot/themes/xiuhcoatl",
       "when": {
         "version": {
           "bin": "foot",
@@ -36,7 +36,7 @@
       "type": "line",
       "file": "$XDG_CONFIG_HOME/foot/foot.ini",
       "section": "",
-      "line": "include=$TILDE_CONFIG_HOME/foot/themes/serpantinum",
+      "line": "include=$TILDE_CONFIG_HOME/foot/themes/xiuhcoatl",
       "create": true
     }
   ]

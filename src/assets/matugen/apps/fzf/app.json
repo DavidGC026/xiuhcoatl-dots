@@ -11,11 +11,11 @@
   "templates": [
     {
       "input": "colors.sh",
-      "output": "$XDG_CONFIG_HOME/fzf/serpantinum.sh"
+      "output": "$XDG_CONFIG_HOME/fzf/xiuhcoatl.sh"
     },
     {
       "input": "colors.fish",
-      "output": "$XDG_CONFIG_HOME/fish/conf.d/serpantinum-fzf.fish",
+      "output": "$XDG_CONFIG_HOME/fish/conf.d/xiuhcoatl-fzf.fish",
       "when": {
         "bin": [
           "fish"
@@ -27,7 +27,7 @@
     {
       "type": "line",
       "file": "$HOME/.bashrc",
-      "line": "[ -f $TILDE_CONFIG_HOME/fzf/serpantinum.sh ] && . $TILDE_CONFIG_HOME/fzf/serpantinum.sh",
+      "line": "[ -f $TILDE_CONFIG_HOME/fzf/xiuhcoatl.sh ] && . $TILDE_CONFIG_HOME/fzf/xiuhcoatl.sh",
       "when": {
         "path": [
           "$HOME/.bashrc"
@@ -37,7 +37,7 @@
     {
       "type": "line",
       "file": "$HOME/.zshrc",
-      "line": "[ -f $TILDE_CONFIG_HOME/fzf/serpantinum.sh ] && . $TILDE_CONFIG_HOME/fzf/serpantinum.sh",
+      "line": "[ -f $TILDE_CONFIG_HOME/fzf/xiuhcoatl.sh ] && . $TILDE_CONFIG_HOME/fzf/xiuhcoatl.sh",
       "when": {
         "path": [
           "$HOME/.zshrc"

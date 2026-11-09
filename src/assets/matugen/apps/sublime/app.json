@@ -11,8 +11,8 @@
   },
   "templates": [
     {
-      "input": "Serpantinum.sublime-color-scheme",
-      "output": "$XDG_CONFIG_HOME/sublime-text/Packages/User/Serpantinum.sublime-color-scheme"
+      "input": "Xiuhcoatl.sublime-color-scheme",
+      "output": "$XDG_CONFIG_HOME/sublime-text/Packages/User/Xiuhcoatl.sublime-color-scheme"
     }
   ]
 }

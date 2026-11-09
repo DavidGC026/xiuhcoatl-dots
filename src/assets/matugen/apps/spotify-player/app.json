@@ -11,21 +11,21 @@
   "templates": [
     {
       "input": "theme.toml",
-      "output": "$XDG_CACHE_HOME/serpantinum/apps/spotify-player.toml"
+      "output": "$XDG_CACHE_HOME/xiuhcoatl/apps/spotify-player.toml"
     }
   ],
   "integrate": [
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/spotify-player/theme.toml",
-      "lines_from": "$XDG_CACHE_HOME/serpantinum/apps/spotify-player.toml",
+      "lines_from": "$XDG_CACHE_HOME/xiuhcoatl/apps/spotify-player.toml",
       "create": true
     },
     {
       "type": "line",
       "file": "$XDG_CONFIG_HOME/spotify-player/app.toml",
       "section": "",
-      "line": "theme = \"serpantinum\"",
+      "line": "theme = \"xiuhcoatl\"",
       "disable": "^\\s*theme\\s*=",
       "create": true
     }

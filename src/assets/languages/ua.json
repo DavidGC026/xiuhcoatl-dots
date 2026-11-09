@@ -148,7 +148,7 @@
       "warning_command": {
         "title": "Команда попередження",
         "desc": "Зміщення і команда, що виконується перед дією",
-        "placeholder": "напр. serpantinum-core notify 'попередження'"
+        "placeholder": "напр. xiuhcoatl notify 'попередження'"
       },
       "before_command": {
         "title": "Команда перед дією",
@@ -158,7 +158,7 @@
       "resume_command": {
         "title": "Команда відновлення",
         "desc": "Виконується під час відновлення активності",
-        "placeholder": "напр. serpantinum-core notify 'відновлено'"
+        "placeholder": "напр. xiuhcoatl notify 'відновлено'"
       },
       "dim": {
         "title": "Затемнення екрана",
@@ -738,16 +738,16 @@
           "failed": "Не вдалося оновити конфігурацію: {line}"
         },
         "hint": {
-          "select_in_app": "Виберіть тему Serpantinum у налаштуваннях застосунку",
+          "select_in_app": "Виберіть тему Xiuhcoatl у налаштуваннях застосунку",
           "restart": "Перезапустіть відкриті вікна, щоб побачити нові кольори",
-          "neovim": "Виконайте :colorscheme serpantinum, щоб використати її",
+          "neovim": "Виконайте :colorscheme xiuhcoatl, щоб використати її",
           "helix": "Виконайте :config-reload у відкритих редакторах, щоб побачити нові кольори",
-          "fastfetch": "Виконайте fastfetch -c serpantinum, щоб використати його",
-          "spicetify": "Виконайте spicetify config current_theme Serpantinum, потім spicetify apply",
-          "discord": "Увімкніть Serpantinum у налаштуваннях тем клієнта",
-          "emacs": "Виконайте M-x load-theme serpantinum, щоб використати її",
+          "fastfetch": "Виконайте fastfetch -c xiuhcoatl, щоб використати його",
+          "spicetify": "Виконайте spicetify config current_theme Xiuhcoatl, потім spicetify apply",
+          "discord": "Увімкніть Xiuhcoatl у налаштуваннях тем клієнта",
+          "emacs": "Виконайте M-x load-theme xiuhcoatl, щоб використати її",
           "steam": "Встановіть Material-Theme через Millennium, потім виберіть Matugen у його налаштуваннях кольорів",
-          "heroic": "Вкажіть у Heroic шлях до власних тем у його теці тем, потім виберіть serpantinum",
+          "heroic": "Вкажіть у Heroic шлях до власних тем у його теці тем, потім виберіть xiuhcoatl",
           "telegram": "Завантажте файл теми в налаштуваннях чатів Telegram"
         },
         "list": {

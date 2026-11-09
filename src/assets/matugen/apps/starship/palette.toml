@@ -1,4 +1,4 @@
-[palettes.serpantinum]
+[palettes.xiuhcoatl]
 black = "{{colors.surface_variant.default.hex}}"
 red = "{{colors.error.default.hex}}"
 green = "{{colors.primary.default.hex}}"

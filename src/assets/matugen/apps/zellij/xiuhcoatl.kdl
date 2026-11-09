@@ -1,5 +1,5 @@
 themes {
-    serpantinum {
+    xiuhcoatl {
         fg "{{colors.on_surface.default.hex}}"
         bg "{{colors.surface_container_high.default.hex}}"
         black "{{colors.surface_container.default.hex}}"

@@ -16,8 +16,8 @@
   },
   "templates": [
     {
-      "input": "serpantinum.css",
-      "output": "$EACH/chrome/serpantinum.css",
+      "input": "xiuhcoatl.css",
+      "output": "$EACH/chrome/xiuhcoatl.css",
       "each": [
         "$HOME/.mozilla/firefox/*/prefs.js",
         "$XDG_CONFIG_HOME/mozilla/firefox/*/prefs.js",
@@ -32,7 +32,7 @@
     {
       "type": "line",
       "file": "$EACH/chrome/userChrome.css",
-      "line": "@import url(\"serpantinum.css\");",
+      "line": "@import url(\"xiuhcoatl.css\");",
       "comment": [
         "/*",
         "*/"

@@ -20,7 +20,7 @@
   "templates": [
     {
       "input": "colors.conf",
-      "output": "$XDG_CONFIG_HOME/qt6ct/colors/serpantinum.conf",
+      "output": "$XDG_CONFIG_HOME/qt6ct/colors/xiuhcoatl.conf",
       "when": {
         "bin": [
           "qt6ct"
@@ -29,7 +29,7 @@
     },
     {
       "input": "colors.conf",
-      "output": "$XDG_CONFIG_HOME/qt5ct/colors/serpantinum.conf",
+      "output": "$XDG_CONFIG_HOME/qt5ct/colors/xiuhcoatl.conf",
       "when": {
         "bin": [
           "qt5ct"
@@ -43,7 +43,7 @@
       "file": "$XDG_CONFIG_HOME/qt6ct/qt6ct.conf",
       "values": {
         "Appearance": {
-          "color_scheme_path": "$XDG_CONFIG_HOME/qt6ct/colors/serpantinum.conf",
+          "color_scheme_path": "$XDG_CONFIG_HOME/qt6ct/colors/xiuhcoatl.conf",
           "custom_palette": "true"
         }
       },
@@ -59,7 +59,7 @@
       "file": "$XDG_CONFIG_HOME/qt5ct/qt5ct.conf",
       "values": {
         "Appearance": {
-          "color_scheme_path": "$XDG_CONFIG_HOME/qt5ct/colors/serpantinum.conf",
+          "color_scheme_path": "$XDG_CONFIG_HOME/qt5ct/colors/xiuhcoatl.conf",
           "custom_palette": "true"
         }
       },

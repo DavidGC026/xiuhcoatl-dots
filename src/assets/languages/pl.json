@@ -1004,7 +1004,7 @@
       "warning_command": {
         "title": "Polecenie ostrzegawcze",
         "desc": "Przesunięcie czasowe i polecenie do wykonania przed akcją",
-        "placeholder": "np. serpantinum-core notify 'ostrzeżenie'"
+        "placeholder": "np. xiuhcoatl notify 'ostrzeżenie'"
       },
       "before_command": {
         "title": "Polecenie poprzedzające",
@@ -1014,7 +1014,7 @@
       "resume_command": {
         "title": "Polecenie wznowienia",
         "desc": "Wykonywane po wznowieniu aktywności przez użytkownika",
-        "placeholder": "np. serpantinum-core notify 'wznowiono'"
+        "placeholder": "np. xiuhcoatl notify 'wznowiono'"
       },
       "dim": {
         "title": "Przyciemnij ekran",
@@ -1608,16 +1608,16 @@
           "failed": "Nie udało się zaktualizować konfiguracji: {line}"
         },
         "hint": {
-          "select_in_app": "Wybierz motyw Serpantinum w ustawieniach aplikacji",
+          "select_in_app": "Wybierz motyw Xiuhcoatl w ustawieniach aplikacji",
           "restart": "Uruchom ponownie otwarte okna, aby zobaczyć nowe kolory",
-          "neovim": "Uruchom :colorscheme serpantinum, aby go użyć",
+          "neovim": "Uruchom :colorscheme xiuhcoatl, aby go użyć",
           "helix": "Uruchom :config-reload w otwartych edytorach, aby zobaczyć nowe kolory",
-          "fastfetch": "Uruchom fastfetch -c serpantinum, aby go użyć",
-          "spicetify": "Uruchom spicetify config current_theme Serpantinum, a potem spicetify apply",
-          "discord": "Włącz Serpantinum w ustawieniach motywów klienta",
-          "emacs": "Uruchom M-x load-theme serpantinum, aby go użyć",
+          "fastfetch": "Uruchom fastfetch -c xiuhcoatl, aby go użyć",
+          "spicetify": "Uruchom spicetify config current_theme Xiuhcoatl, a potem spicetify apply",
+          "discord": "Włącz Xiuhcoatl w ustawieniach motywów klienta",
+          "emacs": "Uruchom M-x load-theme xiuhcoatl, aby go użyć",
           "steam": "Zainstaluj Material-Theme przez Millennium, a potem wybierz Matugen w jego ustawieniach kolorów",
-          "heroic": "Ustaw w Heroic ścieżkę własnych motywów na jego folder motywów, a potem wybierz serpantinum",
+          "heroic": "Ustaw w Heroic ścieżkę własnych motywów na jego folder motywów, a potem wybierz xiuhcoatl",
           "telegram": "Wczytaj plik motywu z ustawień czatu w Telegramie"
         },
         "list": {

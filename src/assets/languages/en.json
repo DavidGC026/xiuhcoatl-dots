@@ -156,7 +156,7 @@
       "warning_command": {
         "title": "Warning command",
         "desc": "Offset and command to execute before action",
-        "placeholder": "e.g. serpantinum-core notify 'warning'"
+        "placeholder": "e.g. xiuhcoatl notify 'warning'"
       },
       "before_command": {
         "title": "Before command",
@@ -166,7 +166,7 @@
       "resume_command": {
         "title": "Resume command",
         "desc": "Executed when user activity resumes",
-        "placeholder": "e.g. serpantinum-core notify 'resumed'"
+        "placeholder": "e.g. xiuhcoatl notify 'resumed'"
       },
       "dim": {
         "title": "Dim screen",
@@ -774,16 +774,16 @@
           "failed": "Couldn't update the config: {line}"
         },
         "hint": {
-          "select_in_app": "Pick the Serpantinum theme in the app's settings",
+          "select_in_app": "Pick the Xiuhcoatl theme in the app's settings",
           "restart": "Restart open windows to see new colors",
-          "neovim": "Run :colorscheme serpantinum to use it",
+          "neovim": "Run :colorscheme xiuhcoatl to use it",
           "helix": "Run :config-reload in open editors to see new colors",
-          "fastfetch": "Run fastfetch -c serpantinum to use it",
-          "spicetify": "Run spicetify config current_theme Serpantinum, then spicetify apply",
-          "discord": "Enable Serpantinum in the client's theme settings",
-          "emacs": "Run M-x load-theme serpantinum to use it",
+          "fastfetch": "Run fastfetch -c xiuhcoatl to use it",
+          "spicetify": "Run spicetify config current_theme Xiuhcoatl, then spicetify apply",
+          "discord": "Enable Xiuhcoatl in the client's theme settings",
+          "emacs": "Run M-x load-theme xiuhcoatl to use it",
           "steam": "Install Material-Theme with Millennium, then pick Matugen in its color settings",
-          "heroic": "Set Heroic's custom themes path to its themes folder, then pick serpantinum",
+          "heroic": "Set Heroic's custom themes path to its themes folder, then pick xiuhcoatl",
           "telegram": "Load the theme file from Telegram's chat settings"
         },
         "list": {

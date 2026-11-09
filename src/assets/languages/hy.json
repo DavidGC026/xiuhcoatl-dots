@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Նախազգուշացման հրաման",
         "desc": "Գործողությունից առաջ կատարվող հրամանն ու ժամանակային շեղումը",
-        "placeholder": "օր.՝ serpantinum-core notify 'warning'"
+        "placeholder": "օր.՝ xiuhcoatl notify 'warning'"
       },
       "before_command": {
         "title": "Նախորդող հրաման",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Վերսկսման հրաման",
         "desc": "Կատարվում է օգտատիրոջ ակտիվության վերսկսման ժամանակ",
-        "placeholder": "օր.՝ serpantinum-core notify 'resumed'"
+        "placeholder": "օր.՝ xiuhcoatl notify 'resumed'"
       },
       "dim": {
         "title": "Մգացնել էկրանը",
@@ -754,16 +754,16 @@
           "failed": "Չհաջողվեց թարմացնել կարգավորումը՝ {line}"
         },
         "hint": {
-          "select_in_app": "Ընտրեք Serpantinum թեման հավելվածի կարգավորումներում",
+          "select_in_app": "Ընտրեք Xiuhcoatl թեման հավելվածի կարգավորումներում",
           "restart": "Նոր գույները տեսնելու համար վերագործարկեք բաց պատուհանները",
-          "neovim": "Օգտագործելու համար գործարկեք :colorscheme serpantinum",
+          "neovim": "Օգտագործելու համար գործարկեք :colorscheme xiuhcoatl",
           "helix": "Նոր գույները տեսնելու համար բաց խմբագրիչներում գործարկեք :config-reload",
-          "fastfetch": "Օգտագործելու համար գործարկեք fastfetch -c serpantinum",
-          "spicetify": "Գործարկեք spicetify config current_theme Serpantinum, ապա spicetify apply",
-          "discord": "Միացրեք Serpantinum-ը հաճախորդի թեմաների կարգավորումներում",
-          "emacs": "Գործարկեք M-x load-theme serpantinum՝ այն օգտագործելու համար",
+          "fastfetch": "Օգտագործելու համար գործարկեք fastfetch -c xiuhcoatl",
+          "spicetify": "Գործարկեք spicetify config current_theme Xiuhcoatl, ապա spicetify apply",
+          "discord": "Միացրեք Xiuhcoatl-ը հաճախորդի թեմաների կարգավորումներում",
+          "emacs": "Գործարկեք M-x load-theme xiuhcoatl՝ այն օգտագործելու համար",
           "steam": "Տեղադրեք Material-Theme-ը Millennium-ով, ապա ընտրեք Matugen-ը դրա գույների կարգավորումներում",
-          "heroic": "Heroic-ում սահմանեք անհատական թեմաների ուղին դրա թեմաների թղթապանակին, ապա ընտրեք serpantinum",
+          "heroic": "Heroic-ում սահմանեք անհատական թեմաների ուղին դրա թեմաների թղթապանակին, ապա ընտրեք xiuhcoatl",
           "telegram": "Բեռնեք թեմայի ֆայլը Telegram-ի զրույցի կարգավորումներից"
         },
         "list": {

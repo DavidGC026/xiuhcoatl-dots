@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Perintah peringatan",
         "desc": "Selang waktu dan perintah untuk dieksekusi sebelum tindakan",
-        "placeholder": "misalnya serpantinum-core notify 'peringatan'"
+        "placeholder": "misalnya xiuhcoatl notify 'peringatan'"
       },
       "before_command": {
         "title": "Perintah sebelum tindakan",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Perintah saat kembali aktif",
         "desc": "Dieksekusi saat aktivitas pengguna kembali dilanjutkan",
-        "placeholder": "misalnya serpantinum-core notify 'dilanjutkan'"
+        "placeholder": "misalnya xiuhcoatl notify 'dilanjutkan'"
       },
       "dim": {
         "title": "Redupkan layar",
@@ -754,16 +754,16 @@
           "failed": "Gagal memperbarui konfigurasi: {line}"
         },
         "hint": {
-          "select_in_app": "Pilih tema Serpantinum di pengaturan aplikasi",
+          "select_in_app": "Pilih tema Xiuhcoatl di pengaturan aplikasi",
           "restart": "Mulai ulang jendela yang terbuka untuk melihat warna baru",
-          "neovim": "Jalankan :colorscheme serpantinum untuk memakainya",
+          "neovim": "Jalankan :colorscheme xiuhcoatl untuk memakainya",
           "helix": "Jalankan :config-reload di editor yang terbuka untuk melihat warna baru",
-          "fastfetch": "Jalankan fastfetch -c serpantinum untuk memakainya",
-          "spicetify": "Jalankan spicetify config current_theme Serpantinum, lalu spicetify apply",
-          "discord": "Aktifkan Serpantinum di pengaturan tema klien",
-          "emacs": "Jalankan M-x load-theme serpantinum untuk menggunakannya",
+          "fastfetch": "Jalankan fastfetch -c xiuhcoatl untuk memakainya",
+          "spicetify": "Jalankan spicetify config current_theme Xiuhcoatl, lalu spicetify apply",
+          "discord": "Aktifkan Xiuhcoatl di pengaturan tema klien",
+          "emacs": "Jalankan M-x load-theme xiuhcoatl untuk menggunakannya",
           "steam": "Pasang Material-Theme dengan Millennium, lalu pilih Matugen di pengaturan warnanya",
-          "heroic": "Atur jalur tema kustom Heroic ke folder temanya, lalu pilih serpantinum",
+          "heroic": "Atur jalur tema kustom Heroic ke folder temanya, lalu pilih xiuhcoatl",
           "telegram": "Muat file tema dari pengaturan obrolan Telegram"
         },
         "list": {

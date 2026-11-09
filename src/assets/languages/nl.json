@@ -150,7 +150,7 @@
       "warning_command": {
         "title": "Waarschuwingsopdracht",
         "desc": "Verschuiving en opdracht die vóór de actie wordt uitgevoerd",
-        "placeholder": "bijv. serpantinum-core notify 'waarschuwing'"
+        "placeholder": "bijv. xiuhcoatl notify 'waarschuwing'"
       },
       "before_command": {
         "title": "Voorafgaande opdracht",
@@ -160,7 +160,7 @@
       "resume_command": {
         "title": "Hervattingsopdracht",
         "desc": "Wordt uitgevoerd wanneer gebruikersactiviteit wordt hervat",
-        "placeholder": "bijv. serpantinum-core notify 'hervat'"
+        "placeholder": "bijv. xiuhcoatl notify 'hervat'"
       },
       "dim": {
         "title": "Scherm dimmen",
@@ -754,16 +754,16 @@
           "failed": "Kon de configuratie niet bijwerken: {line}"
         },
         "hint": {
-          "select_in_app": "Kies het thema Serpantinum in de instellingen van de app",
+          "select_in_app": "Kies het thema Xiuhcoatl in de instellingen van de app",
           "restart": "Start open vensters opnieuw om de nieuwe kleuren te zien",
-          "neovim": "Voer :colorscheme serpantinum uit om het te gebruiken",
+          "neovim": "Voer :colorscheme xiuhcoatl uit om het te gebruiken",
           "helix": "Voer :config-reload uit in open editors om de nieuwe kleuren te zien",
-          "fastfetch": "Voer fastfetch -c serpantinum uit om het te gebruiken",
-          "spicetify": "Voer spicetify config current_theme Serpantinum uit en daarna spicetify apply",
-          "discord": "Schakel Serpantinum in bij de thema-instellingen van de client",
-          "emacs": "Voer M-x load-theme serpantinum uit om het te gebruiken",
+          "fastfetch": "Voer fastfetch -c xiuhcoatl uit om het te gebruiken",
+          "spicetify": "Voer spicetify config current_theme Xiuhcoatl uit en daarna spicetify apply",
+          "discord": "Schakel Xiuhcoatl in bij de thema-instellingen van de client",
+          "emacs": "Voer M-x load-theme xiuhcoatl uit om het te gebruiken",
           "steam": "Installeer Material-Theme met Millennium en kies daarna Matugen in de kleurinstellingen",
-          "heroic": "Stel het pad voor eigen thema's in Heroic in op de themamap en kies daarna serpantinum",
+          "heroic": "Stel het pad voor eigen thema's in Heroic in op de themamap en kies daarna xiuhcoatl",
           "telegram": "Laad het themabestand via de chatinstellingen van Telegram"
         },
         "list": {

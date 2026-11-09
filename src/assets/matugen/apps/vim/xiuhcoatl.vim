@@ -6,7 +6,7 @@ endif
 if has("termguicolors")
   set termguicolors
 endif
-let g:colors_name = "serpantinum"
+let g:colors_name = "xiuhcoatl"
 
 highlight Normal guifg={{colors.on_surface.default.hex}} guibg={{colors.surface.default.hex}} gui=NONE cterm=NONE
 highlight NormalFloat guifg={{colors.on_surface.default.hex}} guibg={{colors.surface_container_high.default.hex}} gui=NONE cterm=NONE

@@ -10,7 +10,7 @@
   "templates": [
     {
       "input": "ghostty",
-      "output": "$XDG_CONFIG_HOME/ghostty/themes/serpantinum"
+      "output": "$XDG_CONFIG_HOME/ghostty/themes/xiuhcoatl"
     }
   ],
   "integrate": [
@@ -21,7 +21,7 @@
         "$XDG_CONFIG_HOME/ghostty/config"
       ],
       "create_at": "$XDG_CONFIG_HOME/ghostty/config",
-      "line": "theme = serpantinum",
+      "line": "theme = xiuhcoatl",
       "disable": "^\\s*theme\\s*=",
       "create": true
     }
