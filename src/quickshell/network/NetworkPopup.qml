@@ -639,8 +639,10 @@ Item {
 
     readonly property string scriptsDir: Caching.qsDir + "/network"
 
-    readonly property color sharedAccent: Qt.lighter(ThemeBackend.sapphire, 1.15)
-    readonly property color btAccent: ThemeBackend.mauve
+    // DVG OS: lo conectado va en carmín (con letras marfil) y los anillos e hilos en
+    // oro, como un sello de lacre; Bluetooth en un carmín un poco más claro.
+    readonly property color sharedAccent: DvgEstilo.carmin
+    readonly property color btAccent: Qt.lighter(DvgEstilo.carmin, 1.2)
 
     property string activeMode: "wifi"
     readonly property color activeColor: activeMode === "bt" ? popupWindowRoot.btAccent : popupWindowRoot.sharedAccent
@@ -1465,6 +1467,14 @@ Item {
         scale: (0.96 + 0.04 * popupWindowRoot.easeOut(popupWindowRoot.animWin(popupWindowRoot.introState, 0.0, 0.12))) * (0.97 + 0.03 * popupWindowRoot.exitOpacity)
         transformOrigin: Item.Center
 
+        // DVG OS: esquinas de nudo celta sobre el panel de red.
+        MarcoCelta {
+            anchors.fill: parent
+            tam: popupWindowRoot.s(56)
+            margen: popupWindowRoot.s(7)
+            opacidad: 0.7
+        }
+
         Rectangle {
             anchors.fill: parent
             radius: ThemeBackend.borderRadius
@@ -1575,7 +1585,7 @@ Item {
                 property real time: animTime
                 property real strikeProg: popupWindowRoot.lightningStrikeProg
                 property real scale: popupWindowRoot.s(1.0)
-                property color activeColor: popupWindowRoot.activeColor
+                property color activeColor: DvgEstilo.oro
 
                 function calcActiveBeams() {
                     var beams = [];

@@ -214,12 +214,12 @@ Item {
 
             property color dynamicTextColor: {
                 if (isFailed) return ThemeBackend.red;
-                if (isHighlighted && !ThemeBackend.liquidGlass) return window.activeColor;
+                if (isHighlighted && !ThemeBackend.liquidGlass) return DvgEstilo.oro;
                 return ThemeBackend.text;
             }
 
             property bool isAccentGlass: ThemeBackend.liquidGlass && (isHighlighted || isCurrentlyConnected)
-            property color filledContentColor: ThemeBackend.liquidGlass ? ThemeBackend.text : ThemeBackend.crust
+            property color filledContentColor: ThemeBackend.text
 
             function handleTrigger() {
                 let currentCmd = typeof cmdStr !== "undefined" ? cmdStr : "";
@@ -330,6 +330,17 @@ Item {
                 buttonText: ""
                 buttonIcon: ""
                 onTriggered: floatCardDelegateContainer.handleTrigger()
+            }
+
+            // DVG OS: filete de oro en cada tarjeta; más visible si es la conexión activa.
+            Rectangle {
+                anchors.fill: parent
+                radius: ThemeBackend.borderRadius
+                color: "transparent"
+                border.width: window.s(1)
+                border.color: Qt.alpha(DvgEstilo.oro, isCurrentlyConnected || isHighlighted ? 0.75 : 0.3)
+                z: 1
+                Behavior on border.color { enabled: window.visible; ColorAnimation { duration: 200 } }
             }
 
             Item {

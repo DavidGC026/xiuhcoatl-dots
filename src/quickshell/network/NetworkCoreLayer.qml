@@ -131,9 +131,10 @@ Item {
                     if (!window.currentPower) return ThemeBackend.crust;
                     if (isMyDisconnecting) return ThemeBackend.surface0;
                     if (centralCore.isDangerState && window.currentConn && !showPassword) return Qt.tint(Qt.lighter(window.activeColor, 1.1), Qt.rgba(ThemeBackend.red.r, ThemeBackend.red.g, ThemeBackend.red.b, 0.45));
-                    return window.currentConn || showPassword ? Qt.lighter(window.activeColor, 1.1) : ThemeBackend.surface1;
+                    return window.currentConn || showPassword ? DvgEstilo.oro : Qt.alpha(DvgEstilo.oro, 0.45);
                 }
-                border.width: ThemeBackend.liquidGlass ? 0 : window.s(2)
+                // DVG OS: anillo de oro, como el borde de un sello.
+                border.width: ThemeBackend.liquidGlass ? 0 : window.s(3)
                 Behavior on border.color { enabled: window.visible; ColorAnimation { duration: 250 } }
 
                 GlassFill {
@@ -147,6 +148,19 @@ Item {
                     pulse: Math.min(1, centralCore.flashOpacity * 2.5)
                     Behavior on press { NumberAnimation { duration: 250; easing.type: Easing.OutCubic } }
                     Behavior on tintAmount { NumberAnimation { duration: 250 } }
+                }
+
+                // DVG OS: anillo interior estampado, como el de un sello de lacre.
+                Rectangle {
+                    anchors.centerIn: parent
+                    width: parent.width * 0.84
+                    height: width
+                    radius: width / 2
+                    color: "transparent"
+                    border.width: window.s(1.5)
+                    border.color: DvgEstilo.oro
+                    opacity: (window.currentConn || showPassword) && window.currentPower && !isMyDisconnecting ? 0.55 : 0.18
+                    Behavior on opacity { enabled: window.visible; NumberAnimation { duration: 250 } }
                 }
 
                 Rectangle {
@@ -222,7 +236,7 @@ Item {
                     height: width
                     radius: width / 2
                     color: "transparent"
-                    border.color: centralCore.isDangerState && !showPassword ? ThemeBackend.red : window.activeColor
+                    border.color: centralCore.isDangerState && !showPassword ? ThemeBackend.red : DvgEstilo.oro
                     border.width: window.s(2)
                     z: -2
 
@@ -305,12 +319,12 @@ Item {
                         anchors.centerIn: parent
                         spacing: window.s(6)
 
-                        Text { Layout.alignment: Qt.AlignHCenter; font.family: ThemeBackend.fontFamily; font.pixelSize: window.s(28); color: coreGlass.active ? ThemeBackend.text : ThemeBackend.crust; text: "󰤨" }
+                        Text { Layout.alignment: Qt.AlignHCenter; font.family: ThemeBackend.fontFamily; font.pixelSize: window.s(28); color: ThemeBackend.text; text: "󰤨" }
 
                         Text {
                             Layout.alignment: Qt.AlignHCenter; Layout.maximumWidth: pwdLayer.width - window.s(30)
                             font.family: ThemeBackend.fontFamily; font.weight: Font.Bold; font.pixelSize: window.s(12)
-                            color: coreGlass.active ? ThemeBackend.text : ThemeBackend.crust; text: window.pendingWifiSsid; elide: Text.ElideRight
+                            color: ThemeBackend.text; text: window.pendingWifiSsid; elide: Text.ElideRight
                         }
 
                         Rectangle {
@@ -318,7 +332,7 @@ Item {
                             Layout.preferredWidth: pwdLayer.width - window.s(30); height: window.s(32)
                             radius: ThemeBackend.borderRadius
                             color: ThemeBackend.surface0
-                            border.color: wifiPasswordField.activeFocus ? (coreGlass.active ? ThemeBackend.text : ThemeBackend.crust) : "transparent"
+                            border.color: wifiPasswordField.activeFocus ? ThemeBackend.text : "transparent"
                             border.width: 1
                             Behavior on border.color { enabled: window.visible; ColorAnimation { duration: 250 } }
 
@@ -364,7 +378,7 @@ Item {
                             Layout.alignment: Qt.AlignHCenter
                             font.family: ThemeBackend.fontFamily
                             font.pixelSize: window.s(40) - (window.s(12) * coreContainer.multiShift)
-                            color: isMyDisconnecting ? ThemeBackend.overlay1 : (coreGlass.active ? ThemeBackend.text : ThemeBackend.crust)
+                            color: isMyDisconnecting ? ThemeBackend.overlay1 : ThemeBackend.text
                             text: isMyDisconnecting ? "" : (coreMa.containsMouse ? (window.activeMode === "wifi" ? "󰖪" : (window.activeMode === "eth" ? "󰈂" : "󰂲")) : (coreContainer.myDevice ? (coreContainer.myDevice.icon || (window.activeMode === "wifi" ? "󰤨" : (window.activeMode === "eth" ? "󰈀" : "󰂯"))) : ""))
                             Behavior on color { enabled: window.visible; ColorAnimation { duration: 250 } }
                         }
@@ -374,9 +388,9 @@ Item {
                             Layout.alignment: Qt.AlignHCenter
                             Layout.maximumWidth: window.s(130) - (window.s(40) * coreContainer.multiShift)
                             horizontalAlignment: Text.AlignHCenter
-                            font.family: ThemeBackend.fontFamily; font.weight: Font.Black
-                            font.pixelSize: window.s(14) - (window.s(3) * coreContainer.multiShift)
-                            color: isMyDisconnecting ? ThemeBackend.overlay1 : (coreGlass.active ? ThemeBackend.text : ThemeBackend.crust)
+                            font.family: DvgEstilo.tituloFont; font.weight: Font.Bold
+                            font.pixelSize: window.s(15) - (window.s(3) * coreContainer.multiShift)
+                            color: isMyDisconnecting ? ThemeBackend.overlay1 : ThemeBackend.text
                             text: coreContainer.myDevice ? (window.activeMode === "wifi" ? (coreContainer.myDevice.ssid || "") : (coreContainer.myDevice.name || "")) : ""
                             elide: Text.ElideRight
                             Behavior on color { enabled: window.visible; ColorAnimation { duration: 250 } }
@@ -385,7 +399,7 @@ Item {
                             id: coreStatusText
                             Layout.alignment: Qt.AlignHCenter
                             font.family: ThemeBackend.fontFamily; font.weight: Font.Bold; font.pixelSize: window.s(10)
-                            color: isMyDisconnecting ? ThemeBackend.overlay1 : (coreGlass.active ? Qt.alpha(ThemeBackend.text, coreMa.containsMouse ? 1.0 : 0.7) : (coreMa.containsMouse ? ThemeBackend.crust : "#99000000"))
+                            color: isMyDisconnecting ? ThemeBackend.overlay1 : (coreGlass.active ? Qt.alpha(ThemeBackend.text, coreMa.containsMouse ? 1.0 : 0.7) : Qt.alpha(ThemeBackend.text, coreMa.containsMouse ? 1.0 : 0.75))
                             text: isMyDisconnecting ? (I18n.t("network.status.disconnecting") || "Disconnecting...") : (centralCore.disconnectFill > 0.01 ? (I18n.t("network.status.hold") || "Hold to Disconnect") : (I18n.t("network.status.connected") || "Connected"))
                             Behavior on color { enabled: window.visible; ColorAnimation { duration: 250 } }
                         }
