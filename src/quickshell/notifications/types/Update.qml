@@ -10,7 +10,7 @@ Notification {
     id: faceRoot
 
     fullSummary: model ? (model.summary || "Update Available") : "Update Available"
-    fullBody: model && model.body !== "" ? model.body : "A new version of Serpantinum is available."
+    fullBody: model && model.body !== "" ? model.body : "Hay una nueva versión de Xiuhcóatl."
     accentColor: ThemeBackend.green
     overrideClick: true
 
@@ -52,7 +52,7 @@ Notification {
         Text {
             Layout.fillWidth: true
             horizontalAlignment: I18n.textAlignment
-            text: model ? (model.displayName || model.appName || "Serpantinum Updater") : "Serpantinum Updater"
+            text: model ? (model.displayName || model.appName || "Xiuhcóatl") : "Xiuhcóatl"
             font.family: ThemeBackend.fontFamily
             font.weight: Font.Bold
             font.pixelSize: s(11)

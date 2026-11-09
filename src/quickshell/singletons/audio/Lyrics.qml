@@ -881,7 +881,7 @@ Item {
         let url = "https://lrclib.net/api/get?" + params;
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url);
-        xhr.setRequestHeader("Lrclib-Client", "serpantinum-shell");
+        xhr.setRequestHeader("Lrclib-Client", "xiuhcoatl-shell");
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState !== XMLHttpRequest.DONE) return;
@@ -921,7 +921,7 @@ Item {
         let url = "https://lrclib.net/api/search?q=" + encodeURIComponent(uniq[idx]);
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url);
-        xhr.setRequestHeader("Lrclib-Client", "serpantinum-shell");
+        xhr.setRequestHeader("Lrclib-Client", "xiuhcoatl-shell");
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState !== XMLHttpRequest.DONE) return;
@@ -958,7 +958,7 @@ Item {
         let url = "https://lrclib.net/api/get?" + params;
         let xhr = new XMLHttpRequest();
         xhr.open("GET", url);
-        xhr.setRequestHeader("Lrclib-Client", "serpantinum-shell");
+        xhr.setRequestHeader("Lrclib-Client", "xiuhcoatl-shell");
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState !== XMLHttpRequest.DONE) return;
