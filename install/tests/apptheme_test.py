@@ -221,10 +221,10 @@ class CatalogTests(Sandbox):
         tomllib.loads(self.cfg("wezterm/colors/xiuhcoatl.toml").read_text())
         tomllib.loads(self.cfg("alacritty/alacritty.toml").read_text())
         tomllib.loads(self.cfg("rio/themes/xiuhcoatl.toml").read_text())
-        self.assertEqual(tomllib.loads(self.cfg("rio/config.toml").read_text())["theme"], "serpantinum")
-        json.loads(self.cfg("sublime-text/Packages/User/Serpantinum.sublime-color-scheme").read_text())
+        self.assertEqual(tomllib.loads(self.cfg("rio/config.toml").read_text())["theme"], "xiuhcoatl")
+        json.loads(self.cfg("sublime-text/Packages/User/Xiuhcoatl.sublime-color-scheme").read_text())
         plistlib.loads(self.cfg("bat/themes/xiuhcoatl.tmTheme").read_bytes())
-        for line in self.cfg("fish/conf.d/serpantinum.fish").read_text().splitlines()[2:]:
+        for line in self.cfg("fish/conf.d/xiuhcoatl.fish").read_text().splitlines()[2:]:
             self.assertRegex(line, r"^set -g fish_[a-z_]+ ")
         hexre = re.compile(r"^#[0-9a-f]{6}$")
         for rel in ["yazi/flavors/xiuhcoatl.yazi/flavor.toml", "superfile/theme/xiuhcoatl.toml", "halloy/themes/xiuhcoatl.toml",
@@ -233,24 +233,24 @@ class CatalogTests(Sandbox):
             tomllib.loads(self.cfg(rel).read_text())
         vicinae = tomllib.loads((self.home / ".local/share/vicinae/themes/xiuhcoatl.toml").read_text())
         self.assertEqual(vicinae["meta"]["variant"], mode)
-        self.assertEqual(tomllib.loads(self.cfg("yazi/theme.toml").read_text())["flavor"], {"dark": "serpantinum", "light": "serpantinum"})
+        self.assertEqual(tomllib.loads(self.cfg("yazi/theme.toml").read_text())["flavor"], {"dark": "xiuhcoatl", "light": "xiuhcoatl"})
         starship = tomllib.loads(self.cfg("starship.toml").read_text())
-        self.assertEqual(starship["palette"], "serpantinum")
-        self.assertTrue(all(hexre.match(v) for v in starship["palettes"]["serpantinum"].values()))
-        self.assertIn("serpantinum", [t["name"] for t in tomllib.loads(self.cfg("spotify-player/theme.toml").read_text())["themes"]])
+        self.assertEqual(starship["palette"], "xiuhcoatl")
+        self.assertTrue(all(hexre.match(v) for v in starship["palettes"]["xiuhcoatl"].values()))
+        self.assertIn("xiuhcoatl", [t["name"] for t in tomllib.loads(self.cfg("spotify-player/theme.toml").read_text())["themes"]])
         for path in [self.home / ".claude/themes/xiuhcoatl.json", self.cfg("glow/xiuhcoatl.json")]:
             json.loads(path.read_text())
         self.assertEqual(json.loads((self.home / ".claude/themes/xiuhcoatl.json").read_text())["base"], mode)
         code = json.loads(self.cfg("Code/User/settings.json").read_text())
         self.assertEqual(code["workbench.colorTheme"], "Default {} Modern".format(mode.title()))
         self.assertTrue(all(hexre.match(v) for v in code["workbench.colorCustomizations"].values()))
-        self.assertEqual(json.loads((self.home / "Notes/.obsidian/appearance.json").read_text()), {"enabledCssSnippets": ["serpantinum"]})
+        self.assertEqual(json.loads((self.home / "Notes/.obsidian/appearance.json").read_text()), {"enabledCssSnippets": ["xiuhcoatl"]})
         self.assertTrue((self.home / "Notes/.obsidian/snippets/xiuhcoatl.css").is_file())
         for profile in [".zen/b.default", ".mozilla/firefox/c.default-release"]:
             self.assertTrue((self.home / profile / "chrome/xiuhcoatl.css").is_file(), profile)
-            self.assertIn('@import url("serpantinum.css");', (self.home / profile / "chrome/userChrome.css").read_text())
+            self.assertIn('@import url("xiuhcoatl.css");', (self.home / profile / "chrome/userChrome.css").read_text())
             self.assertIn('"toolkit.legacyUserProfileCustomizations.stylesheets", true', (self.home / profile / "user.js").read_text())
-        for line in self.cfg("aerc/stylesets/serpantinum").read_text().splitlines():
+        for line in self.cfg("aerc/stylesets/xiuhcoatl").read_text().splitlines():
             if line:
                 self.assertRegex(line, r"^[a-z_*]+(\.[a-z*]+)*\.(fg|bg|bold|default|normal)=(#[0-9a-f]{6}|true)$")
         for line in self.cfg("lsd/xiuhcoatl.yaml").read_text().splitlines():
@@ -263,19 +263,19 @@ class CatalogTests(Sandbox):
         for line in self.cfg("btop/themes/xiuhcoatl.theme").read_text().splitlines():
             m = re.match(r'^theme\[[a-z_]+\]="(.*)"$', line)
             self.assertTrue(m and hexre.match(m.group(1)), line)
-        qt = self.cfg("qt6ct/colors/serpantinum.conf").read_text()
+        qt = self.cfg("qt6ct/colors/xiuhcoatl.conf").read_text()
         for key in ("active_colors", "inactive_colors", "disabled_colors"):
             values = re.search(key + r"=(.*)", qt).group(1).split(", ")
             self.assertEqual(len(values), 22)
             self.assertTrue(all(hexre.match(v) for v in values), values)
-        kde = (self.home / ".local/share/color-schemes/Serpantinum.colors").read_text()
+        kde = (self.home / ".local/share/color-schemes/Xiuhcoatl.colors").read_text()
         for line in kde.splitlines():
             if line.startswith(("Background", "Foreground", "Decoration")):
                 self.assertRegex(line, r"=\d{1,3},\d{1,3},\d{1,3}$")
-        for line in self.cfg("foot/themes/serpantinum").read_text().splitlines():
+        for line in self.cfg("foot/themes/xiuhcoatl").read_text().splitlines():
             if line and not line.startswith("["):
                 self.assertRegex(line, r"^[a-z0-9-]+=[0-9a-f]{6}$")
-        for line in self.cfg("fuzzel/serpantinum.ini").read_text().splitlines()[1:]:
+        for line in self.cfg("fuzzel/xiuhcoatl.ini").read_text().splitlines()[1:]:
             self.assertRegex(line, r"^[a-z-]+=[0-9a-f]{8}$")
         for name in ("gtk-3.0", "gtk-4.0"):
             css = self.cfg(name + "/xiuhcoatl.css").read_text()
@@ -293,7 +293,7 @@ class CatalogTests(Sandbox):
             self.assertNotIn("Error", res.stderr)
         vim = shutil.which("vim", path=self.saved_env.get("PATH"))
         if vim:
-            res = subprocess.run([vim, "--clean", "-es", "-c", "source " + str(self.home / ".vim/colors/serpantinum.vim"), "-c", "qa!"],
+            res = subprocess.run([vim, "--clean", "-es", "-c", "source " + str(self.home / ".vim/colors/xiuhcoatl.vim"), "-c", "qa!"],
                                  capture_output=True, text=True, timeout=30, env=dict(self.saved_env, HOME=str(self.home)))
             self.assertEqual(res.returncode, 0, res.stdout + res.stderr)
         tmux = shutil.which("tmux", path=self.saved_env.get("PATH"))
@@ -301,7 +301,7 @@ class CatalogTests(Sandbox):
             sock = "apptheme-test-" + str(os.getpid())
             env = dict(self.saved_env, HOME=str(self.home), TMUX_TMPDIR=str(self.tmp))
             env.pop("TMUX", None)
-            res = subprocess.run([tmux, "-L", sock, "-f", "/dev/null", "new-session", "-d", ";", "source-file", str(self.cfg("tmux/serpantinum.conf"))],
+            res = subprocess.run([tmux, "-L", sock, "-f", "/dev/null", "new-session", "-d", ";", "source-file", str(self.cfg("tmux/xiuhcoatl.conf"))],
                                  capture_output=True, text=True, timeout=30, env=env)
             subprocess.run([tmux, "-L", sock, "kill-server"], capture_output=True, env=env)
             self.assertEqual(res.returncode, 0, res.stderr)
@@ -356,12 +356,12 @@ class IntegrationTests(Sandbox):
         res = self.apply(["kitty"])
         self.assertTrue(res["apps"]["kitty"]["ok"])
         conf = self.cfg("kitty/kitty.conf").read_text()
-        self.assertIn("include themes/serpantinum.conf", conf)
-        self.assertTrue(self.cfg("kitty/themes/serpantinum.conf").is_file())
+        self.assertIn("include themes/xiuhcoatl.conf", conf)
+        self.assertTrue(self.cfg("kitty/themes/xiuhcoatl.conf").is_file())
         self.assertTrue(any(c.startswith("pkill -USR1 -x kitty") for c in self.calls()))
         apptheme.apply(self.ctx, [])
         self.assertFalse(self.cfg("kitty/kitty.conf").exists())
-        self.assertFalse(self.cfg("kitty/themes/serpantinum.conf").exists())
+        self.assertFalse(self.cfg("kitty/themes/xiuhcoatl.conf").exists())
 
     def test_kitty_existing_config_roundtrip_and_legacy_include(self):
         self.install("kitty")
@@ -393,18 +393,18 @@ class IntegrationTests(Sandbox):
     def test_palette_change_rerenders_and_reloads_once(self):
         self.install("kitty")
         self.apply(["kitty"])
-        before = self.cfg("kitty/themes/serpantinum.conf").read_text()
+        before = self.cfg("kitty/themes/xiuhcoatl.conf").read_text()
         self.reset_calls()
         self.set_palette("dark", "#1b8a3a")
         res = self.apply(["kitty"])
         self.assertTrue(res["apps"]["kitty"]["changed"])
-        self.assertNotEqual(self.cfg("kitty/themes/serpantinum.conf").read_text(), before)
+        self.assertNotEqual(self.cfg("kitty/themes/xiuhcoatl.conf").read_text(), before)
         self.assertEqual(len([c for c in self.calls() if c.startswith("pkill -USR1 -x kitty")]), 1)
 
     def test_user_edit_of_output_is_restored(self):
         self.install("kitty")
         self.apply(["kitty"])
-        out = self.cfg("kitty/themes/serpantinum.conf")
+        out = self.cfg("kitty/themes/xiuhcoatl.conf")
         good = out.read_text()
         out.write_text("garbage\n")
         self.apply(["kitty"])
@@ -432,11 +432,11 @@ class IntegrationTests(Sandbox):
         self.apply(["cava"])
         conf = self.cfg("cava/config").read_text()
         color = conf.split("[color]")[1].split("[eq]")[0]
-        self.assertIn("theme = 'serpantinum'", color)
+        self.assertIn("theme = 'xiuhcoatl'", color)
         for key in ("background", "foreground", "gradient", "gradient_count", "gradient_color_1"):
             self.assertRegex(color, r"# serpantinum-disabled: " + key + r" = ")
         self.assertIn("framerate = 60", conf)
-        self.assertTrue(self.cfg("cava/themes/serpantinum").is_file())
+        self.assertTrue(self.cfg("cava/themes/xiuhcoatl").is_file())
         self.apply([])
         self.assertEqual(self.cfg("cava/config").read_text(), legacy)
 
@@ -446,7 +446,7 @@ class IntegrationTests(Sandbox):
         self.write(self.cfg("cava/config"), original)
         self.apply(["cava"])
         conf = self.cfg("cava/config").read_text()
-        self.assertRegex(conf, r"\[color\]\ntheme = 'serpantinum'")
+        self.assertRegex(conf, r"\[color\]\ntheme = 'xiuhcoatl'")
         self.apply(["cava"])
         self.assertEqual(conf, self.cfg("cava/config").read_text())
         self.apply([])
@@ -458,7 +458,7 @@ class IntegrationTests(Sandbox):
         self.write(self.cfg("helix/config.toml"), original)
         self.apply(["helix"])
         parsed = tomllib.loads(self.cfg("helix/config.toml").read_text())
-        self.assertEqual(parsed["theme"], "serpantinum")
+        self.assertEqual(parsed["theme"], "xiuhcoatl")
         self.assertEqual(parsed["editor"]["line-number"], "relative")
         self.apply([])
         self.assertEqual(self.cfg("helix/config.toml").read_text(), original)
@@ -482,7 +482,7 @@ class IntegrationTests(Sandbox):
         legacy = self.write(self.home / ".alacritty.toml", "[font]\nsize = 11\n")
         self.apply(["alacritty"])
         self.assertFalse(self.cfg("alacritty/alacritty.toml").exists())
-        self.assertIn("serpantinum.toml", legacy.read_text())
+        self.assertIn("xiuhcoatl.toml", legacy.read_text())
 
     def test_wezterm_before_return_and_manual(self):
         self.install("wezterm")
@@ -493,7 +493,7 @@ class IntegrationTests(Sandbox):
         self.apply(["wezterm"])
         lines = self.cfg("wezterm/wezterm.lua").read_text().splitlines()
         self.assertEqual(lines[-1], "return config")
-        self.assertIn('config.color_scheme = "Serpantinum"', lines)
+        self.assertIn('config.color_scheme = "Xiuhcoatl"', lines)
         self.assertIn("-- serpantinum-disabled: config.color_scheme = 'Nord'", lines)
         self.apply([])
         self.assertEqual(self.cfg("wezterm/wezterm.lua").read_text(), original)
@@ -509,7 +509,7 @@ class IntegrationTests(Sandbox):
         self.apply(["ghostty"])
         self.assertFalse(self.cfg("ghostty/config").exists())
         text = self.cfg("ghostty/config.ghostty").read_text()
-        self.assertIn("theme = serpantinum", text)
+        self.assertIn("theme = xiuhcoatl", text)
         self.assertIn("# serpantinum-disabled: theme = dark:x,light:y", text)
         self.assertTrue(any(c.startswith("gdbus call") for c in self.calls()))
 
@@ -519,10 +519,10 @@ class IntegrationTests(Sandbox):
         self.write(self.cfg("qt6ct/qt6ct.conf"), original)
         self.apply(["qt"])
         text = self.cfg("qt6ct/qt6ct.conf").read_text()
-        self.assertIn("color_scheme_path=" + str(self.cfg("qt6ct/colors/serpantinum.conf")), text)
+        self.assertIn("color_scheme_path=" + str(self.cfg("qt6ct/colors/xiuhcoatl.conf")), text)
         self.assertIn("custom_palette=true", text)
         self.assertIn("style=Fusion", text)
-        self.assertFalse(self.cfg("qt5ct/colors/serpantinum.conf").exists())
+        self.assertFalse(self.cfg("qt5ct/colors/xiuhcoatl.conf").exists())
         self.apply([])
         self.assertEqual(self.cfg("qt6ct/qt6ct.conf").read_text(), original)
 
@@ -541,13 +541,13 @@ class IntegrationTests(Sandbox):
         self.apply([])
         text = path.read_text()
         self.assertIn("custom_palette=false", text)
-        self.assertNotIn("serpantinum", text)
+        self.assertNotIn("xiuhcoatl", text)
 
     def test_qt_rewritten_by_app_still_tracked(self):
         self.install("qt6ct")
         self.apply(["qt"])
         path = self.cfg("qt6ct/qt6ct.conf")
-        path.write_text("[Appearance]\ncustom_palette=true\ncolor_scheme_path=" + str(self.cfg("qt6ct/colors/serpantinum.conf")) + "\nicon_theme=Papirus\n")
+        path.write_text("[Appearance]\ncustom_palette=true\ncolor_scheme_path=" + str(self.cfg("qt6ct/colors/xiuhcoatl.conf")) + "\nicon_theme=Papirus\n")
         self.apply([])
         self.assertEqual(path.read_text(), "[Appearance]\nicon_theme=Papirus\n")
 
@@ -567,7 +567,7 @@ class IntegrationTests(Sandbox):
         theme_dir = self.tmp / "usr-share" / "themes" / "adw-gtk3-dark"
         res = self.apply(["gtk"])
         css = self.cfg("gtk-3.0/gtk.css").read_text()
-        self.assertTrue(css.startswith("/* >>> serpantinum theme >>> */\n@import url(\"serpantinum.css\");"))
+        self.assertTrue(css.startswith("/* >>> serpantinum theme >>> */\n@import url(\"xiuhcoatl.css\");"))
         self.assertTrue(self.cfg("gtk-4.0/gtk.css").is_file())
         self.assertEqual(self.gset("color-scheme"), "'prefer-dark'")
         self.assertEqual(self.gset("gtk-theme"), "'default'")
@@ -598,10 +598,10 @@ class IntegrationTests(Sandbox):
         self.write(self.cfg("kdeglobals"), original)
         self.apply(["kde"])
         text = self.cfg("kdeglobals").read_text()
-        self.assertIn("ColorScheme=Serpantinum", text)
+        self.assertIn("ColorScheme=Xiuhcoatl", text)
         self.assertIn("[Colors:Header][Inactive]", text)
         self.assertIn("Theme=breeze-dark", text)
-        self.assertNotIn("Name=Serpantinum", text)
+        self.assertNotIn("Name=Xiuhcoatl", text)
         self.assertNotIn("BackgroundNormal=1,2,3", text)
         self.apply([])
         self.assertEqual(self.cfg("kdeglobals").read_text(), original)
@@ -611,7 +611,7 @@ class IntegrationTests(Sandbox):
         original = '#? Config file for btop\n\ncolor_theme = "Default"\ntheme_background = True\n'
         self.write(self.cfg("btop/btop.conf"), original)
         self.apply(["btop"])
-        self.assertIn('color_theme = "serpantinum"', self.cfg("btop/btop.conf").read_text())
+        self.assertIn('color_theme = "xiuhcoatl"', self.cfg("btop/btop.conf").read_text())
         self.apply([])
         self.assertEqual(self.cfg("btop/btop.conf").read_text(), original)
 
@@ -620,7 +620,7 @@ class IntegrationTests(Sandbox):
         original = "set -g mouse on\n"
         self.write(self.home / ".tmux.conf", original)
         self.apply(["tmux"])
-        self.assertIn("source-file -q ~/.config/tmux/serpantinum.conf", (self.home / ".tmux.conf").read_text())
+        self.assertIn("source-file -q ~/.config/tmux/xiuhcoatl.conf", (self.home / ".tmux.conf").read_text())
         self.assertFalse(self.cfg("tmux/tmux.conf").exists())
         self.apply([])
         self.assertEqual((self.home / ".tmux.conf").read_text(), original)
@@ -631,7 +631,7 @@ class IntegrationTests(Sandbox):
             apptheme._PATH_CACHE.clear()
             apptheme._VERSION_CACHE.clear()
             self.apply(["foot"], force=True)
-            lines = self.cfg("foot/themes/serpantinum").read_text().splitlines()
+            lines = self.cfg("foot/themes/xiuhcoatl").read_text().splitlines()
             self.assertEqual(lines[0], header)
             self.assertEqual(lines.count("[colors]") + lines.count("[colors-dark]"), 1)
 
@@ -641,8 +641,8 @@ class IntegrationTests(Sandbox):
         self.write(self.cfg("foot/foot.ini"), foot)
         self.apply(["foot", "fuzzel"])
         lines = self.cfg("foot/foot.ini").read_text().splitlines()
-        self.assertEqual(lines[1], "include=~/.config/foot/themes/serpantinum")
-        self.assertIn("include=~/.config/fuzzel/serpantinum.ini", self.cfg("fuzzel/fuzzel.ini").read_text())
+        self.assertEqual(lines[1], "include=~/.config/foot/themes/xiuhcoatl")
+        self.assertIn("include=~/.config/fuzzel/xiuhcoatl.ini", self.cfg("fuzzel/fuzzel.ini").read_text())
         self.apply([])
         self.assertEqual(self.cfg("foot/foot.ini").read_text(), foot)
         self.assertFalse(self.cfg("fuzzel/fuzzel.ini").exists())
@@ -658,7 +658,7 @@ class IntegrationTests(Sandbox):
         rofi = self.cfg("rofi/config.rasi").read_text()
         self.assertIn('// serpantinum-disabled: @theme "gruvbox"', rofi)
         self.assertTrue(rofi.rstrip().endswith("// <<< serpantinum theme <<<"))
-        self.assertIn("include serpantinum", self.cfg("zathura/zathurarc").read_text())
+        self.assertIn("include xiuhcoatl", self.cfg("zathura/zathurarc").read_text())
 
     def test_kakoune_rio_bat_wofi(self):
         self.install("kak", "rio", "bat", "wofi")
@@ -668,13 +668,13 @@ class IntegrationTests(Sandbox):
         self.apply(["kakoune", "rio", "bat", "wofi"])
         kak = self.cfg("kak/kakrc").read_text()
         self.assertIn("# serpantinum-disabled: colorscheme gruvbox-dark", kak)
-        self.assertIn("\ncolorscheme serpantinum\n", kak)
+        self.assertIn("\ncolorscheme xiuhcoatl\n", kak)
         rio = tomllib.loads(self.cfg("rio/config.toml").read_text())
-        self.assertEqual(rio["theme"], "serpantinum")
+        self.assertEqual(rio["theme"], "xiuhcoatl")
         self.assertEqual(rio["window"]["opacity"], 0.9)
         bat = self.cfg("bat/config").read_text()
         self.assertIn('# serpantinum-disabled: --theme="TwoDark"', bat)
-        self.assertIn('--theme="serpantinum"', bat)
+        self.assertIn('--theme="xiuhcoatl"', bat)
         self.assertTrue(self.cfg("wofi/style.css").read_text().startswith("/* >>> serpantinum theme >>> */\n@import url(\"file://{}/wofi/xiuhcoatl.css\");".format(self.cfg(""))))
         self.apply([])
         self.assertEqual(self.cfg("kak/kakrc").read_text(), "colorscheme gruvbox-dark\nset-option global tabstop 4\n")
@@ -763,10 +763,10 @@ class IntegrationTests(Sandbox):
         self.apply(["obsidian"])
         self.assertTrue((vault / ".obsidian/snippets/xiuhcoatl.css").is_file())
         appearance = json.loads((vault / ".obsidian/appearance.json").read_text())
-        self.assertEqual(appearance["enabledCssSnippets"], ["mine", "serpantinum"])
+        self.assertEqual(appearance["enabledCssSnippets"], ["mine", "xiuhcoatl"])
         self.assertFalse((self.home / "missing").exists())
         self.apply(["obsidian"])
-        self.assertEqual(json.loads((vault / ".obsidian/appearance.json").read_text())["enabledCssSnippets"], ["mine", "serpantinum"])
+        self.assertEqual(json.loads((vault / ".obsidian/appearance.json").read_text())["enabledCssSnippets"], ["mine", "xiuhcoatl"])
         self.apply([])
         self.assertEqual(json.loads((vault / ".obsidian/appearance.json").read_text()), {"cssTheme": "Minimal", "enabledCssSnippets": ["mine"]})
         self.assertFalse((vault / ".obsidian/snippets/xiuhcoatl.css").exists())
@@ -778,14 +778,14 @@ class IntegrationTests(Sandbox):
         self.apply(["starship"])
         text = self.cfg("starship.toml").read_text()
         data = tomllib.loads(text)
-        self.assertEqual(data["palette"], "serpantinum")
+        self.assertEqual(data["palette"], "xiuhcoatl")
         self.assertFalse(data["add_newline"])
         self.assertEqual(data["character"]["success_symbol"], "[>](bold green)")
-        self.assertIn("green", data["palettes"]["serpantinum"])
-        self.assertLess(text.index("[palettes.serpantinum]"), text.index("[character]"))
+        self.assertIn("green", data["palettes"]["xiuhcoatl"])
+        self.assertLess(text.index("[palettes.xiuhcoatl]"), text.index("[character]"))
         self.set_palette("dark", "#b33b15")
         self.apply(["starship"])
-        self.assertEqual(self.cfg("starship.toml").read_text().count("[palettes.serpantinum]"), 1)
+        self.assertEqual(self.cfg("starship.toml").read_text().count("[palettes.xiuhcoatl]"), 1)
         self.apply([])
         self.assertEqual(self.cfg("starship.toml").read_text(), original)
 
@@ -822,9 +822,9 @@ class IntegrationTests(Sandbox):
             self.assertEqual(res["apps"][app_id]["issues"], [])
         self.assertTrue(self.cfg("nvim/colors/xiuhcoatl.lua").is_file())
         self.assertFalse(self.cfg("nvim/init.lua").exists())
-        self.assertTrue((self.home / ".vim/colors/serpantinum.vim").is_file())
+        self.assertTrue((self.home / ".vim/colors/xiuhcoatl.vim").is_file())
         self.assertFalse((self.home / ".vimrc").exists())
-        self.assertTrue(self.cfg("fish/conf.d/serpantinum.fish").is_file())
+        self.assertTrue(self.cfg("fish/conf.d/xiuhcoatl.fish").is_file())
         self.assertFalse(self.cfg("fish/config.fish").exists())
 
 
@@ -873,7 +873,7 @@ class RobustnessTests(Sandbox):
         os.symlink(dotfiles, self.cfg("kitty/kitty.conf"))
         self.apply(["kitty"])
         self.assertTrue(self.cfg("kitty/kitty.conf").is_symlink())
-        self.assertIn("include themes/serpantinum.conf", dotfiles.read_text())
+        self.assertIn("include themes/xiuhcoatl.conf", dotfiles.read_text())
         self.apply([])
         self.assertEqual(dotfiles.read_text(), "font_size 10\n")
 
@@ -887,7 +887,7 @@ class RobustnessTests(Sandbox):
             self.assertEqual(res["apps"]["kitty"]["error"], "write")
             self.assertIn("kitty/themes", res["apps"]["kitty"]["detail"])
             self.assertTrue(res["apps"]["cava"]["ok"])
-            self.assertTrue(self.cfg("cava/themes/serpantinum").is_file())
+            self.assertTrue(self.cfg("cava/themes/xiuhcoatl").is_file())
             self.assertEqual(self.cfg("kitty/kitty.conf").read_text(), "font_size 12\n")
             listing = {a["id"]: a for a in apptheme.list_apps(self.ctx)["apps"]}
             self.assertIn("kitty/themes", listing["kitty"]["error"])
@@ -895,7 +895,7 @@ class RobustnessTests(Sandbox):
             self.cfg("kitty").chmod(0o755)
         res = self.apply(["kitty", "cava"])
         self.assertTrue(res["apps"]["kitty"]["ok"])
-        self.assertIn("include themes/serpantinum.conf", self.cfg("kitty/kitty.conf").read_text())
+        self.assertIn("include themes/xiuhcoatl.conf", self.cfg("kitty/kitty.conf").read_text())
 
     def test_system_config_not_hidden(self):
         self.install("kitty")
@@ -935,9 +935,9 @@ class RobustnessTests(Sandbox):
         self.install("kitty")
         self.apply(["kitty"])
         path = self.cfg("kitty/kitty.conf")
-        path.write_text("font_size 12\ninclude themes/serpantinum.conf\n")
+        path.write_text("font_size 12\ninclude themes/xiuhcoatl.conf\n")
         self.apply(["kitty"], force=True)
-        self.assertEqual(path.read_text(), "font_size 12\ninclude themes/serpantinum.conf\n")
+        self.assertEqual(path.read_text(), "font_size 12\ninclude themes/xiuhcoatl.conf\n")
         path.write_text("font_size 12\n")
         self.apply(["kitty"], force=True)
         self.assertIn(">>> serpantinum theme >>>", path.read_text())
@@ -945,7 +945,7 @@ class RobustnessTests(Sandbox):
     def test_broken_user_template_is_isolated(self):
         self.install("kitty", "cava", "btop")
         user_btop = Path(apptheme.customize(self.ctx, "btop")["dir"])
-        (user_btop / "serpantinum.theme").write_text("{{colors.does_not_exist.default.hex}}\n")
+        (user_btop / "xiuhcoatl.theme").write_text("{{colors.does_not_exist.default.hex}}\n")
         res = self.apply(["kitty", "cava", "btop"])
         self.assertTrue(res["apps"]["kitty"]["ok"])
         self.assertTrue(res["apps"]["cava"]["ok"])
@@ -1016,14 +1016,14 @@ class RobustnessTests(Sandbox):
         ctx = apptheme.Context()
         self.install("kitty", "cava")
         apptheme.apply(ctx, ["kitty", "cava"])
-        self.assertTrue(self.cfg("kitty/themes/serpantinum.conf").exists())
+        self.assertTrue(self.cfg("kitty/themes/xiuhcoatl.conf").exists())
         shutil.rmtree(catalog / "kitty")
         apptheme.apply(ctx, ["kitty", "cava"])
-        self.assertTrue(self.cfg("kitty/themes/serpantinum.conf").exists())
+        self.assertTrue(self.cfg("kitty/themes/xiuhcoatl.conf").exists())
         apptheme.apply(ctx, ["cava"])
-        self.assertFalse(self.cfg("kitty/themes/serpantinum.conf").exists())
+        self.assertFalse(self.cfg("kitty/themes/xiuhcoatl.conf").exists())
         self.assertFalse(self.cfg("kitty/kitty.conf").exists())
-        self.assertTrue(self.cfg("cava/themes/serpantinum").exists())
+        self.assertTrue(self.cfg("cava/themes/xiuhcoatl").exists())
 
     def test_customize_and_reset(self):
         out = apptheme.customize(self.ctx, "kitty")
@@ -1032,8 +1032,8 @@ class RobustnessTests(Sandbox):
         (user_kitty / "kitty.conf").write_text("foreground {{colors.primary.default.hex}}\n")
         self.install("kitty")
         self.apply(["kitty"])
-        self.assertEqual(self.cfg("kitty/themes/serpantinum.conf").read_text().split()[0], "foreground")
-        self.assertEqual(len(self.cfg("kitty/themes/serpantinum.conf").read_text().splitlines()), 1)
+        self.assertEqual(self.cfg("kitty/themes/xiuhcoatl.conf").read_text().split()[0], "foreground")
+        self.assertEqual(len(self.cfg("kitty/themes/xiuhcoatl.conf").read_text().splitlines()), 1)
         listing = {a["id"]: a for a in apptheme.list_apps(self.ctx)["apps"]}
         self.assertTrue(listing["kitty"]["custom"] and listing["kitty"]["builtin"])
         self.assertEqual(apptheme.customize(self.ctx, "kitty")["dir"], str(user_kitty))
@@ -1041,7 +1041,7 @@ class RobustnessTests(Sandbox):
         self.assertTrue(Path(backup, "kitty.conf").is_file())
         self.assertFalse(user_kitty.exists())
         self.apply(["kitty"])
-        self.assertGreater(len(self.cfg("kitty/themes/serpantinum.conf").read_text().splitlines()), 10)
+        self.assertGreater(len(self.cfg("kitty/themes/xiuhcoatl.conf").read_text().splitlines()), 10)
         with self.assertRaises(apptheme.AppError):
             apptheme.customize(self.ctx, "../etc")
         with self.assertRaises(apptheme.AppError):
@@ -1052,7 +1052,7 @@ class RobustnessTests(Sandbox):
         self.apply(["kitty", "cava"])
         res = apptheme.apply(self.ctx, ["kitty"], only={"kitty"})
         self.assertIn("kitty", res["apps"])
-        self.assertTrue(self.cfg("cava/themes/serpantinum").exists())
+        self.assertTrue(self.cfg("cava/themes/xiuhcoatl").exists())
 
     def test_state_corruption_recovers(self):
         self.install("kitty")
