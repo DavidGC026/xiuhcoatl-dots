@@ -75,6 +75,15 @@ Item {
                 useSnapshot: true
             }
 
+            // DVG OS: esquinas de nudo celta en el panel del bloqueo.
+            MarcoCelta {
+                anchors.fill: parent
+                tam: screenRoot.s(60)
+                margen: screenRoot.s(8)
+                opacidad: 0.7
+                z: 50
+            }
+
             LockLayoutView {
                 id: panelView
                 x: (mainDashboardShell.width - LockLayoutStore.panelW) / 2

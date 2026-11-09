@@ -460,6 +460,14 @@ Item {
         scale: 0.95 + (0.05 * introMain)
         opacity: introMain
 
+        // DVG OS: esquinas de nudo celta sobre todo el panel.
+        MarcoCelta {
+            anchors.fill: parent
+            tam: window.s(64)
+            margen: window.s(8)
+            opacidad: 0.75
+        }
+
         Rectangle {
             anchors.fill: parent
             radius: ThemeBackend.borderRadius
@@ -675,8 +683,8 @@ Item {
                     Text {
                         Layout.alignment: Qt.AlignHCenter
                         text: DateTime.time
-                        font.family: ThemeBackend.fontFamily
-                        font.weight: Font.Black
+                        font.family: DvgEstilo.tituloFont
+                        font.weight: Font.Bold
                         font.pixelSize: {
                             let baseSize = window.s(84);
                             let len = (DateTime.time || "").length;
@@ -822,6 +830,14 @@ Item {
 
                 HoverHandler { id: calHover }
 
+                MarcoCelta {
+                    anchors.fill: parent
+                    tam: window.s(34)
+                    margen: window.s(3)
+                    opacidad: 0.6
+                    z: -1
+                }
+
                 ColumnLayout {
                     anchors.fill: parent
                     anchors.topMargin: window.s(12)
@@ -864,13 +880,13 @@ Item {
 
                         Text {
                             Layout.fillWidth: true
-                            text: window.targetMonthName.toUpperCase()
-                            font.family: ThemeBackend.fontFamily
-                            font.weight: Font.Black
-                            font.pixelSize: window.s(14)
+                            text: window.targetMonthName
+                            font.family: DvgEstilo.tituloFont
+                            font.weight: Font.Bold
+                            font.pixelSize: window.s(17)
                             fontSizeMode: Text.Fit
-                            minimumPixelSize: window.s(8)
-                            color: window.text
+                            minimumPixelSize: window.s(9)
+                            color: DvgEstilo.oro
                             horizontalAlignment: Text.AlignHCenter
 
                             opacity: window.calendarContentOpacity
@@ -890,6 +906,14 @@ Item {
                         }
                     }
 
+                    SeparadorCelta {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: window.s(12)
+                        Layout.bottomMargin: window.s(8)
+                        Layout.topMargin: -window.s(6)
+                        opacidad: 0.8
+                    }
+
                     RowLayout {
                         Layout.fillWidth: true
                         Layout.bottomMargin: window.s(4)
@@ -898,12 +922,18 @@ Item {
                         Repeater {
                             model: [I18n.t("calendar.days.mo"), I18n.t("calendar.days.tu"), I18n.t("calendar.days.we"), I18n.t("calendar.days.th"), I18n.t("calendar.days.fr"), I18n.t("calendar.days.sa"), I18n.t("calendar.days.su")]
                             Text {
+                                required property var modelData
+                                required property int index
                                 Layout.fillWidth: true
                                 text: modelData
                                 font.family: ThemeBackend.fontFamily
                                 font.weight: Font.Black
                                 font.pixelSize: window.s(11.5)
-                                color: window.overlay0
+                                // DVG OS: sábado en oro y domingo en carmín, como en los
+                                // calendarios de la época; entre semana, tono neutro.
+                                color: index === 6 ? Qt.lighter(DvgEstilo.carmin, 1.35)
+                                     : index === 5 ? DvgEstilo.oro
+                                     : Qt.alpha(window.text, 0.55)
                                 horizontalAlignment: Text.AlignHCenter
                             }
                         }
@@ -922,17 +952,40 @@ Item {
 
                         Repeater {
                             model: calendarModel
-                            ClickButton {
+                            // DVG OS: hoy es un sello de lacre carmín con anillo de oro; los
+                            // sábados van en oro y los domingos en carmín («días en rojo»).
+                            Item {
+                                required property int index
+                                required property string dayNum
+                                required property bool isCurrentMonth
+                                required property bool isToday
+                                readonly property bool isSaturday: index % 7 === 5
+                                readonly property bool isSunday: index % 7 === 6
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
-                                enabled: false
-                                buttonText: dayNum
-                                textFontSize: window.s(11.5)
-                                cornerRadius: window.s(5)
-                                horizontalPadding: 0
-                                accentColor: isToday ? window.textAccent : ((ThemeBackend.liquidGlass && !isCurrentMonth) ? window.surface0 : "transparent")
-                                glassTintScale: isToday ? 2.6 : 1.0
-                                textColor: ThemeBackend.liquidGlass ? (isCurrentMonth ? window.text : window.subtext0) : (isToday ? window.base : (isCurrentMonth ? window.text : window.surface0))
+
+                                SelloLacre {
+                                    anchors.centerIn: parent
+                                    width: Math.min(parent.width, parent.height) + window.s(4)
+                                    height: width
+                                    visible: parent.isToday
+                                    semilla: parseInt(parent.dayNum) || 7
+                                }
+
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: parent.dayNum
+                                    font.family: ThemeBackend.fontFamily
+                                    font.weight: parent.isToday ? Font.Black : Font.Bold
+                                    font.pixelSize: window.s(parent.isToday ? 12.5 : 11.5)
+                                    color: parent.isToday ? ThemeBackend.text
+                                         : !parent.isCurrentMonth ? Qt.alpha(window.subtext0, 0.35)
+                                         : parent.isSunday ? Qt.lighter(DvgEstilo.carmin, 1.35)
+                                         : parent.isSaturday ? DvgEstilo.oro
+                                         : window.text
+                                    style: parent.isToday ? Text.Raised : Text.Normal
+                                    styleColor: Qt.alpha(window.crust, 0.6)
+                                }
                             }
                         }
                     }

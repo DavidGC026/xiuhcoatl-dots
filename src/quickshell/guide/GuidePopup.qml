@@ -1093,6 +1093,14 @@ Item {
                 width: Math.max(0, parent.width - sidebar.width)
                 height: parent.height
             }
+
+            // DVG OS: esquinas de nudo celta sobre la ventana de Ajustes.
+            MarcoCelta {
+                anchors.fill: parent
+                tam: root.s(52)
+                margen: root.s(6)
+                opacidad: 0.55
+            }
         }
     }
 }

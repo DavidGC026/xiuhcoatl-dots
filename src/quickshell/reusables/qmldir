@@ -30,6 +30,9 @@ LiquidGlass 1.0 display/LiquidGlass.qml
 GlassFillets 1.0 display/GlassFillets.qml
 GlassFill 1.0 display/GlassFill.qml
 FileteHeraldico 1.0 display/FileteHeraldico.qml
+MarcoCelta 1.0 display/MarcoCelta.qml
+SeparadorCelta 1.0 display/SeparadorCelta.qml
+SelloLacre 1.0 display/SelloLacre.qml
 MaterialDigitGrid 1.0 display/MaterialDigitGrid.qml
 GlassLens 1.0 display/GlassLens.qml
 

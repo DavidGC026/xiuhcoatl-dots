@@ -85,9 +85,12 @@ Rectangle {
                     smooth: true
                     visible: false
                 }
+                // La silueta es negra: se aclara a blanco y luego se tiñe de oro
+                // (colorization sola no tiñe el negro).
                 MultiEffect {
                     anchors.fill: brandLogo
                     source: brandLogo
+                    brightness: 1.0
                     colorization: 1.0
                     colorizationColor: DvgEstilo.oro
                 }

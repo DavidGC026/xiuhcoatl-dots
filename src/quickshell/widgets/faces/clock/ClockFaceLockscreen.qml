@@ -32,7 +32,13 @@ Item {
     readonly property string hoursText: Qt.formatDateTime(root.currentTime, root.hourFmt)
     readonly property string minutesText: Qt.formatDateTime(root.currentTime, "mm")
     readonly property string meridiemText: root.is12h ? Qt.formatDateTime(root.currentTime, "AP") : ""
-    readonly property string dateText: Qt.formatDateTime(root.currentTime, "dddd, d MMMM").toUpperCase()
+    // Fecha en el idioma del shell (antes salía siempre en inglés).
+    readonly property string dateText: {
+        let lang = (typeof I18n !== "undefined" && I18n.isReady) ? I18n.qtLocaleName : "";
+        let patron = (typeof DateTime !== "undefined" && DateTime.fullDatePattern) ? DateTime.fullDatePattern : "dddd, d MMMM";
+        return (lang !== "" ? root.currentTime.toLocaleDateString(Qt.locale(lang), patron)
+                            : Qt.formatDateTime(root.currentTime, "dddd, d MMMM")).toUpperCase();
+    }
 
     Connections {
         target: typeof DateTime !== "undefined" ? DateTime : null
@@ -41,8 +47,9 @@ Item {
         }
     }
 
+    // DVG OS: reloj y fecha en Cinzel, como en el login.
     component ShadowText: Text {
-        font.family: ThemeBackend.fontFamily
+        font.family: DvgEstilo.tituloFont
         font.weight: Font.Bold
 
         Text {

@@ -23,13 +23,28 @@ Item {
         source: el.avatarSource
         backgroundColor: el.avatarSource === "" ? ThemeBackend.surface1 : "transparent"
 
-        Text {
+        // DVG OS: sin foto de perfil va el emblema de DVG.
+        Image {
             anchors.centerIn: parent
             visible: el.avatarSource === ""
-            text: "󰀉"
-            font.family: ThemeBackend.iconFont
-            font.pixelSize: el.side / 2
-            color: ThemeBackend.text
+            width: el.side * 0.72
+            height: width
+            source: "file://" + Caching.serpantinumDir + "/assets/dvg/emblema.png"
+            sourceSize: Qt.size(width * 2, height * 2)
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            mipmap: true
         }
+    }
+
+    // Anillo de oro alrededor del avatar.
+    Rectangle {
+        anchors.centerIn: parent
+        width: Math.round(el.side) + 6
+        height: width
+        radius: el.variant === "rounded" ? Math.round(ThemeBackend.borderRadius * 1.5) + 3 : width / 2
+        color: "transparent"
+        border.width: 2
+        border.color: Qt.alpha(DvgEstilo.oro, 0.85)
     }
 }
