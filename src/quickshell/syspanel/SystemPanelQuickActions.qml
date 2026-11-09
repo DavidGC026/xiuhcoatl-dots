@@ -370,5 +370,16 @@ Item {
                 }
             }
         }
+
+        // DVG OS: Pantallas en red (Miracast) con dvg-pantallas, igual que Super+K.
+        QuickActionBtn {
+            iconText: "󰄘"
+            activeColor: ThemeBackend.mauve
+            onLeftClicked: {
+                Sounds.playSfx("system/quick_click.wav");
+                view.panel.closeAnim.start();
+                Quickshell.execDetached(["dvg-pantallas"]);
+            }
+        }
     }
 }
