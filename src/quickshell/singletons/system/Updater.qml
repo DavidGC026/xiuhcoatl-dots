@@ -18,7 +18,7 @@ Item {
     // Xiuhcóatl se instala como paquete de DVG OS: actualizar y reinstalar pasan
     // por pacman (DVG Tools si está, si no una terminal), nunca por un script remoto.
     readonly property string packageName: "xiuhcoatl"
-    readonly property string sourceUrl: "https://github.com/DavidGC026/xiucoalt-dots"
+    readonly property string sourceUrl: "https://github.com/DavidGC026/xiuhcoatl-dots"
 
     function runInTerminal(command) {
         let script = 'if command -v kitty >/dev/null 2>&1; then exec kitty --hold bash -c "$1"; ' +

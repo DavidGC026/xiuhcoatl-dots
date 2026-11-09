@@ -21,7 +21,7 @@
         "uptime": "Tiempo de actividad",
         "default_os": "Linux"
       },
-      "github_repo": "DavidGC026/xiucoalt-dots",
+      "github_repo": "DavidGC026/xiuhcoatl-dots",
       "based_on": "Basado en serpantinum de @ilyamiro (AGPL-3.0)",
       "update_available_version": "Actualización disponible: v{version}",
       "update": "Actualizar",
