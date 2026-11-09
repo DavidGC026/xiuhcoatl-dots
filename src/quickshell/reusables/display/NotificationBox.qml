@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
 import "../../"
@@ -245,17 +246,24 @@ Item {
                     Layout.preferredHeight: root.showEmptyGraphic ? root.emptyGraphicSize : root.s(48)
                     visible: true
 
-                    ImageBox {
+                    // DVG OS: sin avisos, la serpiente de Xiuhcóatl en oro (en vez del gato).
+                    Image {
                         id: pushyImg
                         anchors.fill: parent
-                        size: root.emptyGraphicSize
-                        cornerRadius: root.s(0)
-                        imageRadius: root.s(0)
-                        source: Caching.serpantinumDir ? ("file://" + Caching.serpantinumDir + "/assets/pushy.gif") : Qt.resolvedUrl("../../assets/pushy.gif")
-                        isGif: true
-                        playing: true
+                        anchors.margins: root.s(8)
+                        source: "file://" + Caching.serpantinumDir + "/assets/logo.svg"
+                        sourceSize: Qt.size(width * 2, height * 2)
                         fillMode: Image.PreserveAspectFit
-                        interactive: false
+                        smooth: true
+                        visible: false
+                    }
+                    MultiEffect {
+                        anchors.fill: pushyImg
+                        source: pushyImg
+                        brightness: 1.0
+                        colorization: 1.0
+                        colorizationColor: DvgEstilo.oro
+                        opacity: 0.45
                         visible: root.showEmptyGraphic
                     }
 

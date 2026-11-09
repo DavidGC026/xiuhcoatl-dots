@@ -21,7 +21,8 @@ Item {
 
         property bool isActive: false
         property string iconText: ""
-        property color activeColor: ThemeBackend.blue
+        // DVG OS: las acciones encendidas van en carmín con filete de oro.
+        property color activeColor: DvgEstilo.carmin
         readonly property bool isHovered: qaMa.containsMouse
         property real customFontSize: 0
         property string customFontFamily: ""
@@ -42,6 +43,16 @@ Item {
         signal rightClicked()
 
         color: qaGlass.active ? "transparent" : (isActive ? activeColor : ThemeBackend.faded(qaMa.containsMouse ? ThemeBackend.surface1 : Qt.darker(ThemeBackend.surface0, 1.04)))
+
+        Rectangle {
+            anchors.fill: parent
+            radius: parent.radius
+            color: "transparent"
+            border.width: view.panel.s(1.5)
+            border.color: Qt.alpha(DvgEstilo.oro, qaBtn.isActive ? 0.85 : 0.0)
+            z: 2
+            Behavior on border.color { ColorAnimation { duration: 150 } }
+        }
 
         GlassFill {
             id: qaGlass
@@ -71,7 +82,7 @@ Item {
             font.family: qaBtn.customFontFamily !== "" ? qaBtn.customFontFamily : ThemeBackend.iconFont
             font.pixelSize: qaBtn.customFontSize > 0 ? qaBtn.customFontSize : view.panel.s(18)
             font.weight: qaBtn.customFontSize > 0 ? Font.Bold : Font.Normal
-            color: (qaBtn.isActive && !qaGlass.active) ? ThemeBackend.crust : ((qaBtn.isActive || qaMa.containsMouse) ? ThemeBackend.text : ThemeBackend.subtext0)
+            color: (qaBtn.isActive || qaMa.containsMouse) ? ThemeBackend.text : ThemeBackend.subtext0
             text: qaBtn.iconText
             Behavior on color {
                 enabled: view.panel.visible
@@ -107,7 +118,6 @@ Item {
         QuickActionBtn {
             id: nightLightBtn
             iconText: "󰖔"
-            activeColor: ThemeBackend.peach
 
             function updateState() {
                 let anyEnabled = false;
@@ -186,7 +196,6 @@ Item {
 
         QuickActionBtn {
             id: coffeeBtn
-            activeColor: Qt.tint(ThemeBackend.peach, "#5c3016")
 
             property double coffeeStartTime: 0
             property double coffeeEndTime: 0
@@ -319,7 +328,6 @@ Item {
 
         QuickActionBtn {
             iconText: isActive ? "󰤨" : "󰤮"
-            activeColor: ThemeBackend.blue
             isActive: view.panel.wifiRadioEnabled
             onLeftClicked: {
                 Sounds.playSfx("system/quick_click.wav");
@@ -333,7 +341,6 @@ Item {
 
         QuickActionBtn {
             iconText: isActive ? "󰂯" : "󰂲"
-            activeColor: ThemeBackend.mauve
             isActive: view.panel.btRadioEnabled
             onLeftClicked: {
                 Sounds.playSfx("system/quick_click.wav");
@@ -349,7 +356,6 @@ Item {
 
         QuickActionBtn {
             iconText: "󰀝"
-            activeColor: ThemeBackend.red
             isActive: !view.panel.wifiRadioEnabled && !view.panel.btRadioEnabled
             onLeftClicked: {
                 Sounds.playSfx("system/quick_click.wav");
@@ -374,7 +380,6 @@ Item {
         // DVG OS: Pantallas en red (Miracast) con dvg-pantallas, igual que Super+K.
         QuickActionBtn {
             iconText: "󰄘"
-            activeColor: ThemeBackend.mauve
             onLeftClicked: {
                 Sounds.playSfx("system/quick_click.wav");
                 view.panel.closeAnim.start();

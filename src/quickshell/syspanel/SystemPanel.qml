@@ -38,9 +38,10 @@ Item {
     readonly property real boxRadius: Math.min(ThemeBackend.borderRadius, root.s(20))
     readonly property real cardRadius: Math.min(ThemeBackend.borderRadius, root.s(14))
 
-    readonly property color briColor: Qt.lighter(ThemeBackend.mauve, 1.1)
-    readonly property color volColor: Qt.lighter(ThemeBackend.sapphire, 1.5)
-    readonly property color profileColor: Qt.lighter(ThemeBackend.blue, 1.55)
+    // DVG OS: volumen en carmín, brillo en oro y el perfil de energía elegido en carmín.
+    readonly property color briColor: DvgEstilo.oro
+    readonly property color volColor: Qt.lighter(DvgEstilo.carmin, 1.15)
+    readonly property color profileColor: DvgEstilo.carmin
     readonly property int batCapacity: UPower.displayDevice.ready ? Math.round(UPower.displayDevice.percentage * 100) : 0
 
     readonly property bool isCharging: UPower.displayDevice.ready && (UPower.displayDevice.state === UPowerDeviceState.Charging || UPower.displayDevice.state === UPowerDeviceState.FullyCharged)
@@ -116,10 +117,10 @@ Item {
     property bool canHibernate: false
 
     readonly property color batColorFlat: {
-        if (!UPower.displayDevice.ready) return ThemeBackend.blue;
+        if (!UPower.displayDevice.ready) return DvgEstilo.oro;
         if (isCharging) return ThemeBackend.green;
         if (batCapacity <= 20) return ThemeBackend.red;
-        return ThemeBackend.blue;
+        return DvgEstilo.oro;
     }
 
     property real animCapacity: 0
@@ -464,12 +465,16 @@ Item {
                             source: SystemInfo.avatarPath !== "" ? "file://" + SystemInfo.avatarPath : ""
                             backgroundColor: SystemInfo.avatarPath === "" ? ThemeBackend.surface1 : "transparent"
 
-                            Text {
+                            // DVG OS: sin foto de perfil va el emblema de DVG.
+                            Image {
                                 anchors.centerIn: parent
-                                text: ""
-                                font.family: ThemeBackend.iconFont
-                                font.pixelSize: root.s(18)
-                                color: ThemeBackend.text
+                                width: parent.width * 0.86
+                                height: width
+                                source: "file://" + Caching.serpantinumDir + "/assets/dvg/emblema.png"
+                                sourceSize: Qt.size(width * 2, height * 2)
+                                fillMode: Image.PreserveAspectFit
+                                smooth: true
+                                mipmap: true
                                 visible: SystemInfo.avatarPath === ""
                             }
                         }
@@ -680,7 +685,7 @@ Item {
                             accentColor: root.profileColor
                             baseColor: ThemeBackend.surface1
                             textColor: ThemeBackend.text
-                            activeTextColor: ThemeBackend.crust
+                            activeTextColor: ThemeBackend.text
                             currentIndex: {
                                 if (PowerProfiles.hasPerformanceProfile) {
                                     if (root.powerProfile === "power-saver") return 0;
