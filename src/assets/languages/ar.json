@@ -33,8 +33,8 @@
   },
   "cli": {
     "commands": "الأوامر:",
-    "daemon_stopped": "تم إيقاف خدمة خلفية Serpantinum.",
-    "daemon_restarted": "تمت إعادة تشغيل خدمة خلفية Serpantinum.",
+    "daemon_stopped": "تم إيقاف خدمة خلفية Xiuhcóatl.",
+    "daemon_restarted": "تمت إعادة تشغيل خدمة خلفية Xiuhcóatl.",
     "description": "واجهة سطح مكتب عصرية لمديري نوافذ Wayland.",
     "error_missing_qml": "خطأ: لم يتم تحديد هدف للتشغيل.",
     "error_qml_not_found": "ملف QML غير موجود: '{NAME}' في '{DIR}'",
@@ -46,7 +46,7 @@
     "ipc_desc": "توجيه نداءات IPC مباشرة إلى واجهة Shell",
     "ipc_help": {
       "description": "إرسال نداء IPC مباشرة إلى مثيل quickshell قيد التشغيل.",
-      "usage": "الاستخدام: serpantinum ipc call <هدف> <دالة> [وسائط...]"
+      "usage": "الاستخدام: xiuhcoatl ipc call <هدف> <دالة> [وسائط...]"
     },
     "kill_desc": "إيقاف خدمة الخلفية قيد التشغيل بشكل نظيف",
     "restart_desc": "إعادة تشغيل خدمة الخلفية",
@@ -55,9 +55,9 @@
       "available_targets": "الأهداف المتاحة:",
       "description": "تشغيل مكونات مستقلة مباشرة في وضع runner.",
       "target_start": "تشغيل واجهة البدء والإعداد الأولي",
-      "usage": "الاستخدام: serpantinum launch <start> [وسائط...]"
+      "usage": "الاستخدام: xiuhcoatl launch <start> [وسائط...]"
     },
-    "launch_usage": "الاستخدام: serpantinum launch <start> [وسائط...]",
+    "launch_usage": "الاستخدام: xiuhcoatl launch <start> [وسائط...]",
     "msg_desc": "إرسال أوامر أو التبديل بين مساحات العمل إلى مدير الواجهة",
     "msg_help": {
       "available_commands": "الرسائل المتاحة:",
@@ -66,7 +66,7 @@
       "cmd_toggle": "تبديل حالة لوحة واجهة مدارة",
       "cmd_workspace": "التبديل إلى مساحة العمل <رقم> (أضف 'move' لنقل النافذة النشطة)",
       "description": "إرسال رسائل إدارة التخطيط، مساحات العمل والنوافذ مباشرة.",
-      "usage": "الاستخدام: serpantinum msg <أمر|مساحة_عمل> [وسائط...]"
+      "usage": "الاستخدام: xiuhcoatl msg <أمر|مساحة_عمل> [وسائط...]"
     },
     "options": "الخيارات:",
     "script_commands": "أوامر السكربتات:",
@@ -90,14 +90,14 @@
       "lock_redactor": "تبديل محرر تخطيط شاشة القفل أو فتحه أو إغلاقه"
     },
     "starting_daemon": "خدمة الخلفية لا تعمل. جارٍ بدء serpantinumd في الخلفية...",
-    "usage": "الاستخدام: serpantinum [أمر] [خيارات...]",
+    "usage": "الاستخدام: xiuhcoatl [أمر] [خيارات...]",
     "verbose_desc": "تفعيل المخرجات التفصيلية في السجلات",
     "version_desc": "عرض معلومات الإصدار ثم الخروج",
     "usage_label": "الاستخدام:",
     "config_desc": "قراءة الإعدادات وتغييرها (get, set, dump, path, edit)",
     "error_unknown_language": "خطأ: اللغة '{CODE}' غير معروفة.",
     "update_available": "يتوفر تحديث: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum محدّث ({VERSION}).",
+    "up_to_date": "Xiuhcóatl محدّث ({VERSION}).",
     "state_on": "مفعل",
     "state_off": "معطل",
     "error_unknown_theme": "خطأ: سمة غير معروفة '{NAME}'.",
@@ -124,23 +124,23 @@
       "cmd_status": "التحقق من حالة تشغيل خدمة الخلفية",
       "cmd_stop": "إيقاف خدمة الخلفية قيد التشغيل",
       "commands": "الأوامر:",
-      "description": "خدمة خلفية لإدارة واجهة سطح مكتب Serpantinum.",
+      "description": "خدمة خلفية لإدارة واجهة سطح مكتب Xiuhcóatl.",
       "opt_help": "عرض رسالة المساعدة هذه ثم الخروج",
       "opt_verbose": "تفعيل تسجيل المخرجات التفصيلية",
       "opt_version": "عرض معلومات الإصدار ثم الخروج",
       "options": "الخيارات:",
       "status_running": "خدمة الخلفية تعمل (PID: {PID})",
-      "status_stopped": "خدمة خلفية Serpantinum لا تعمل.",
-      "stopped": "تم إيقاف خدمة خلفية Serpantinum.",
+      "status_stopped": "خدمة خلفية Xiuhcóatl لا تعمل.",
+      "stopped": "تم إيقاف خدمة خلفية Xiuhcóatl.",
       "unknown_arg": "وسيطة غير معروفة: '{ARG}'",
       "usage": "الاستخدام: serpantinumd [start|stop|restart|status]"
     },
-    "launching": "جارٍ إطلاق خدمة خلفية Serpantinum...",
-    "shutting_down": "جارٍ إيقاف خدمة خلفية Serpantinum...",
-    "app_name": "Serpantinum",
+    "launching": "جارٍ إطلاق خدمة خلفية Xiuhcóatl...",
+    "shutting_down": "جارٍ إيقاف خدمة خلفية Xiuhcóatl...",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "لا يزال EasyEffects مفعّلًا",
-      "body": "أصبح لدى Serpantinum الآن محرك صوت خاص به، وقد يتعارض EasyEffects معه. إذا كنت تستخدم EasyEffects من أجل Serpantinum فقط، فأوقف تشغيله التلقائي عند تسجيل الدخول."
+      "body": "أصبح لدى Xiuhcóatl الآن محرك صوت خاص به، وقد يتعارض EasyEffects معه. إذا كنت تستخدم EasyEffects من أجل Xiuhcóatl فقط، فأوقف تشغيله التلقائي عند تسجيل الدخول."
     }
   },
   "datetime": {
@@ -148,7 +148,7 @@
   },
   "guide": {
     "about": {
-      "github_repo": "ilyamiro/serpantinum",
+      "github_repo": "DavidGC026/xiuhcoatl",
       "hardware": {
         "device_name": "اسم الجهاز",
         "disk_capacity": "سعة القرص",
@@ -166,7 +166,7 @@
         "shell": "الصدفة (Shell)",
         "uptime": "مدة التشغيل"
       },
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "unknown": "غير معروف",
       "version_by": "الإصدار {version} بواسطة @{author}"
     },
@@ -1027,7 +1027,7 @@
       },
       "delete_theme": "حذف",
       "font": {
-        "desc": "اختر الخط الافتراضي المستخدم في واجهة Serpantinum",
+        "desc": "اختر الخط الافتراضي المستخدم في واجهة Xiuhcóatl",
         "select": "اختر الخط...",
         "title": "الخط"
       },
@@ -1801,7 +1801,7 @@
     "made_by": "صُنع بواسطة @{author}",
     "start_preview": "بدء المعاينة",
     "tagline": "واجهة سطح مكتب صُممت من أجل",
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "welcome": "مرحبًا بك",
     "you": "أنت"
   },
@@ -1981,7 +1981,7 @@
       "set_user": "تعيين المستخدم"
     },
     "guide": {
-      "desc": "إعدادات Serpantinum",
+      "desc": "إعدادات Xiuhcóatl",
       "name": "الإعدادات"
     },
     "music": {

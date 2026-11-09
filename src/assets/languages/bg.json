@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Зареждане...",
       "unknown": "Неизвестно",
       "version_by": "v{version} • от {author}",
@@ -21,7 +21,7 @@
         "uptime": "Време на работа",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Добре дошли",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "Шрифт",
-        "desc": "Изберете шрифта по подразбиране за serpantinum",
+        "desc": "Изберете шрифта по подразбиране за Xiuhcóatl",
         "select": "Избор..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Създадено от @{author}",
     "welcome": "Добре дошли",
     "tagline": "Работна среда, създадена за",
@@ -1712,7 +1712,7 @@
     },
     "guide": {
       "name": "Настройки",
-      "desc": "Настройки на Serpantinum"
+      "desc": "Настройки на Xiuhcóatl"
     },
     "calendar": {
       "name": "Календар и часовник",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "Употреба: serpantinum [команда] [опции...]",
+    "usage": "Употреба: xiuhcoatl [команда] [опции...]",
     "description": "Работна среда за wayland композитори.",
     "commands": "Команди:",
     "script_commands": "Скриптови команди:",
@@ -1836,23 +1836,23 @@
     "version_desc": "Показване на информация за версията и изход",
     "help_desc": "Показване на това помощно съобщение и изход",
     "examples": "Примери:",
-    "daemon_stopped": "Демонът на Serpantinum е спрян.",
-    "daemon_restarted": "Демонът на Serpantinum е рестартиран.",
+    "daemon_stopped": "Демонът на Xiuhcóatl е спрян.",
+    "daemon_restarted": "Демонът на Xiuhcóatl е рестартиран.",
     "starting_daemon": "Демонът не работи. Стартиране на serpantinumd във фонов режим...",
     "error_missing_qml": "Грешка: липсва цел за стартиране.",
-    "launch_usage": "Употреба: serpantinum launch <start> [аргументи...]",
+    "launch_usage": "Употреба: xiuhcoatl launch <start> [аргументи...]",
     "error_qml_not_found": "Грешка: {NAME}.qml не може да бъде намерен в {DIR}",
     "error_shell_qml_not_found": "Грешка: пътят до shell.qml не може да бъде намерен в {DIR}",
     "error_unknown_command": "Грешка: неизвестна команда '{CMD}'.",
     "error_unknown_target": "Грешка: неизвестна цел '{TARGET}'.",
     "launch_help": {
-      "usage": "Употреба: serpantinum launch <start> [аргументи...]",
+      "usage": "Употреба: xiuhcoatl launch <start> [аргументи...]",
       "description": "Стартиране на самостоятелни компоненти директно в режим на изпълнение.",
       "available_targets": "Налични цели:",
       "target_start": "Стартиране на интерфейса за начална настройка"
     },
     "msg_help": {
-      "usage": "Употреба: serpantinum msg <команда|работно_пространство> [аргументи...]",
+      "usage": "Употреба: xiuhcoatl msg <команда|работно_пространство> [аргументи...]",
       "description": "Изпращане на съобщения за подредба, работни пространства и управление на прозорци директно.",
       "available_commands": "Налични съобщения:",
       "cmd_workspace": "Превключване към работно пространство <номер> (добавете 'move' за преместване на активния прозорец)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "Затваряне на всеки активен слой на обвивката"
     },
     "ipc_help": {
-      "usage": "Употреба: serpantinum ipc call <цел> <метод> [аргументи...]",
+      "usage": "Употреба: xiuhcoatl ipc call <цел> <метод> [аргументи...]",
       "description": "Изпращане на IPC повикване директно към работещия процес на quickshell."
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "Четене и промяна на настройките (get, set, dump, path, edit)",
     "error_unknown_language": "Грешка: непознат език '{CODE}'.",
     "update_available": "Налична е актуализация: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum е актуален ({VERSION}).",
+    "up_to_date": "Xiuhcóatl е актуален ({VERSION}).",
     "state_on": "вкл.",
     "state_off": "изкл.",
     "error_unknown_theme": "Грешка: непозната тема '{NAME}'.",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "Демонът вече работи. Изход...",
-    "shutting_down": "Спиране на демона на serpantinum...",
-    "launching": "Стартиране на демона на serpantinum...",
+    "shutting_down": "Спиране на демона на Xiuhcóatl...",
+    "launching": "Стартиране на демона на Xiuhcóatl...",
     "cli": {
       "usage": "Употреба: serpantinumd <команда> [опции...]",
-      "description": "Фонов системен демон за работната среда serpantinum.",
+      "description": "Фонов системен демон за работната среда Xiuhcóatl.",
       "commands": "Команди:",
       "cmd_start": "Стартиране на демона и изпълнение на фоновите процеси",
       "cmd_stop": "Спиране на работещия демон",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "Активиране на подробен изход в журнала",
       "opt_version": "Показване на информация за версията и изход",
       "opt_help": "Показване на това помощно съобщение и изход",
-      "stopped": "Демонът на Serpantinum е спрян.",
-      "status_running": "Демонът на Serpantinum работи (PID: {PID}).",
-      "status_stopped": "Демонът на Serpantinum не работи.",
+      "stopped": "Демонът на Xiuhcóatl е спрян.",
+      "status_running": "Демонът на Xiuhcóatl работи (PID: {PID}).",
+      "status_stopped": "Демонът на Xiuhcóatl не работи.",
       "unknown_arg": "Неизвестен аргумент: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects все още е активен",
-      "body": "Serpantinum вече има собствен аудио двигател и EasyEffects може да му пречи. Ако сте използвали EasyEffects само за Serpantinum, спрете стартирането му при вход."
+      "body": "Xiuhcóatl вече има собствен аудио двигател и EasyEffects може да му пречи. Ако сте използвали EasyEffects само за Xiuhcóatl, спрете стартирането му при вход."
     }
   },
   "installer": {

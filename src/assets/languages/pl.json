@@ -392,7 +392,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Stworzone przez @{author}",
     "welcome": "Witaj",
     "tagline": "Powłoka pulpitu stworzona dla",
@@ -529,7 +529,7 @@
     },
     "guide": {
       "name": "Ustawienia",
-      "desc": "Ustawienia Serpantinum"
+      "desc": "Ustawienia Xiuhcóatl"
     },
     "calendar": {
       "name": "Kalendarz i zegar",
@@ -639,7 +639,7 @@
     }
   },
   "cli": {
-    "usage": "Użycie: serpantinum [polecenie] [opcje...]",
+    "usage": "Użycie: xiuhcoatl [polecenie] [opcje...]",
     "description": "Powłoka pulpitu dla kompozytorów Wayland.",
     "commands": "Polecenia:",
     "script_commands": "Polecenia skryptów:",
@@ -653,23 +653,23 @@
     "version_desc": "Wyświetl informacje o wersji i zakończ",
     "help_desc": "Wyświetl ten komunikat pomocy i zakończ",
     "examples": "Przykłady:",
-    "daemon_stopped": "Demon Serpantinum został zatrzymany.",
-    "daemon_restarted": "Demon Serpantinum został uruchomiony ponownie.",
+    "daemon_stopped": "Demon Xiuhcóatl został zatrzymany.",
+    "daemon_restarted": "Demon Xiuhcóatl został uruchomiony ponownie.",
     "starting_daemon": "Demon nie jest uruchomiony. Uruchamianie serpantinumd w tle...",
     "error_missing_qml": "Błąd: brak celu do uruchomienia.",
-    "launch_usage": "Użycie: serpantinum launch <start> [argumenty...]",
+    "launch_usage": "Użycie: xiuhcoatl launch <start> [argumenty...]",
     "error_qml_not_found": "Błąd: nie można odnaleźć {NAME}.qml w {DIR}",
     "error_shell_qml_not_found": "Błąd: nie można odnaleźć ścieżki do shell.qml w {DIR}",
     "error_unknown_command": "Błąd: nieznane polecenie '{CMD}'.",
     "error_unknown_target": "Błąd: nieznany cel '{TARGET}'.",
     "launch_help": {
-      "usage": "Użycie: serpantinum launch <start> [argumenty...]",
+      "usage": "Użycie: xiuhcoatl launch <start> [argumenty...]",
       "description": "Uruchom komponenty bezpośrednio w trybie wykonawczym.",
       "available_targets": "Dostępne cele:",
       "target_start": "Uruchom interfejs konfiguracji startowej"
     },
     "msg_help": {
-      "usage": "Użycie: serpantinum msg <polecenie|workspace> [argumenty...]",
+      "usage": "Użycie: xiuhcoatl msg <polecenie|workspace> [argumenty...]",
       "description": "Wysyłaj polecenia układu, obszarów roboczych i zarządzania oknami bezpośrednio.",
       "available_commands": "Dostępne komunikaty:",
       "cmd_workspace": "Przełącz na obszar roboczy <num> (dodaj 'move', aby przenieść aktywne okno)",
@@ -678,7 +678,7 @@
       "cmd_close": "Zamknij każdą aktywną nakładkę powłoki"
     },
     "ipc_help": {
-      "usage": "Użycie: serpantinum ipc call <cel> <metoda> [argumenty...]",
+      "usage": "Użycie: xiuhcoatl ipc call <cel> <metoda> [argumenty...]",
       "description": "Wyślij wywołanie IPC bezpośrednio do uruchomionej instancji quickshell."
     },
     "scripts": {
@@ -704,7 +704,7 @@
     "config_desc": "Odczytaj i zmień ustawienia (get, set, dump, path, edit)",
     "error_unknown_language": "Błąd: nieznany język '{CODE}'.",
     "update_available": "Dostępna aktualizacja: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum jest aktualny ({VERSION}).",
+    "up_to_date": "Xiuhcóatl jest aktualny ({VERSION}).",
     "state_on": "włączone",
     "state_off": "wyłączone",
     "error_unknown_theme": "Błąd: nieznany motyw '{NAME}'.",
@@ -718,11 +718,11 @@
   },
   "daemon": {
     "already_running": "Demon jest już uruchomiony. Kończenie pracy...",
-    "shutting_down": "Zamykanie demona serpantinum...",
-    "launching": "Uruchamianie demona serpantinum...",
+    "shutting_down": "Zamykanie demona Xiuhcóatl...",
+    "launching": "Uruchamianie demona Xiuhcóatl...",
     "cli": {
       "usage": "Użycie: serpantinumd <polecenie> [opcje...]",
-      "description": "Usługa demona w tle dla powłoki pulpitu serpantinum.",
+      "description": "Usługa demona w tle dla powłoki pulpitu Xiuhcóatl.",
       "commands": "Polecenia:",
       "cmd_start": "Uruchom usługę demona i procesy w tle",
       "cmd_stop": "Zatrzymaj działającą usługę demona",
@@ -731,15 +731,15 @@
       "opt_verbose": "Włącz szczegółowe rejestrowanie zdarzeń",
       "opt_version": "Wyświetl informacje o wersji i zakończ",
       "opt_help": "Wyświetl ten komunikat pomocy i zakończ",
-      "stopped": "Demon Serpantinum został zatrzymany.",
-      "status_running": "Demon Serpantinum jest uruchomiony (PID: {PID}).",
-      "status_stopped": "Demon Serpantinum nie jest uruchomiony.",
+      "stopped": "Demon Xiuhcóatl został zatrzymany.",
+      "status_running": "Demon Xiuhcóatl jest uruchomiony (PID: {PID}).",
+      "status_stopped": "Demon Xiuhcóatl nie jest uruchomiony.",
       "unknown_arg": "Nieznany argument: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects jest nadal włączony",
-      "body": "Serpantinum ma teraz własny silnik dźwięku, a EasyEffects może mu przeszkadzać. Jeśli EasyEffects służył Ci tylko do Serpantinum, wyłącz jego uruchamianie przy logowaniu."
+      "body": "Xiuhcóatl ma teraz własny silnik dźwięku, a EasyEffects może mu przeszkadzać. Jeśli EasyEffects służył Ci tylko do Xiuhcóatl, wyłącz jego uruchamianie przy logowaniu."
     }
   },
   "installer": {
@@ -855,7 +855,7 @@
   },
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Ładowanie...",
       "unknown": "Nieznany",
       "version_by": "v{version} • stworzone przez {author}",
@@ -875,7 +875,7 @@
         "uptime": "Czas pracy",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Witaj",
@@ -1504,7 +1504,7 @@
     "theme": {
       "font": {
         "title": "Czcionka",
-        "desc": "Wybierz domyślną czcionkę używaną przez Serpantinum",
+        "desc": "Wybierz domyślną czcionkę używaną przez Xiuhcóatl",
         "select": "Wybierz..."
       },
       "radius": {

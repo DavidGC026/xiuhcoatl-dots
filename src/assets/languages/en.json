@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Loading...",
       "unknown": "Unknown",
       "version_by": "v{version} • by {author}",
@@ -21,7 +21,13 @@
         "uptime": "Uptime",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl",
+      "based_on": "Based on serpantinum by @ilyamiro (AGPL-3.0)",
+      "update_available_version": "Update available: v{version}",
+      "update": "Update",
+      "reinstall": "Reinstall",
+      "source_code": "Source code",
+      "no_notes": "No release notes"
     },
     "tabs": {
       "welcome": "Welcome",
@@ -664,7 +670,7 @@
     "theme": {
       "font": {
         "title": "Font",
-        "desc": "Choose the default used by serpantinum",
+        "desc": "Choose the default used by Xiuhcóatl",
         "select": "Select..."
       },
       "radius": {
@@ -1603,7 +1609,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Made by @{author}",
     "welcome": "Welcome",
     "tagline": "A desktop shell built for",
@@ -1740,7 +1746,7 @@
     },
     "guide": {
       "name": "Settings",
-      "desc": "Serpantinum settings"
+      "desc": "Xiuhcóatl settings"
     },
     "calendar": {
       "name": "Calendar & clock",
@@ -1859,7 +1865,7 @@
     }
   },
   "cli": {
-    "usage": "Usage: serpantinum [command] [options...]",
+    "usage": "Usage: xiuhcoatl [command] [options...]",
     "description": "A desktop shell for wayland compositors.",
     "commands": "Commands:",
     "script_commands": "Script commands:",
@@ -1873,23 +1879,23 @@
     "version_desc": "Display version information and exit",
     "help_desc": "Show this help message and exit",
     "examples": "Examples:",
-    "daemon_stopped": "Serpantinum daemon stopped.",
-    "daemon_restarted": "Serpantinum daemon restarted.",
+    "daemon_stopped": "Xiuhcóatl daemon stopped.",
+    "daemon_restarted": "Xiuhcóatl daemon restarted.",
     "starting_daemon": "Daemon not running. Starting serpantinumd in the background...",
     "error_missing_qml": "Error: missing target to launch.",
-    "launch_usage": "Usage: serpantinum launch <start> [args...]",
+    "launch_usage": "Usage: xiuhcoatl launch <start> [args...]",
     "error_qml_not_found": "Error: could not resolve {NAME}.qml in {DIR}",
     "error_shell_qml_not_found": "Error: could not resolve path to shell.qml in {DIR}",
     "error_unknown_command": "Error: unknown command '{CMD}'.",
     "error_unknown_target": "Error: unknown target '{TARGET}'.",
     "launch_help": {
-      "usage": "Usage: serpantinum launch <start> [arguments...]",
+      "usage": "Usage: xiuhcoatl launch <start> [arguments...]",
       "description": "Launch standalone components directly in runner mode.",
       "available_targets": "Available targets:",
       "target_start": "Launch the start setup interface"
     },
     "msg_help": {
-      "usage": "Usage: serpantinum msg <command|workspace> [arguments...]",
+      "usage": "Usage: xiuhcoatl msg <command|workspace> [arguments...]",
       "description": "Send layout, workspace, and window management messages directly.",
       "available_commands": "Available messages:",
       "cmd_workspace": "Switch to workspace <num> (append 'move' to send active window)",
@@ -1898,7 +1904,7 @@
       "cmd_close": "Close any active shell overlay"
     },
     "ipc_help": {
-      "usage": "Usage: serpantinum ipc call <target> <method> [arguments...]",
+      "usage": "Usage: xiuhcoatl ipc call <target> <method> [arguments...]",
       "description": "Send an IPC call directly to the running quickshell instance."
     },
     "scripts": {
@@ -1924,7 +1930,7 @@
     "config_desc": "Read and change settings (get, set, dump, path, edit)",
     "error_unknown_language": "Error: unknown language '{CODE}'.",
     "update_available": "Update available: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum is up to date ({VERSION}).",
+    "up_to_date": "Xiuhcóatl is up to date ({VERSION}).",
     "state_on": "on",
     "state_off": "off",
     "error_unknown_theme": "Error: unknown theme '{NAME}'.",
@@ -1938,11 +1944,11 @@
   },
   "daemon": {
     "already_running": "Daemon is already running. Exiting...",
-    "shutting_down": "Shutting down serpantinum daemon...",
-    "launching": "Launching serpantinum daemon...",
+    "shutting_down": "Shutting down Xiuhcóatl daemon...",
+    "launching": "Launching Xiuhcóatl daemon...",
     "cli": {
       "usage": "Usage: serpantinumd <command> [options...]",
-      "description": "Background service daemon for serpantinum desktop shell.",
+      "description": "Background service daemon for Xiuhcóatl desktop shell.",
       "commands": "Commands:",
       "cmd_start": "Start the daemon service and launch background workers",
       "cmd_stop": "Stop the running daemon service",
@@ -1951,15 +1957,15 @@
       "opt_verbose": "Enable verbose output logging",
       "opt_version": "Show version information and exit",
       "opt_help": "Show this help message and exit",
-      "stopped": "Serpantinum daemon stopped.",
-      "status_running": "Serpantinum daemon is running (PID: {PID}).",
-      "status_stopped": "Serpantinum daemon is not running.",
+      "stopped": "Xiuhcóatl daemon stopped.",
+      "status_running": "Xiuhcóatl daemon is running (PID: {PID}).",
+      "status_stopped": "Xiuhcóatl daemon is not running.",
       "unknown_arg": "Unknown argument: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects is still enabled",
-      "body": "Serpantinum now has its own audio engine, and EasyEffects can interfere with it. If you only used EasyEffects for Serpantinum, stop it from starting at login."
+      "body": "Xiuhcóatl now has its own audio engine, and EasyEffects can interfere with it. If you only used EasyEffects for Xiuhcóatl, stop it from starting at login."
     }
   },
   "installer": {

@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Завантаження...",
       "unknown": "Невідомо",
       "version_by": "v{version} • від {author}",
@@ -21,7 +21,7 @@
         "uptime": "Час роботи",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Ласкаво просимо",
@@ -634,7 +634,7 @@
     "theme": {
       "font": {
         "title": "Шрифт",
-        "desc": "Оберіть типовий шрифт для serpantinum",
+        "desc": "Оберіть типовий шрифт для Xiuhcóatl",
         "select": "Обрати..."
       },
       "radius": {
@@ -1595,7 +1595,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Створено @{author}",
     "welcome": "Ласкаво просимо",
     "tagline": "Оболонка робочого столу, створена для",
@@ -1732,7 +1732,7 @@
     },
     "guide": {
       "name": "Налаштування",
-      "desc": "Налаштування serpantinum"
+      "desc": "Налаштування Xiuhcóatl"
     },
     "calendar": {
       "name": "Календар і годинник",
@@ -1845,7 +1845,7 @@
     }
   },
   "cli": {
-    "usage": "Використання: serpantinum [команда] [опції...]",
+    "usage": "Використання: xiuhcoatl [команда] [опції...]",
     "description": "Оболонка робочого столу для композиторів wayland.",
     "commands": "Команди:",
     "script_commands": "Команди скриптів:",
@@ -1859,23 +1859,23 @@
     "version_desc": "Показати інформацію про версію і вийти",
     "help_desc": "Показати цю довідку і вийти",
     "examples": "Приклади:",
-    "daemon_stopped": "Службу serpantinum зупинено.",
-    "daemon_restarted": "Службу serpantinum перезапущено.",
+    "daemon_stopped": "Службу Xiuhcóatl зупинено.",
+    "daemon_restarted": "Службу Xiuhcóatl перезапущено.",
     "starting_daemon": "Службу не запущено. Запуск serpantinumd у фоновому режимі...",
     "error_missing_qml": "Помилка: не вказано ціль для запуску.",
-    "launch_usage": "Використання: serpantinum launch <start> [аргументи...]",
+    "launch_usage": "Використання: xiuhcoatl launch <start> [аргументи...]",
     "error_qml_not_found": "Помилка: не вдалося знайти {NAME}.qml у {DIR}",
     "error_shell_qml_not_found": "Помилка: не вдалося визначити шлях до shell.qml у {DIR}",
     "error_unknown_command": "Помилка: невідома команда '{CMD}'.",
     "error_unknown_target": "Помилка: невідома ціль '{TARGET}'.",
     "launch_help": {
-      "usage": "Використання: serpantinum launch <start> [аргументи...]",
+      "usage": "Використання: xiuhcoatl launch <start> [аргументи...]",
       "description": "Запуск автономних компонентів напряму в режимі runner.",
       "available_targets": "Доступні цілі:",
       "target_start": "Запустити інтерфейс початкового налаштування"
     },
     "msg_help": {
-      "usage": "Використання: serpantinum msg <команда|робочийпростір> [аргументи...]",
+      "usage": "Використання: xiuhcoatl msg <команда|робочийпростір> [аргументи...]",
       "description": "Надсилання повідомлень розмітки, робочих просторів і керування вікнами напряму.",
       "available_commands": "Доступні повідомлення:",
       "cmd_workspace": "Перемкнутися на робочий простір <номер> (додайте 'move', щоб перемістити активне вікно)",
@@ -1884,7 +1884,7 @@
       "cmd_close": "Закрити будь-який активний оверлей оболонки"
     },
     "ipc_help": {
-      "usage": "Використання: serpantinum ipc call <ціль> <метод> [аргументи...]",
+      "usage": "Використання: xiuhcoatl ipc call <ціль> <метод> [аргументи...]",
       "description": "Надіслати виклик IPC напряму запущеному екземпляру quickshell."
     },
     "scripts": {
@@ -1910,7 +1910,7 @@
     "config_desc": "Читання та зміна налаштувань (get, set, dump, path, edit)",
     "error_unknown_language": "Помилка: невідома мова '{CODE}'.",
     "update_available": "Доступне оновлення: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum актуальний ({VERSION}).",
+    "up_to_date": "Xiuhcóatl актуальний ({VERSION}).",
     "state_on": "увімк.",
     "state_off": "вимк.",
     "error_unknown_theme": "Помилка: невідома тема '{NAME}'.",
@@ -1924,11 +1924,11 @@
   },
   "daemon": {
     "already_running": "Службу вже запущено. Вихід...",
-    "shutting_down": "Завершення роботи служби serpantinum...",
-    "launching": "Запуск служби serpantinum...",
+    "shutting_down": "Завершення роботи служби Xiuhcóatl...",
+    "launching": "Запуск служби Xiuhcóatl...",
     "cli": {
       "usage": "Використання: serpantinumd <команда> [опції...]",
-      "description": "Фонова служба для оболонки робочого столу serpantinum.",
+      "description": "Фонова служба для оболонки робочого столу Xiuhcóatl.",
       "commands": "Команди:",
       "cmd_start": "Запустити службу та фонові процеси",
       "cmd_stop": "Зупинити запущену службу",
@@ -1937,15 +1937,15 @@
       "opt_verbose": "Увімкнути докладний вивід логів",
       "opt_version": "Показати інформацію про версію і вийти",
       "opt_help": "Показати цю довідку і вийти",
-      "stopped": "Службу serpantinum зупинено.",
-      "status_running": "Службу serpantinum запущено (PID: {PID}).",
-      "status_stopped": "Службу serpantinum не запущено.",
+      "stopped": "Службу Xiuhcóatl зупинено.",
+      "status_running": "Службу Xiuhcóatl запущено (PID: {PID}).",
+      "status_stopped": "Службу Xiuhcóatl не запущено.",
       "unknown_arg": "Невідомий аргумент: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects досі увімкнено",
-      "body": "Тепер Serpantinum має власний аудіорушій, і EasyEffects може йому заважати. Якщо ви використовували EasyEffects лише для Serpantinum, вимкніть його запуск під час входу в систему."
+      "body": "Тепер Xiuhcóatl має власний аудіорушій, і EasyEffects може йому заважати. Якщо ви використовували EasyEffects лише для Xiuhcóatl, вимкніть його запуск під час входу в систему."
     }
   },
   "installer": {

@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "در حال بارگذاری...",
       "unknown": "ناشناخته",
       "version_by": "نسخه {version} • اثر {author}",
@@ -21,7 +21,7 @@
         "uptime": "مدت‌زمان روشن‌بودن",
         "default_os": "لینوکس"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "خوش‌آمدید",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "قلم",
-        "desc": "انتخاب قلم پیش‌فرض مورد استفاده در serpantinum",
+        "desc": "انتخاب قلم پیش‌فرض مورد استفاده در Xiuhcóatl",
         "select": "انتخاب..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "ساخته‌شده توسط @{author}",
     "welcome": "خوش‌آمدید",
     "tagline": "یک پوسته میزکار ساخته‌شده برای",
@@ -1712,7 +1712,7 @@
     },
     "guide": {
       "name": "تنظیمات",
-      "desc": "تنظیمات Serpantinum"
+      "desc": "تنظیمات Xiuhcóatl"
     },
     "calendar": {
       "name": "تقویم و ساعت",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "کاربرد: serpantinum [دستور] [گزینه‌ها...]",
+    "usage": "کاربرد: xiuhcoatl [دستور] [گزینه‌ها...]",
     "description": "یک پوسته میزکار برای کامپوزیتورهای وی‌لند.",
     "commands": "دستورات:",
     "script_commands": "دستورات اسکریپت:",
@@ -1836,23 +1836,23 @@
     "version_desc": "نمایش اطلاعات نسخه و خروج",
     "help_desc": "نمایش این پیام راهنما و خروج",
     "examples": "مثال‌ها:",
-    "daemon_stopped": "دیمن serpantinum متوقف شد.",
-    "daemon_restarted": "دیمن serpantinum دوباره راه‌اندازی شد.",
+    "daemon_stopped": "دیمن Xiuhcóatl متوقف شد.",
+    "daemon_restarted": "دیمن Xiuhcóatl دوباره راه‌اندازی شد.",
     "starting_daemon": "دیمن در حال اجرا نیست. در حال راه‌اندازی serpantinumd در پس‌زمینه...",
     "error_missing_qml": "خطا: هدف مورد نظر برای راه‌اندازی مشخص نشده است.",
-    "launch_usage": "کاربرد: serpantinum launch <start> [آرگومان‌ها...]",
+    "launch_usage": "کاربرد: xiuhcoatl launch <start> [آرگومان‌ها...]",
     "error_qml_not_found": "خطا: پرونده {NAME}.qml در {DIR} یافت نشد",
     "error_shell_qml_not_found": "خطا: مسیر پرونده shell.qml در {DIR} پیدا نشد",
     "error_unknown_command": "خطا: دستور ناشناخته '{CMD}'.",
     "error_unknown_target": "خطا: هدف ناشناخته '{TARGET}'.",
     "launch_help": {
-      "usage": "کاربرد: serpantinum launch <start> [آرگومان‌ها...]",
+      "usage": "کاربرد: xiuhcoatl launch <start> [آرگومان‌ها...]",
       "description": "راه‌اندازی مستقیم اجزای مستقل در حالت اجراکننده.",
       "available_targets": "هدف‌های موجود:",
       "target_start": "راه‌اندازی واسط پیکربندی آغازین"
     },
     "msg_help": {
-      "usage": "کاربرد: serpantinum msg <command|workspace> [آرگومان‌ها...]",
+      "usage": "کاربرد: xiuhcoatl msg <command|workspace> [آرگومان‌ها...]",
       "description": "ارسال مستقیم پیام‌های چیدمان، فضای کاری و مدیریت پنجره‌ها.",
       "available_commands": "پیام‌های موجود:",
       "cmd_workspace": "تغییر به فضای کاری <num> (برای انتقال پنجره فعال، 'move' را اضافه کنید)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "بستن تمام لایه‌های فعال پوسته"
     },
     "ipc_help": {
-      "usage": "کاربرد: serpantinum ipc call <target> <method> [آرگومان‌ها...]",
+      "usage": "کاربرد: xiuhcoatl ipc call <target> <method> [آرگومان‌ها...]",
       "description": "ارسال فراخوانی IPC به‌طور مستقیم به نمونه در حال اجرای quickshell."
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "خواندن و تغییر تنظیمات (get, set, dump, path, edit)",
     "error_unknown_language": "خطا: زبان ناشناخته '{CODE}'.",
     "update_available": "به‌روزرسانی موجود است: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum به‌روز است ({VERSION}).",
+    "up_to_date": "Xiuhcóatl به‌روز است ({VERSION}).",
     "state_on": "روشن",
     "state_off": "خاموش",
     "error_unknown_theme": "خطا: پوسته ناشناخته '{NAME}'.",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "دیمن در حال حاضر در حال اجرا است. در حال خروج...",
-    "shutting_down": "در حال خاموش کردن دیمن serpantinum...",
-    "launching": "در حال راه‌اندازی دیمن serpantinum...",
+    "shutting_down": "در حال خاموش کردن دیمن Xiuhcóatl...",
+    "launching": "در حال راه‌اندازی دیمن Xiuhcóatl...",
     "cli": {
       "usage": "کاربرد: serpantinumd <دستور> [گزینه‌ها...]",
-      "description": "دیمن سرویس پس‌زمینه برای پوسته میزکار serpantinum.",
+      "description": "دیمن سرویس پس‌زمینه برای پوسته میزکار Xiuhcóatl.",
       "commands": "دستورات:",
       "cmd_start": "شروع سرویس دیمن و راه‌اندازی پردازش‌های پس‌زمینه",
       "cmd_stop": "توقف سرویس دیمن در حال اجرا",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "فعال‌سازی ثبت وقایع با جزئیات کامل",
       "opt_version": "نمایش اطلاعات نسخه و خروج",
       "opt_help": "نمایش این پیام راهنما و خروج",
-      "stopped": "دیمن serpantinum متوقف شد.",
-      "status_running": "دیمن serpantinum در حال اجرا است (PID: {PID}).",
-      "status_stopped": "دیمن serpantinum در حال اجرا نیست.",
+      "stopped": "دیمن Xiuhcóatl متوقف شد.",
+      "status_running": "دیمن Xiuhcóatl در حال اجرا است (PID: {PID}).",
+      "status_stopped": "دیمن Xiuhcóatl در حال اجرا نیست.",
       "unknown_arg": "آرگومان ناشناخته: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects هنوز فعال است",
-      "body": "Serpantinum اکنون موتور صوتی خودش را دارد و EasyEffects ممکن است با آن تداخل کند. اگر EasyEffects را فقط برای Serpantinum استفاده می‌کردید، اجرای خودکار آن هنگام ورود را غیرفعال کنید."
+      "body": "Xiuhcóatl اکنون موتور صوتی خودش را دارد و EasyEffects ممکن است با آن تداخل کند. اگر EasyEffects را فقط برای Xiuhcóatl استفاده می‌کردید، اجرای خودکار آن هنگام ورود را غیرفعال کنید."
     }
   },
   "installer": {

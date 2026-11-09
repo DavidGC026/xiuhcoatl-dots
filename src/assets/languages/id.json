@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Memuat...",
       "unknown": "Tidak diketahui",
       "version_by": "v{version} • oleh {author}",
@@ -21,7 +21,7 @@
         "uptime": "Waktu aktif",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Selamat Datang",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "Huruf",
-        "desc": "Pilih huruf default yang digunakan oleh serpantinum",
+        "desc": "Pilih huruf default yang digunakan oleh Xiuhcóatl",
         "select": "Pilih..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Dibuat oleh @{author}",
     "welcome": "Selamat Datang",
     "tagline": "Shell desktop yang dibangun untuk",
@@ -1712,7 +1712,7 @@
     },
     "guide": {
       "name": "Pengaturan",
-      "desc": "Pengaturan Serpantinum"
+      "desc": "Pengaturan Xiuhcóatl"
     },
     "calendar": {
       "name": "Kalender & jam",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "Penggunaan: serpantinum [perintah] [opsi...]",
+    "usage": "Penggunaan: xiuhcoatl [perintah] [opsi...]",
     "description": "Shell desktop untuk kompositor Wayland.",
     "commands": "Perintah:",
     "script_commands": "Perintah skrip:",
@@ -1836,23 +1836,23 @@
     "version_desc": "Tampilkan informasi versi lalu keluar",
     "help_desc": "Tampilkan pesan bantuan ini lalu keluar",
     "examples": "Contoh:",
-    "daemon_stopped": "Daemon Serpantinum dihentikan.",
-    "daemon_restarted": "Daemon Serpantinum dimulai ulang.",
+    "daemon_stopped": "Daemon Xiuhcóatl dihentikan.",
+    "daemon_restarted": "Daemon Xiuhcóatl dimulai ulang.",
     "starting_daemon": "Daemon tidak berjalan. Memulai serpantinumd di latar belakang...",
     "error_missing_qml": "Kesalahan: target untuk diluncurkan tidak ada.",
-    "launch_usage": "Penggunaan: serpantinum launch <start> [arg...]",
+    "launch_usage": "Penggunaan: xiuhcoatl launch <start> [arg...]",
     "error_qml_not_found": "Kesalahan: tidak dapat menemukan {NAME}.qml di {DIR}",
     "error_shell_qml_not_found": "Kesalahan: tidak dapat menemukan jalur ke shell.qml di {DIR}",
     "error_unknown_command": "Kesalahan: perintah tidak dikenal '{CMD}'.",
     "error_unknown_target": "Kesalahan: target tidak dikenal '{TARGET}'.",
     "launch_help": {
-      "usage": "Penggunaan: serpantinum launch <start> [argumen...]",
+      "usage": "Penggunaan: xiuhcoatl launch <start> [argumen...]",
       "description": "Luncurkan komponen mandiri langsung dalam mode eksekusi.",
       "available_targets": "Target yang tersedia:",
       "target_start": "Luncurkan antarmuka pengaturan awal"
     },
     "msg_help": {
-      "usage": "Penggunaan: serpantinum msg <command|workspace> [argumen...]",
+      "usage": "Penggunaan: xiuhcoatl msg <command|workspace> [argumen...]",
       "description": "Kirim pesan tata letak, ruang kerja, dan pengelolaan jendela secara langsung.",
       "available_commands": "Pesan yang tersedia:",
       "cmd_workspace": "Beralih ke ruang kerja <num> (tambahkan 'move' untuk mengirim jendela aktif)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "Tutup semua hamparan shell yang aktif"
     },
     "ipc_help": {
-      "usage": "Penggunaan: serpantinum ipc call <target> <method> [argumen...]",
+      "usage": "Penggunaan: xiuhcoatl ipc call <target> <method> [argumen...]",
       "description": "Kirim panggilan IPC langsung ke instans quickshell yang sedang berjalan."
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "Baca dan ubah pengaturan (get, set, dump, path, edit)",
     "error_unknown_language": "Kesalahan: bahasa '{CODE}' tidak dikenal.",
     "update_available": "Pembaruan tersedia: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum sudah yang terbaru ({VERSION}).",
+    "up_to_date": "Xiuhcóatl sudah yang terbaru ({VERSION}).",
     "state_on": "aktif",
     "state_off": "nonaktif",
     "error_unknown_theme": "Kesalahan: tema tidak dikenal '{NAME}'.",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "Daemon sudah berjalan. Keluar...",
-    "shutting_down": "Mematikan daemon serpantinum...",
-    "launching": "Meluncurkan daemon serpantinum...",
+    "shutting_down": "Mematikan daemon Xiuhcóatl...",
+    "launching": "Meluncurkan daemon Xiuhcóatl...",
     "cli": {
       "usage": "Penggunaan: serpantinumd <perintah> [opsi...]",
-      "description": "Daemon layanan latar belakang untuk shell desktop serpantinum.",
+      "description": "Daemon layanan latar belakang untuk shell desktop Xiuhcóatl.",
       "commands": "Perintah:",
       "cmd_start": "Mulai layanan daemon dan jalankan pekerja latar belakang",
       "cmd_stop": "Hentikan layanan daemon yang sedang berjalan",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "Aktifkan pencatatan log verbose",
       "opt_version": "Tampilkan informasi versi lalu keluar",
       "opt_help": "Tampilkan pesan bantuan ini lalu keluar",
-      "stopped": "Daemon Serpantinum dihentikan.",
-      "status_running": "Daemon Serpantinum sedang berjalan (PID: {PID}).",
-      "status_stopped": "Daemon Serpantinum tidak berjalan.",
+      "stopped": "Daemon Xiuhcóatl dihentikan.",
+      "status_running": "Daemon Xiuhcóatl sedang berjalan (PID: {PID}).",
+      "status_stopped": "Daemon Xiuhcóatl tidak berjalan.",
       "unknown_arg": "Argumen tidak dikenal: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects masih aktif",
-      "body": "Serpantinum kini memiliki mesin audio sendiri, dan EasyEffects dapat mengganggunya. Jika Anda hanya memakai EasyEffects untuk Serpantinum, matikan agar tidak berjalan otomatis saat masuk."
+      "body": "Xiuhcóatl kini memiliki mesin audio sendiri, dan EasyEffects dapat mengganggunya. Jika Anda hanya memakai EasyEffects untuk Xiuhcóatl, matikan agar tidak berjalan otomatis saat masuk."
     }
   },
   "installer": {

@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "लोड हो रहा है...",
       "unknown": "अज्ञात",
       "version_by": "v{version} • {author} द्वारा",
@@ -21,7 +21,7 @@
         "uptime": "अपटाइम",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "स्वागत है",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "फ़ॉन्ट",
-        "desc": "Serpantinum द्वारा उपयोग किया जाने वाला डिफ़ॉल्ट फ़ॉन्ट चुनें",
+        "desc": "Xiuhcóatl द्वारा उपयोग किया जाने वाला डिफ़ॉल्ट फ़ॉन्ट चुनें",
         "select": "चुनें..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "@{author} द्वारा निर्मित",
     "welcome": "स्वागत है",
     "tagline": "एक डेस्कटॉप शेल जो बना है",
@@ -1712,7 +1712,7 @@
     },
     "guide": {
       "name": "सेटिंग्स",
-      "desc": "Serpantinum सेटिंग्स"
+      "desc": "Xiuhcóatl सेटिंग्स"
     },
     "calendar": {
       "name": "कैलेंडर और घड़ी",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "उपयोग: serpantinum [कमांड] [विकल्प...]",
+    "usage": "उपयोग: xiuhcoatl [कमांड] [विकल्प...]",
     "description": "वेरलैंड कंपोजिटर्स के लिए एक डेस्कटॉप शेल।",
     "commands": "कमांड:",
     "script_commands": "स्क्रिप्ट कमांड:",
@@ -1836,23 +1836,23 @@
     "version_desc": "संस्करण जानकारी प्रदर्शित करें और बाहर निकलें",
     "help_desc": "यह सहायता संदेश दिखाएं और बाहर निकलें",
     "examples": "उदाहरण:",
-    "daemon_stopped": "Serpantinum डेमन रुक गया।",
-    "daemon_restarted": "Serpantinum डेमन पुनः आरंभ हुआ।",
+    "daemon_stopped": "Xiuhcóatl डेमन रुक गया।",
+    "daemon_restarted": "Xiuhcóatl डेमन पुनः आरंभ हुआ।",
     "starting_daemon": "डेमन नहीं चल रहा है। पृष्ठभूमि में serpantinumd शुरू किया जा रहा है...",
     "error_missing_qml": "त्रुटि: लॉन्च करने के लिए लक्ष्य अनुपलब्ध है।",
-    "launch_usage": "उपयोग: serpantinum launch <start> [args...]",
+    "launch_usage": "उपयोग: xiuhcoatl launch <start> [args...]",
     "error_qml_not_found": "त्रुटि: {DIR} में {NAME}.qml हल नहीं किया जा सका",
     "error_shell_qml_not_found": "त्रुटि: {DIR} में shell.qml का पथ हल नहीं किया जा सका",
     "error_unknown_command": "त्रुटि: अज्ञात कमांड '{CMD}'।",
     "error_unknown_target": "त्रुटि: अज्ञात लक्ष्य '{TARGET}'।",
     "launch_help": {
-      "usage": "उपयोग: serpantinum launch <start> [तर्क...]",
+      "usage": "उपयोग: xiuhcoatl launch <start> [तर्क...]",
       "description": "स्टैंडअलोन घटकों को सीधे रनर मोड में लॉन्च करें।",
       "available_targets": "उपलब्ध लक्ष्य:",
       "target_start": "प्रारंभिक सेटअप इंटरफ़ेस लॉन्च करें"
     },
     "msg_help": {
-      "usage": "उपयोग: serpantinum msg <command|workspace> [तर्क...]",
+      "usage": "उपयोग: xiuhcoatl msg <command|workspace> [तर्क...]",
       "description": "लेआउट, वर्कस्पेस और विंडो प्रबंधन संदेश सीधे भेजें।",
       "available_commands": "उपलब्ध संदेश:",
       "cmd_workspace": "वर्कस्पेस <num> पर जाएं (सक्रिय विंडो भेजने के लिए 'move' जोड़ें)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "किसी भी सक्रिय शेल ओवरले को बंद करें"
     },
     "ipc_help": {
-      "usage": "उपयोग: serpantinum ipc call <target> <method> [तर्क...]",
+      "usage": "उपयोग: xiuhcoatl ipc call <target> <method> [तर्क...]",
       "description": "चल रहे quickshell इंस्टेंस को सीधे आईपीसी कॉल भेजें।"
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "सेटिंग्स पढ़ें और बदलें (get, set, dump, path, edit)",
     "error_unknown_language": "त्रुटि: अज्ञात भाषा '{CODE}'।",
     "update_available": "अपडेट उपलब्ध है: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum अप टू डेट है ({VERSION})।",
+    "up_to_date": "Xiuhcóatl अप टू डेट है ({VERSION})।",
     "state_on": "चालू",
     "state_off": "बंद",
     "error_unknown_theme": "त्रुटि: अज्ञात थीम '{NAME}'।",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "डेमन पहले से चल रहा है। बाहर निकल रहे हैं...",
-    "shutting_down": "Serpantinum डेमन बंद हो रहा है...",
-    "launching": "Serpantinum डेमन लॉन्च किया जा रहा है...",
+    "shutting_down": "Xiuhcóatl डेमन बंद हो रहा है...",
+    "launching": "Xiuhcóatl डेमन लॉन्च किया जा रहा है...",
     "cli": {
       "usage": "उपयोग: serpantinumd <कमांड> [विकल्प...]",
-      "description": "Serpantinum डेस्कटॉप शेल के लिए बैकग्राउंड सर्विस डेमन।",
+      "description": "Xiuhcóatl डेस्कटॉप शेल के लिए बैकग्राउंड सर्विस डेमन।",
       "commands": "कमांड:",
       "cmd_start": "डेमन सेवा शुरू करें और बैकग्राउंड वर्कर्स लॉन्च करें",
       "cmd_stop": "चल रही डेमन सेवा रोकें",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "विस्तृत आउटपुट लॉगिंग सक्षम करें",
       "opt_version": "संस्करण जानकारी दिखाएं और बाहर निकलें",
       "opt_help": "यह सहायता संदेश दिखाएं और बाहर निकलें",
-      "stopped": "Serpantinum डेमन रुक गया।",
-      "status_running": "Serpantinum डेमन चल रहा है (PID: {PID})।",
-      "status_stopped": "Serpantinum डेमन नहीं चल रहा है।",
+      "stopped": "Xiuhcóatl डेमन रुक गया।",
+      "status_running": "Xiuhcóatl डेमन चल रहा है (PID: {PID})।",
+      "status_stopped": "Xiuhcóatl डेमन नहीं चल रहा है।",
       "unknown_arg": "अज्ञात तर्क: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects अभी भी चालू है",
-      "body": "Serpantinum के पास अब अपना ऑडियो इंजन है, और EasyEffects इसमें बाधा डाल सकता है। अगर आप EasyEffects का उपयोग केवल Serpantinum के लिए करते थे, तो लॉगिन पर इसका अपने-आप शुरू होना बंद करें।"
+      "body": "Xiuhcóatl के पास अब अपना ऑडियो इंजन है, और EasyEffects इसमें बाधा डाल सकता है। अगर आप EasyEffects का उपयोग केवल Xiuhcóatl के लिए करते थे, तो लॉगिन पर इसका अपने-आप शुरू होना बंद करें।"
     }
   },
   "installer": {

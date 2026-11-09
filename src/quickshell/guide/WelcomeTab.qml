@@ -227,7 +227,7 @@ GuideTab {
             }
 
             Text {
-                text: I18n.t("guide.welcome.by_author", { author: "ilyamiro" })
+                text: I18n.t("guide.about.based_on")
                 font.family: ThemeBackend.fontFamily
                 font.pixelSize: rootObj.s(14)
                 color: ThemeBackend.subtext0

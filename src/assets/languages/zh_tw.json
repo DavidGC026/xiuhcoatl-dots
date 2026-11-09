@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "載入中...",
       "unknown": "未知",
       "version_by": "v{version} • 由 {author} 製作",
@@ -21,7 +21,7 @@
         "uptime": "開機時間",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "歡迎",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "字型",
-        "desc": "選擇 Serpantinum 使用的預設字型",
+        "desc": "選擇 Xiuhcóatl 使用的預設字型",
         "select": "選取..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "由 @{author} 製作",
     "welcome": "歡迎",
     "tagline": "專為您量身打造的桌面 Shell",
@@ -1712,7 +1712,7 @@
     },
     "guide": {
       "name": "設定",
-      "desc": "Serpantinum 設定"
+      "desc": "Xiuhcóatl 設定"
     },
     "calendar": {
       "name": "行事曆與時鐘",
@@ -1822,8 +1822,8 @@
     }
   },
   "cli": {
-    "usage": "用法：serpantinum <指令> [引數...]",
-    "description": "serpantinum 桌面 Shell 的指令列介面。",
+    "usage": "用法：xiuhcoatl <指令> [引數...]",
+    "description": "Xiuhcóatl 桌面 Shell 的指令列介面。",
     "commands": "指令：",
     "script_commands": "指令稿指令：",
     "launch_desc": "啟動獨立元件（如設定介面、小工具編輯器、鎖定畫面編輯器）",
@@ -1836,23 +1836,23 @@
     "version_desc": "顯示版本資訊並結束",
     "help_desc": "顯示此說明訊息並結束",
     "examples": "範例：",
-    "daemon_stopped": "Serpantinum 常駐程式已停止。",
-    "daemon_restarted": "Serpantinum 常駐程式已重新啟動。",
+    "daemon_stopped": "Xiuhcóatl 常駐程式已停止。",
+    "daemon_restarted": "Xiuhcóatl 常駐程式已重新啟動。",
     "starting_daemon": "常駐程式未執行。正在背景啟動 serpantinumd...",
     "error_missing_qml": "錯誤：缺少啟動目標。",
-    "launch_usage": "用法：serpantinum launch <start> [引數...]",
+    "launch_usage": "用法：xiuhcoatl launch <start> [引數...]",
     "error_qml_not_found": "錯誤：無法在 {DIR} 中解析 {NAME}.qml",
     "error_shell_qml_not_found": "錯誤：無法在 {DIR} 中解析 shell.qml 的路徑",
     "error_unknown_command": "錯誤：未知的指令「{CMD}」。",
     "error_unknown_target": "錯誤：未知的目標「{TARGET}」。",
     "launch_help": {
-      "usage": "用法：serpantinum launch <start> [引數...]",
+      "usage": "用法：xiuhcoatl launch <start> [引數...]",
       "description": "直接以執行器模式啟動獨立元件。",
       "available_targets": "可用目標：",
       "target_start": "啟動初始設定介面"
     },
     "msg_help": {
-      "usage": "用法：serpantinum msg <command|workspace> [引數...]",
+      "usage": "用法：xiuhcoatl msg <command|workspace> [引數...]",
       "description": "直接傳送版面配置、工作區與視窗管理訊息。",
       "available_commands": "可用訊息：",
       "cmd_workspace": "切換至工作區 <num>（附加「move」可移動目前視窗）",
@@ -1861,7 +1861,7 @@
       "cmd_close": "關閉任何作用中的 shell 覆蓋層"
     },
     "ipc_help": {
-      "usage": "用法：serpantinum ipc call <target> <method> [引數...]",
+      "usage": "用法：xiuhcoatl ipc call <target> <method> [引數...]",
       "description": "直接向執行中的 quickshell 執行個體發送 IPC 呼叫。"
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "讀取和變更設定 (get, set, dump, path, edit)",
     "error_unknown_language": "錯誤：未知語言 '{CODE}'。",
     "update_available": "有可用更新：{LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum 已是最新版本 ({VERSION})。",
+    "up_to_date": "Xiuhcóatl 已是最新版本 ({VERSION})。",
     "state_on": "開",
     "state_off": "關",
     "error_unknown_theme": "錯誤：未知主題「{NAME}」。",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "常駐程式已在執行中。正在結束...",
-    "shutting_down": "正在關閉 serpantinum 常駐程式...",
-    "launching": "正在啟動 serpantinum 常駐程式...",
+    "shutting_down": "正在關閉 Xiuhcóatl 常駐程式...",
+    "launching": "正在啟動 Xiuhcóatl 常駐程式...",
     "cli": {
       "usage": "用法：serpantinumd <指令> [選項...]",
-      "description": "serpantinum 桌面 shell 的背景服務常駐程式。",
+      "description": "Xiuhcóatl 桌面 shell 的背景服務常駐程式。",
       "commands": "指令：",
       "cmd_start": "啟動常駐服務並啟動背景工作程序",
       "cmd_stop": "停止執行中的常駐服務",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "啟用詳細記錄輸出",
       "opt_version": "顯示版本資訊並結束",
       "opt_help": "顯示此說明訊息並結束",
-      "stopped": "Serpantinum 常駐程式已停止。",
-      "status_running": "Serpantinum 常駐程式正在執行（PID: {PID}）。",
-      "status_stopped": "Serpantinum 常駐程式未執行。",
+      "stopped": "Xiuhcóatl 常駐程式已停止。",
+      "status_running": "Xiuhcóatl 常駐程式正在執行（PID: {PID}）。",
+      "status_stopped": "Xiuhcóatl 常駐程式未執行。",
       "unknown_arg": "未知引數：{ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects 仍處於啟用狀態",
-      "body": "Serpantinum 現在擁有自己的音訊引擎，EasyEffects 可能會與其衝突。如果你只是為 Serpantinum 使用 EasyEffects，請關閉它的登入自動啟動。"
+      "body": "Xiuhcóatl 現在擁有自己的音訊引擎，EasyEffects 可能會與其衝突。如果你只是為 Xiuhcóatl 使用 EasyEffects，請關閉它的登入自動啟動。"
     }
   },
   "installer": {

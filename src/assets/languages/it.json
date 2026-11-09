@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Caricamento...",
       "unknown": "Sconosciuto",
       "version_by": "v{version} • di {author}",
@@ -21,7 +21,7 @@
         "uptime": "Tempo di attività",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Benvenuto/a",
@@ -649,7 +649,7 @@
     "theme": {
       "font": {
         "title": "Font",
-        "desc": "Scegli il font predefinito che Serpantinum userà",
+        "desc": "Scegli il font predefinito che Xiuhcóatl userà",
         "select": "Seleziona..."
       },
       "radius": {
@@ -1571,7 +1571,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Fatto da @{author}",
     "welcome": "Benvenuto/a",
     "tagline": "Una shell desktop creata per",
@@ -1708,7 +1708,7 @@
     },
     "guide": {
       "name": "Impostazioni",
-      "desc": "Impostazioni Serpantinum"
+      "desc": "Impostazioni Xiuhcóatl"
     },
     "calendar": {
       "name": "Calendario e orologio",
@@ -1821,7 +1821,7 @@
     }
   },
   "cli": {
-    "usage": "Uso: serpantinum [comando] [opzioni...]",
+    "usage": "Uso: xiuhcoatl [comando] [opzioni...]",
     "description": "Una shell desktop per compositor Wayland.",
     "commands": "Comandi:",
     "script_commands": "Comandi Script:",
@@ -1835,23 +1835,23 @@
     "version_desc": "Mostra le informazioni sulla versione ed esci",
     "help_desc": "Mostra questo messaggio di aiuto ed esci",
     "examples": "Esempi:",
-    "daemon_stopped": "Demone di Serpantinum arrestato",
-    "daemon_restarted": "Demone di Serpantinum riavviato.",
+    "daemon_stopped": "Demone di Xiuhcóatl arrestato",
+    "daemon_restarted": "Demone di Xiuhcóatl riavviato.",
     "starting_daemon": "Demone non in esecuzione. Avvio di serpantinumd in background...",
     "error_missing_qml": "Errore: target da avviare mancante.",
-    "launch_usage": "Uso: serpantinum launch <start> [argomenti...]",
+    "launch_usage": "Uso: xiuhcoatl launch <start> [argomenti...]",
     "error_qml_not_found": "Errore: impossibile trovare {NAME}.qml in {DIR}",
     "error_shell_qml_not_found": "Errore: impossibile trovare il percorso di shell.qml in {DIR}",
     "error_unknown_command": "Errore: comando sconosciuto '{CMD}'.",
     "error_unknown_target": "Errore: target sconosciuto '{TARGET}'.",
     "launch_help": {
-      "usage": "Uso: serpantinum launch <start> [argomenti...]",
+      "usage": "Uso: xiuhcoatl launch <start> [argomenti...]",
       "description": "Avvia componenti autonomi direttamente in modalità esecuzione.",
       "available_targets": "Target disponibili:",
       "target_start": "Avvia l'interfaccia di configurazione iniziale"
     },
     "msg_help": {
-      "usage": "Uso: serpantinum msg <comando|workspace> [argomenti...]",
+      "usage": "Uso: xiuhcoatl msg <comando|workspace> [argomenti...]",
       "description": "Invia direttamente messaggi di gestione per layout, workspace e finestre.",
       "available_commands": "Messaggi disponibili:",
       "cmd_workspace": "Passa al workspace <num> (aggiungi 'move' per inviare la finestra attiva)",
@@ -1860,7 +1860,7 @@
       "cmd_close": "Chiude qualsiasi overlay attivo della shell"
     },
     "ipc_help": {
-      "usage": "Uso: serpantinum ipc call <target> <metodo> [argomenti...]",
+      "usage": "Uso: xiuhcoatl ipc call <target> <metodo> [argomenti...]",
       "description": "Invia una chiamata IPC direttamente all'istanza quickshell in esecuzione."
     },
     "scripts": {
@@ -1886,7 +1886,7 @@
     "config_desc": "Leggi e modifica le impostazioni (get, set, dump, path, edit)",
     "error_unknown_language": "Errore: lingua sconosciuta '{CODE}'.",
     "update_available": "Aggiornamento disponibile: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum è aggiornato ({VERSION}).",
+    "up_to_date": "Xiuhcóatl è aggiornato ({VERSION}).",
     "state_on": "attivo",
     "state_off": "disattivo",
     "error_unknown_theme": "Errore: tema sconosciuto '{NAME}'.",
@@ -1900,11 +1900,11 @@
   },
   "daemon": {
     "already_running": "Il demone è già in esecuzione. Uscita...",
-    "shutting_down": "Arresto del demone serpantinum...",
-    "launching": "Avvio del demone serpantinum...",
+    "shutting_down": "Arresto del demone Xiuhcóatl...",
+    "launching": "Avvio del demone Xiuhcóatl...",
     "cli": {
       "usage": "Uso: serpantinumd <comando> [opzioni...]",
-      "description": "Demone di servizio in background per la shell desktop serpantinum.",
+      "description": "Demone di servizio in background per la shell desktop Xiuhcóatl.",
       "commands": "Comandi:",
       "cmd_start": "Avvia il servizio demone e i processi in background",
       "cmd_stop": "Arresta il servizio demone in esecuzione",
@@ -1913,15 +1913,15 @@
       "opt_verbose": "Attiva la registrazione dettagliata dell'output",
       "opt_version": "Mostra le informazioni sulla versione ed esce",
       "opt_help": "Mostra questo messaggio di aiuto ed esce",
-      "stopped": "Demone Serpantinum arrestato.",
-      "status_running": "Il demone Serpantinum è in esecuzione (PID: {PID}).",
-      "status_stopped": "Il demone Serpantinum non è in esecuzione.",
+      "stopped": "Demone Xiuhcóatl arrestato.",
+      "status_running": "Il demone Xiuhcóatl è in esecuzione (PID: {PID}).",
+      "status_stopped": "Il demone Xiuhcóatl non è in esecuzione.",
       "unknown_arg": "Argomento sconosciuto: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects è ancora attivo",
-      "body": "Serpantinum ora ha un proprio motore audio ed EasyEffects può interferire. Se usavi EasyEffects solo per Serpantinum, impedisci che si avvii all'accesso."
+      "body": "Xiuhcóatl ora ha un proprio motore audio ed EasyEffects può interferire. Se usavi EasyEffects solo per Xiuhcóatl, impedisci che si avvii all'accesso."
     }
   },
   "installer": {

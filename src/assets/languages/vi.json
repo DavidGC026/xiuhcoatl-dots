@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Đang tải...",
       "unknown": "Không rõ",
       "version_by": "v{version} • bởi {author}",
@@ -21,7 +21,7 @@
         "uptime": "Thời gian hoạt động",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Chào mừng",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "Phông chữ",
-        "desc": "Chọn phông chữ mặc định cho serpantinum",
+        "desc": "Chọn phông chữ mặc định cho Xiuhcóatl",
         "select": "Chọn..."
       },
       "radius": {
@@ -1572,7 +1572,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Thực hiện bởi @{author}",
     "welcome": "Chào mừng",
     "tagline": "Một desktop shell được xây dựng cho",
@@ -1709,7 +1709,7 @@
     },
     "guide": {
       "name": "Cài đặt",
-      "desc": "Cài đặt Serpantinum"
+      "desc": "Cài đặt Xiuhcóatl"
     },
     "calendar": {
       "name": "Lịch & Đồng hồ",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "Cách dùng: serpantinum [lệnh] [tùy chọn...]",
+    "usage": "Cách dùng: xiuhcoatl [lệnh] [tùy chọn...]",
     "description": "Một desktop shell dành cho các Wayland compositor.",
     "commands": "Các lệnh:",
     "script_commands": "Các lệnh tập lệnh:",
@@ -1836,23 +1836,23 @@
     "version_desc": "Hiển thị thông tin phiên bản và thoát",
     "help_desc": "Hiển thị thông báo trợ giúp này và thoát",
     "examples": "Ví dụ:",
-    "daemon_stopped": "Đã dừng daemon Serpantinum.",
-    "daemon_restarted": "Đã khởi động lại daemon Serpantinum.",
+    "daemon_stopped": "Đã dừng daemon Xiuhcóatl.",
+    "daemon_restarted": "Đã khởi động lại daemon Xiuhcóatl.",
     "starting_daemon": "Daemon không chạy. Đang khởi động serpantinumd ở nền...",
     "error_missing_qml": "Lỗi: thiếu mục tiêu để khởi chạy.",
-    "launch_usage": "Cách dùng: serpantinum launch <start> [đối số...]",
+    "launch_usage": "Cách dùng: xiuhcoatl launch <start> [đối số...]",
     "error_qml_not_found": "Lỗi: không tìm thấy {NAME}.qml trong {DIR}",
     "error_shell_qml_not_found": "Lỗi: không tìm thấy đường dẫn đến shell.qml trong {DIR}",
     "error_unknown_command": "Lỗi: lệnh không xác định '{CMD}'.",
     "error_unknown_target": "Lỗi: mục tiêu không xác định '{TARGET}'.",
     "launch_help": {
-      "usage": "Cách dùng: serpantinum launch <start> [đối số...]",
+      "usage": "Cách dùng: xiuhcoatl launch <start> [đối số...]",
       "description": "Khởi chạy trực tiếp các thành phần độc lập ở chế độ chạy.",
       "available_targets": "Các mục tiêu khả dụng:",
       "target_start": "Khởi chạy giao diện thiết lập ban đầu"
     },
     "msg_help": {
-      "usage": "Cách dùng: serpantinum msg <lệnh|không_gian_làm_việc> [đối số...]",
+      "usage": "Cách dùng: xiuhcoatl msg <lệnh|không_gian_làm_việc> [đối số...]",
       "description": "Gửi trực tiếp thông điệp quản lý bố cục, không gian làm việc và cửa sổ.",
       "available_commands": "Các thông điệp khả dụng:",
       "cmd_workspace": "Chuyển đến không gian làm việc <số> (thêm 'move' để chuyển cửa sổ đang hoạt động)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "Đóng mọi lớp phủ shell đang hoạt động"
     },
     "ipc_help": {
-      "usage": "Cách dùng: serpantinum ipc call <mục_tiêu> <phương_thức> [đối số...]",
+      "usage": "Cách dùng: xiuhcoatl ipc call <mục_tiêu> <phương_thức> [đối số...]",
       "description": "Gửi lệnh gọi IPC trực tiếp đến phiên bản quickshell đang chạy."
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "Đọc và thay đổi cài đặt (get, set, dump, path, edit)",
     "error_unknown_language": "Lỗi: ngôn ngữ '{CODE}' không xác định.",
     "update_available": "Có bản cập nhật: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum đã được cập nhật ({VERSION}).",
+    "up_to_date": "Xiuhcóatl đã được cập nhật ({VERSION}).",
     "state_on": "bật",
     "state_off": "tắt",
     "error_unknown_theme": "Lỗi: không rõ chủ đề '{NAME}'.",
@@ -1901,11 +1901,11 @@
   },
   "daemon": {
     "already_running": "Daemon đang chạy rồi. Đang thoát...",
-    "shutting_down": "Đang tắt daemon serpantinum...",
-    "launching": "Đang khởi chạy daemon serpantinum...",
+    "shutting_down": "Đang tắt daemon Xiuhcóatl...",
+    "launching": "Đang khởi chạy daemon Xiuhcóatl...",
     "cli": {
       "usage": "Cách dùng: serpantinumd <lệnh> [tùy chọn...]",
-      "description": "Daemon dịch vụ nền cho desktop shell serpantinum.",
+      "description": "Daemon dịch vụ nền cho desktop shell Xiuhcóatl.",
       "commands": "Các lệnh:",
       "cmd_start": "Khởi động dịch vụ daemon và các tiến trình nền",
       "cmd_stop": "Dừng dịch vụ daemon đang chạy",
@@ -1914,15 +1914,15 @@
       "opt_verbose": "Bật ghi nhật ký đầu ra chi tiết",
       "opt_version": "Hiển thị thông tin phiên bản và thoát",
       "opt_help": "Hiển thị thông báo trợ giúp này và thoát",
-      "stopped": "Đã dừng daemon Serpantinum.",
-      "status_running": "Daemon Serpantinum đang chạy (PID: {PID}).",
-      "status_stopped": "Daemon Serpantinum không chạy.",
+      "stopped": "Đã dừng daemon Xiuhcóatl.",
+      "status_running": "Daemon Xiuhcóatl đang chạy (PID: {PID}).",
+      "status_stopped": "Daemon Xiuhcóatl không chạy.",
       "unknown_arg": "Đối số không xác định: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects vẫn đang bật",
-      "body": "Serpantinum giờ đã có công cụ âm thanh riêng và EasyEffects có thể gây xung đột. Nếu bạn chỉ dùng EasyEffects cho Serpantinum, hãy tắt việc tự khởi động khi đăng nhập."
+      "body": "Xiuhcóatl giờ đã có công cụ âm thanh riêng và EasyEffects có thể gây xung đột. Nếu bạn chỉ dùng EasyEffects cho Xiuhcóatl, hãy tắt việc tự khởi động khi đăng nhập."
     }
   },
   "installer": {

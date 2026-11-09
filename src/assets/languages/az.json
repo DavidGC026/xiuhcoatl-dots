@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Yüklənir...",
       "unknown": "Naməlum",
       "version_by": "v{version} • müəllif: {author}",
@@ -21,7 +21,7 @@
         "uptime": "İşləmə müddəti",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Xoş gəlmisiniz",
@@ -648,7 +648,7 @@
     "theme": {
       "font": {
         "title": "Yazı növü",
-        "desc": "Serpantinum üçün standart yazı növünü seçin",
+        "desc": "Xiuhcóatl üçün standart yazı növünü seçin",
         "select": "Seç..."
       },
       "radius": {
@@ -1566,7 +1566,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Hazırlayan: @{author}",
     "welcome": "Xoş gəlmisiniz",
     "tagline": "Bu iş masası mühitinin hazırlandığı şəxs",
@@ -1703,7 +1703,7 @@
     },
     "guide": {
       "name": "Parametrlər",
-      "desc": "Serpantinum parametrləri"
+      "desc": "Xiuhcóatl parametrləri"
     },
     "calendar": {
       "name": "Təqvim və saat",
@@ -1816,7 +1816,7 @@
     }
   },
   "cli": {
-    "usage": "İstifadə: serpantinum [command] [options...]",
+    "usage": "İstifadə: xiuhcoatl [command] [options...]",
     "description": "Wayland görüntü birləşdiriciləri üçün iş masası qabığı.",
     "commands": "Əmrlər:",
     "script_commands": "Skript əmrləri:",
@@ -1830,23 +1830,23 @@
     "version_desc": "Versiya məlumatını göstər və çıx",
     "help_desc": "Bu kömək mətnini göstər və çıx",
     "examples": "Nümunələr:",
-    "daemon_stopped": "Serpantinum arxa plan xidməti dayandırıldı.",
-    "daemon_restarted": "Serpantinum arxa plan xidməti yenidən başladıldı.",
+    "daemon_stopped": "Xiuhcóatl arxa plan xidməti dayandırıldı.",
+    "daemon_restarted": "Xiuhcóatl arxa plan xidməti yenidən başladıldı.",
     "starting_daemon": "Arxa plan xidməti işləmir. serpantinumd arxa planda başladılır...",
     "error_missing_qml": "Xəta: başladılacaq hədəf göstərilməyib.",
-    "launch_usage": "İstifadə: serpantinum launch <start> [args...]",
+    "launch_usage": "İstifadə: xiuhcoatl launch <start> [args...]",
     "error_qml_not_found": "Xəta: {DIR} daxilində {NAME}.qml tapılmadı",
     "error_shell_qml_not_found": "Xəta: {DIR} daxilində shell.qml yolu tapılmadı",
     "error_unknown_command": "Xəta: naməlum əmr '{CMD}'.",
     "error_unknown_target": "Xəta: naməlum hədəf '{TARGET}'.",
     "launch_help": {
-      "usage": "İstifadə: serpantinum launch <start> [arguments...]",
+      "usage": "İstifadə: xiuhcoatl launch <start> [arguments...]",
       "description": "Müstəqil tərkib hissələrini birbaşa icra rejimində başlat.",
       "available_targets": "Mövcud hədəflər:",
       "target_start": "İlkin quraşdırma interfeysini başlat"
     },
     "msg_help": {
-      "usage": "İstifadə: serpantinum msg <command|workspace> [arguments...]",
+      "usage": "İstifadə: xiuhcoatl msg <command|workspace> [arguments...]",
       "description": "Düzülüş, iş sahəsi və pəncərə idarəetmə mesajlarını birbaşa göndər.",
       "available_commands": "Mövcud mesajlar:",
       "cmd_workspace": "<num> nömrəli iş sahəsinə keç (fəal pəncərəni ora köçürmək üçün 'move' əlavə et)",
@@ -1855,7 +1855,7 @@
       "cmd_close": "Qabığın hər hansı fəal üst qatını bağla"
     },
     "ipc_help": {
-      "usage": "İstifadə: serpantinum ipc call <target> <method> [arguments...]",
+      "usage": "İstifadə: xiuhcoatl ipc call <target> <method> [arguments...]",
       "description": "IPC çağırışını birbaşa işləyən Quickshell nüsxəsinə göndər."
     },
     "scripts": {
@@ -1881,7 +1881,7 @@
     "config_desc": "Ayarları oxu və dəyiş (get, set, dump, path, edit)",
     "error_unknown_language": "Xəta: naməlum dil '{CODE}'.",
     "update_available": "Yeniləmə mövcuddur: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum aktualdır ({VERSION}).",
+    "up_to_date": "Xiuhcóatl aktualdır ({VERSION}).",
     "state_on": "aktiv",
     "state_off": "deaktiv",
     "error_unknown_theme": "Xəta: naməlum mövzu '{NAME}'.",
@@ -1895,11 +1895,11 @@
   },
   "daemon": {
     "already_running": "Arxa plan xidməti artıq işləyir. Çıxılır...",
-    "shutting_down": "Serpantinum arxa plan xidməti dayandırılır...",
-    "launching": "Serpantinum arxa plan xidməti başladılır...",
+    "shutting_down": "Xiuhcóatl arxa plan xidməti dayandırılır...",
+    "launching": "Xiuhcóatl arxa plan xidməti başladılır...",
     "cli": {
       "usage": "İstifadə: serpantinumd <command> [options...]",
-      "description": "Serpantinum iş masası qabığı üçün arxa plan xidməti.",
+      "description": "Xiuhcóatl iş masası qabığı üçün arxa plan xidməti.",
       "commands": "Əmrlər:",
       "cmd_start": "Arxa plan xidmətini və arxa planda işləyən prosesləri başlat",
       "cmd_stop": "İşləyən arxa plan xidmətini dayandır",
@@ -1908,15 +1908,15 @@
       "opt_verbose": "Çıxışın ətraflı qeydini aktivləşdir",
       "opt_version": "Versiya məlumatını göstər və çıx",
       "opt_help": "Bu kömək mətnini göstər və çıx",
-      "stopped": "Serpantinum arxa plan xidməti dayandırıldı.",
-      "status_running": "Serpantinum arxa plan xidməti işləyir (PID: {PID}).",
-      "status_stopped": "Serpantinum arxa plan xidməti işləmir.",
+      "stopped": "Xiuhcóatl arxa plan xidməti dayandırıldı.",
+      "status_running": "Xiuhcóatl arxa plan xidməti işləyir (PID: {PID}).",
+      "status_stopped": "Xiuhcóatl arxa plan xidməti işləmir.",
       "unknown_arg": "Naməlum arqument: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects hələ də aktivdir",
-      "body": "Serpantinum artıq öz səs mühərrikinə malikdir və EasyEffects ona mane ola bilər. EasyEffects-dən yalnız Serpantinum üçün istifadə edirdinizsə, onun sistemə girişdə başlamasını söndürün."
+      "body": "Xiuhcóatl artıq öz səs mühərrikinə malikdir və EasyEffects ona mane ola bilər. EasyEffects-dən yalnız Xiuhcóatl üçün istifadə edirdinizsə, onun sistemə girişdə başlamasını söndürün."
     }
   },
   "installer": {

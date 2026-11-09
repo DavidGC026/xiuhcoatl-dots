@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Cargando...",
       "unknown": "Desconocido",
       "version_by": "v{version} • por {author}",
@@ -21,7 +21,13 @@
         "uptime": "Tiempo de actividad",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl",
+      "based_on": "Basado en serpantinum de @ilyamiro (AGPL-3.0)",
+      "update_available_version": "Actualización disponible: v{version}",
+      "update": "Actualizar",
+      "reinstall": "Reinstalar",
+      "source_code": "Código fuente",
+      "no_notes": "Sin notas de la versión"
     },
     "tabs": {
       "welcome": "Bienvenida",
@@ -652,7 +658,7 @@
     "theme": {
       "font": {
         "title": "Fuente",
-        "desc": "Elegir la fuente predeterminada usada por serpantinum",
+        "desc": "Elegir la fuente predeterminada usada por Xiuhcóatl",
         "select": "Seleccionar..."
       },
       "radius": {
@@ -1617,7 +1623,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Hecho por @{author}",
     "welcome": "Bienvenido",
     "tagline": "Un entorno de escritorio creado para",
@@ -1754,7 +1760,7 @@
     },
     "guide": {
       "name": "Configuración",
-      "desc": "Configuración de serpantinum"
+      "desc": "Configuración de Xiuhcóatl"
     },
     "calendar": {
       "name": "Calendario y reloj",
@@ -1867,7 +1873,7 @@
     }
   },
   "cli": {
-    "usage": "Uso: serpantinum [comando] [opciones...]",
+    "usage": "Uso: xiuhcoatl [comando] [opciones...]",
     "description": "Un entorno de escritorio para compositores de wayland.",
     "commands": "Comandos:",
     "script_commands": "Comandos de scripts:",
@@ -1881,23 +1887,23 @@
     "version_desc": "Mostrar información de versión y salir",
     "help_desc": "Mostrar este mensaje de ayuda y salir",
     "examples": "Ejemplos:",
-    "daemon_stopped": "Demonio de serpantinum detenido.",
-    "daemon_restarted": "Demonio de serpantinum reiniciado.",
+    "daemon_stopped": "Demonio de Xiuhcóatl detenido.",
+    "daemon_restarted": "Demonio de Xiuhcóatl reiniciado.",
     "starting_daemon": "El demonio no está en ejecución. Iniciando serpantinumd en segundo plano...",
     "error_missing_qml": "Error: falta el destino a ejecutar.",
-    "launch_usage": "Uso: serpantinum launch <start> [argumentos...]",
+    "launch_usage": "Uso: xiuhcoatl launch <start> [argumentos...]",
     "error_qml_not_found": "Error: no se pudo encontrar {NAME}.qml en {DIR}",
     "error_shell_qml_not_found": "Error: no se pudo resolver la ruta a shell.qml en {DIR}",
     "error_unknown_command": "Error: comando desconocido '{CMD}'.",
     "error_unknown_target": "Error: destino desconocido '{TARGET}'.",
     "launch_help": {
-      "usage": "Uso: serpantinum launch <start> [argumentos...]",
+      "usage": "Uso: xiuhcoatl launch <start> [argumentos...]",
       "description": "Lanzar componentes independientes directamente en modo runner.",
       "available_targets": "Destinos disponibles:",
       "target_start": "Lanzar la interfaz de configuración inicial"
     },
     "msg_help": {
-      "usage": "Uso: serpantinum msg <comando|espaciodetrabajo> [argumentos...]",
+      "usage": "Uso: xiuhcoatl msg <comando|espaciodetrabajo> [argumentos...]",
       "description": "Enviar mensajes de diseño, espacios de trabajo y gestión de ventanas directamente.",
       "available_commands": "Mensajes disponibles:",
       "cmd_workspace": "Cambiar al espacio de trabajo <num> (añadir 'move' para mover la ventana activa)",
@@ -1906,7 +1912,7 @@
       "cmd_close": "Cerrar cualquier panel superpuesto activo"
     },
     "ipc_help": {
-      "usage": "Uso: serpantinum ipc call <destino> <método> [argumentos...]",
+      "usage": "Uso: xiuhcoatl ipc call <destino> <método> [argumentos...]",
       "description": "Enviar una llamada IPC directamente a la instancia activa de quickshell."
     },
     "scripts": {
@@ -1932,7 +1938,7 @@
     "config_desc": "Leer y cambiar la configuración (get, set, dump, path, edit)",
     "error_unknown_language": "Error: idioma desconocido '{CODE}'.",
     "update_available": "Actualización disponible: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum está actualizado ({VERSION}).",
+    "up_to_date": "Xiuhcóatl está actualizado ({VERSION}).",
     "state_on": "activado",
     "state_off": "desactivado",
     "error_unknown_theme": "Error: tema desconocido '{NAME}'.",
@@ -1946,11 +1952,11 @@
   },
   "daemon": {
     "already_running": "El demonio ya está en ejecución. Saliendo...",
-    "shutting_down": "Apagando el demonio de serpantinum...",
-    "launching": "Iniciando el demonio de serpantinum...",
+    "shutting_down": "Apagando el demonio de Xiuhcóatl...",
+    "launching": "Iniciando el demonio de Xiuhcóatl...",
     "cli": {
       "usage": "Uso: serpantinumd <comando> [opciones...]",
-      "description": "Servicio demonio en segundo plano para el entorno de escritorio serpantinum.",
+      "description": "Servicio demonio en segundo plano para el entorno de escritorio Xiuhcóatl.",
       "commands": "Comandos:",
       "cmd_start": "Iniciar el servicio demonio y los procesos en segundo plano",
       "cmd_stop": "Detener el servicio demonio en ejecución",
@@ -1959,15 +1965,15 @@
       "opt_verbose": "Habilitar registro detallado (verbose)",
       "opt_version": "Mostrar información de versión y salir",
       "opt_help": "Mostrar este mensaje de ayuda y salir",
-      "stopped": "Demonio de serpantinum detenido.",
-      "status_running": "El demonio de serpantinum está en ejecución (PID: {PID}).",
-      "status_stopped": "El demonio de serpantinum no está en ejecución.",
+      "stopped": "Demonio de Xiuhcóatl detenido.",
+      "status_running": "El demonio de Xiuhcóatl está en ejecución (PID: {PID}).",
+      "status_stopped": "El demonio de Xiuhcóatl no está en ejecución.",
       "unknown_arg": "Argumento desconocido: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects sigue activado",
-      "body": "Serpantinum ahora tiene su propio motor de audio y EasyEffects puede interferir con él. Si solo usabas EasyEffects para Serpantinum, evita que se inicie al iniciar sesión."
+      "body": "Xiuhcóatl ahora tiene su propio motor de audio y EasyEffects puede interferir con él. Si solo usabas EasyEffects para Xiuhcóatl, evita que se inicie al iniciar sesión."
     }
   },
   "installer": {

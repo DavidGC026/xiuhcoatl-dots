@@ -1,7 +1,7 @@
 {
   "guide": {
     "about": {
-      "title": "Serpantinum",
+      "title": "Xiuhcóatl",
       "loading": "Laden...",
       "unknown": "Onbekend",
       "version_by": "v{version} • door {author}",
@@ -21,7 +21,7 @@
         "uptime": "Uptime",
         "default_os": "Linux"
       },
-      "github_repo": "ilyamiro/serpantinum"
+      "github_repo": "DavidGC026/xiuhcoatl"
     },
     "tabs": {
       "welcome": "Welkom",
@@ -650,7 +650,7 @@
     "theme": {
       "font": {
         "title": "Lettertype",
-        "desc": "Kies het standaard lettertype voor serpantinum",
+        "desc": "Kies het standaard lettertype voor Xiuhcóatl",
         "select": "Selecteren..."
       },
       "radius": {
@@ -1575,7 +1575,7 @@
     }
   },
   "start": {
-    "title": "Serpantinum",
+    "title": "Xiuhcóatl",
     "made_by": "Gemaakt door @{author}",
     "welcome": "Welkom",
     "tagline": "Een desktopshell gebouwd voor",
@@ -1822,7 +1822,7 @@
     }
   },
   "cli": {
-    "usage": "Gebruik: serpantinum [opdracht] [opties...]",
+    "usage": "Gebruik: xiuhcoatl [opdracht] [opties...]",
     "description": "Een desktopshell voor wayland-compositors.",
     "commands": "Opdrachten:",
     "script_commands": "Scriptopdrachten:",
@@ -1840,19 +1840,19 @@
     "daemon_restarted": "Serpantinum-daemon opnieuw gestart.",
     "starting_daemon": "Daemon niet actief. serpantinumd wordt op de achtergrond gestart...",
     "error_missing_qml": "Fout: ontbrekend doel om te starten.",
-    "launch_usage": "Gebruik: serpantinum launch <start> [argumenten...]",
+    "launch_usage": "Gebruik: xiuhcoatl launch <start> [argumenten...]",
     "error_qml_not_found": "Fout: kan {NAME}.qml niet vinden in {DIR}",
     "error_shell_qml_not_found": "Fout: kan pad naar shell.qml niet vinden in {DIR}",
     "error_unknown_command": "Fout: onbekende opdracht '{CMD}'.",
     "error_unknown_target": "Fout: onbekend doel '{TARGET}'.",
     "launch_help": {
-      "usage": "Gebruik: serpantinum launch <start> [argumenten...]",
+      "usage": "Gebruik: xiuhcoatl launch <start> [argumenten...]",
       "description": "Zelfstandige componenten rechtstreeks starten in runner-modus.",
       "available_targets": "Beschikbare doelen:",
       "target_start": "Start de installatie-interface van de startwizard"
     },
     "msg_help": {
-      "usage": "Gebruik: serpantinum msg <opdracht|werkblad> [argumenten...]",
+      "usage": "Gebruik: xiuhcoatl msg <opdracht|werkblad> [argumenten...]",
       "description": "Direct layout-, werkblad- en vensterbeheerberichten verzenden.",
       "available_commands": "Beschikbare berichten:",
       "cmd_workspace": "Wissel naar werkblad <num> (voeg 'move' toe om actief venster te verplaatsen)",
@@ -1861,7 +1861,7 @@
       "cmd_close": "Sluit elke actieve shell-overlay"
     },
     "ipc_help": {
-      "usage": "Gebruik: serpantinum ipc call <doel> <methode> [argumenten...]",
+      "usage": "Gebruik: xiuhcoatl ipc call <doel> <methode> [argumenten...]",
       "description": "Stuur een IPC-aanroep direct naar het actieve quickshell-exemplaar."
     },
     "scripts": {
@@ -1887,7 +1887,7 @@
     "config_desc": "Instellingen lezen en wijzigen (get, set, dump, path, edit)",
     "error_unknown_language": "Fout: onbekende taal '{CODE}'.",
     "update_available": "Update beschikbaar: {LOCAL} -> {REMOTE}",
-    "up_to_date": "Serpantinum is up-to-date ({VERSION}).",
+    "up_to_date": "Xiuhcóatl is up-to-date ({VERSION}).",
     "state_on": "aan",
     "state_off": "uit",
     "error_unknown_theme": "Fout: onbekend thema '{NAME}'.",
@@ -1919,10 +1919,10 @@
       "status_stopped": "Serpantinum-daemon is niet actief.",
       "unknown_arg": "Onbekend argument: {ARG}"
     },
-    "app_name": "Serpantinum",
+    "app_name": "Xiuhcóatl",
     "easyeffects": {
       "title": "EasyEffects is nog ingeschakeld",
-      "body": "Serpantinum heeft nu een eigen audio-engine en EasyEffects kan daarmee storen. Gebruikte u EasyEffects alleen voor Serpantinum, zorg dan dat het niet meer bij het aanmelden start."
+      "body": "Xiuhcóatl heeft nu een eigen audio-engine en EasyEffects kan daarmee storen. Gebruikte u EasyEffects alleen voor Xiuhcóatl, zorg dan dat het niet meer bij het aanmelden start."
     }
   },
   "installer": {
