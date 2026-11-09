@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Abre o cierra el menú de atajos de Xiuhcóatl (Super + F1).
+dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+cfg="$dir/src/atajos/shell.qml"
+pkill -f "quickshell -p $cfg" && exit 0
+exec quickshell -p "$cfg"

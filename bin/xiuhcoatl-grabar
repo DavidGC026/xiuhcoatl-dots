@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Inicia o detiene una grabación de pantalla con gpu-screen-recorder.
+# Uso: xiuhcoatl-grabar [pantalla|region]   (pantalla por defecto)
+# Se vuelve a llamar con el mismo atajo para detener y guardar.
+set -u
+
+dir="$(xdg-user-dir VIDEOS 2>/dev/null || echo "$HOME/Videos")/Grabaciones"
+pidfile="${XDG_RUNTIME_DIR:-/tmp}/xiuhcoatl-grabar.pid"
+
+avisar() { serpantinum-core notify --app "Grabación" "$@" >/dev/null 2>&1 || true; }
+
+if [[ -f $pidfile ]] && kill -0 "$(cat "$pidfile")" 2>/dev/null; then
+    # SIGINT hace que gpu-screen-recorder cierre el archivo y lo guarde.
+    kill -INT "$(cat "$pidfile")"
+    rm -f "$pidfile"
+    exit 0
+fi
+
+mkdir -p "$dir"
+salida="$dir/grabacion_$(date +%Y-%m-%d_%H-%M-%S).mp4"
+
+case "${1:-pantalla}" in
+    region)
+        geometria=$(slurp -f '%wx%h+%x+%y') || exit 0
+        objetivo=(-w region -region "$geometria")
+        ;;
+    *)
+        monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+        objetivo=(-w "${monitor:-screen}")
+        ;;
+esac
+
+gpu-screen-recorder "${objetivo[@]}" -f 60 -a default_output -fallback-cpu-encoding yes -o "$salida" >/dev/null 2>&1 &
+pid=$!
+sleep 0.5
+if ! kill -0 "$pid" 2>/dev/null; then
+    avisar --urgency critical -- "No se pudo iniciar la grabación" "Revisa gpu-screen-recorder desde una terminal."
+    exit 1
+fi
+echo "$pid" > "$pidfile"
+avisar --icon media-record -- "Grabando pantalla" "Vuelve a pulsar el atajo para detener."
+
+wait "$pid"
+avisar --icon video-x-generic -- "Grabación guardada" "$salida"

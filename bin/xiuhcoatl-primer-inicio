@@ -1,0 +1,114 @@
+#!/bin/bash
+# Primer inicio de Xiuhcóatl en DVG OS: fondo de DVG, tema Carmín y Oro, idioma
+# del sistema, carpeta de capturas, dock con las apps instaladas y el preset
+# «DVG OS». Solo corre una vez por usuario; después respeta lo que cada quien elija.
+set -u
+
+marca="${XDG_STATE_HOME:-$HOME/.local/state}/dvg-os/hyprland-primer-inicio"
+[[ -f $marca ]] && exit 0
+
+dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+fondo=/usr/share/backgrounds/dvg-os/escritorio.png
+tema="DVG Carmín y Oro"
+
+# serpantinumd tarda unos segundos en aceptar órdenes después de iniciar sesión.
+listo=""
+for intento in $(seq 60); do
+    if [[ ! -f $fondo ]] || serpantinum set wallpaper "$fondo" >/dev/null 2>&1; then
+        listo="fondo listo en el intento $intento"
+        break
+    fi
+    sleep 1
+done
+if [[ -z $listo ]]; then
+    echo "Xiuhcóatl no respondió; el primer inicio se repetirá en la próxima sesión" >&2
+    exit 1
+fi
+
+# El tema se aplica después del fondo: con el tema fijo, el fondo ya no cambia
+# los colores (Matugen apagado).
+serpantinum set theme preset "$tema" >/dev/null 2>&1 && listo+=", tema $tema"
+
+# Idioma = el del sistema, si hay traducción (es, pt, fr...).
+idioma="${LANG%%_*}"
+idioma="${idioma%%.*}"
+if [[ -n $idioma && $idioma != en && -f $dir/src/assets/languages/$idioma.json ]]; then
+    serpantinum set lang "$idioma" >/dev/null 2>&1 && listo+=", idioma $idioma"
+fi
+
+# Capturas en la carpeta de imágenes del idioma del usuario (~/Imágenes).
+xdg-user-dirs-update >/dev/null 2>&1 || true
+imagenes="$(xdg-user-dir PICTURES 2>/dev/null)"
+if [[ -n $imagenes && $imagenes != "$HOME" ]]; then
+    serpantinum config set screenshotDir "$imagenes/Capturas de pantalla" >/dev/null 2>&1 \
+        && listo+=", capturas en $imagenes/Capturas de pantalla"
+fi
+
+# Dock: quitar las apps de fábrica que no se instalaron (Temoa y Tanatl son
+# opcionales en el instalador).
+ajustes="$(serpantinum config path 2>/dev/null)"
+if [[ -n $ajustes && -f $ajustes ]]; then
+    python3 - "$ajustes" <<'PY' && listo+=", dock revisado"
+import json, os, sys
+ruta = sys.argv[1]
+dirs = [os.path.expanduser('~/.local/share/applications'), '/usr/local/share/applications',
+        '/usr/share/applications', '/var/lib/flatpak/exports/share/applications']
+def instalada(app):
+    nombre = str(app.get('desktop_id') or '')
+    if not nombre:
+        return True
+    nombre = nombre if nombre.endswith('.desktop') else nombre + '.desktop'
+    return any(os.path.isfile(os.path.join(d, nombre)) for d in dirs)
+with open(ruta, encoding='utf-8') as f:
+    datos = json.load(f)
+apps = (datos.get('dock') or {}).get('apps')
+if isinstance(apps, list):
+    filtradas = [a for a in apps if not isinstance(a, dict) or instalada(a)]
+    if len(filtradas) != len(apps):
+        datos['dock']['apps'] = filtradas
+        with open(ruta + '.tmp', 'w', encoding='utf-8') as f:
+            json.dump(datos, f, indent=2, ensure_ascii=False)
+            f.write('\n')
+        os.replace(ruta + '.tmp', ruta)
+PY
+fi
+
+# Preset «DVG OS» en Ajustes → General → Presets: guarda la configuración de
+# fábrica para volver a ella con un clic.
+sleep 3
+estado="${XDG_STATE_HOME:-$HOME/.local/state}/serpantinum"
+monitores="$(hyprctl monitors -j 2>/dev/null)"
+if [[ -n $ajustes && -f $ajustes ]] && python3 - "$estado" "$monitores" "$ajustes" "$fondo" <<'PY'
+import json, os, sys, time
+estado, monitores, ajustes_ruta, fondo = sys.argv[1:5]
+destino = os.path.join(estado, 'presets', 'dvg-os.json')
+if os.path.exists(destino):
+    sys.exit(0)
+with open(ajustes_ruta, encoding='utf-8') as f:
+    ajustes = json.load(f)
+try:
+    nombres = [m['name'] for m in json.loads(monitores) if m.get('name')]
+except Exception:
+    nombres = []
+preset = {
+    'name': 'DVG OS',
+    'created': int(time.time() * 1000),
+    'settings': ajustes,
+    'wallpapers': {nombre: fondo for nombre in nombres} if os.path.isfile(fondo) else {},
+    'widgets': {},
+}
+colores = (ajustes.get('theme') or {}).get('colors')
+if isinstance(colores, dict):
+    preset['palette'] = colores
+os.makedirs(os.path.dirname(destino), exist_ok=True)
+with open(destino + '.tmp', 'w', encoding='utf-8') as f:
+    json.dump(preset, f, indent=2, ensure_ascii=False)
+    f.write('\n')
+os.replace(destino + '.tmp', destino)
+PY
+then
+    listo+=", preset DVG OS"
+fi
+
+mkdir -p "$(dirname "$marca")"
+echo "$listo: $(date)" > "$marca"

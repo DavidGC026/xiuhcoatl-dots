@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Toma un color de la pantalla, lo copia al portapapeles y lo notifica.
+avisar() { serpantinum-core notify --app "Selector de color" -- "$@" >/dev/null 2>&1 || true; }
+
+if ! command -v hyprpicker >/dev/null 2>&1; then
+    avisar "Falta hyprpicker" "Instálalo con: sudo pacman -S hyprpicker"
+    exit 1
+fi
+color=$(hyprpicker -f hex 2>/dev/null) || exit 0
+[[ -z $color ]] && exit 0
+printf '%s' "$color" | wl-copy
+avisar "Color copiado" "$color"
