@@ -12,6 +12,38 @@ Item {
     property string remoteVersion: ""
     property bool updateAvailable: false
     property string lastNotifiedVersion: ""
+    property var remoteNotes: []
+    property bool packageManaged: false
+
+    // Xiuhcóatl se instala como paquete de DVG OS: actualizar y reinstalar pasan
+    // por pacman (DVG Tools si está, si no una terminal), nunca por un script remoto.
+    readonly property string packageName: "xiuhcoatl"
+    readonly property string sourceUrl: "https://git.dvguzman.com/DavidGC026/xiuhcoatl"
+
+    function runInTerminal(command) {
+        let script = 'if command -v kitty >/dev/null 2>&1; then exec kitty --hold bash -c "$1"; ' +
+                     'else exec "${TERMINAL:-xterm}" -hold -e bash -c "$1"; fi';
+        Quickshell.execDetached(["bash", "-c", script, "_", command]);
+    }
+
+    function runUpdate() {
+        let script = 'if command -v dvg-software >/dev/null 2>&1; then exec dvg-software --actualizaciones; fi; exit 1';
+        updateLauncher.command = ["bash", "-c", script];
+        updateLauncher.running = true;
+    }
+
+    function runReinstall() {
+        // Sin -Sy: sincronizar sin actualizar todo deja el sistema a medias en Arch.
+        root.runInTerminal("sudo pacman -S " + root.packageName);
+    }
+
+    Process {
+        id: updateLauncher
+        running: false
+        onExited: function(exitCode) {
+            if (exitCode !== 0) root.runInTerminal("sudo pacman -Syu");
+        }
+    }
 
     property string stateVersion: ""
     property string packageVersion: ""
@@ -217,6 +249,8 @@ Item {
                         let data = JSON.parse(out);
                         if (data.local) root.localVersion = data.local;
                         if (data.remote) root.remoteVersion = data.remote;
+                        root.remoteNotes = Array.isArray(data.notes) ? data.notes : [];
+                        root.packageManaged = data.package_managed === true;
                         if (data.last_notified !== undefined) root.lastNotifiedVersion = data.last_notified;
                         root.reevaluateUpdate();
 

@@ -117,7 +117,7 @@ GuideTab {
                             Text {
                                 text: I18n.t("guide.about.version_by", {
                                     version: (Updater.localVersion !== "..." ? Updater.localVersion : (rootObj.dotsVersion !== "Loading..." && rootObj.dotsVersion !== I18n.t("guide.about.loading") ? rootObj.dotsVersion : "2.0.0")),
-                                    author: "@ilyamiro"
+                                    author: "DVG OS"
                                 })
                                 font.family: ThemeBackend.fontFamily
                                 font.pixelSize: rootObj.s(13)
@@ -148,32 +148,30 @@ GuideTab {
                         Text {
                             Layout.alignment: Qt.AlignLeft
                             Layout.bottomMargin: rootObj.s(4)
-                            text: "Update available v" + Updater.remoteVersion
+                            text: I18n.t("guide.about.update_available_version", { version: Updater.remoteVersion })
                             font.family: ThemeBackend.fontFamily
                             font.weight: Font.Bold
                             font.pixelSize: rootObj.s(18)
                             color: ThemeBackend.mauve
                         }
 
-                        ClickButton {
+                        Text {
                             Layout.fillWidth: true
-                            Layout.preferredHeight: rootObj.s(36)
-                            horizontalPadding: rootObj.s(14)
-                            cornerRadius: ThemeBackend.borderRadius
-                            buttonText: "Changelog"
-                            textFontSize: rootObj.s(12)
-                            buttonIcon: "󰈙"
-                            iconFontSize: rootObj.s(16)
-                            accentColor: ThemeBackend.surface0
-                            textColor: ThemeBackend.text
-
-                            onTriggered: Quickshell.execDetached(["xdg-open", "https://github.com/ilyamiro/serpantinum/blob/master/CHANGELOG.md"])
+                            text: Updater.remoteNotes.length > 0
+                                  ? Updater.remoteNotes.map(n => "• " + n).join("\n")
+                                  : I18n.t("guide.about.no_notes")
+                            wrapMode: Text.WordWrap
+                            maximumLineCount: 8
+                            elide: Text.ElideRight
+                            font.family: ThemeBackend.fontFamily
+                            font.pixelSize: rootObj.s(12)
+                            color: ThemeBackend.subtext0
                         }
 
                         FillButton {
                             Layout.fillWidth: true
                             Layout.preferredHeight: rootObj.s(38)
-                            buttonText: "Update"
+                            buttonText: I18n.t("guide.about.update")
                             buttonIcon: "󰚰"
                             accentColor: ThemeBackend.green
                             baseColor: ThemeBackend.surface0
@@ -186,8 +184,7 @@ GuideTab {
                             fillDuration: 1200
 
                             onTriggered: {
-                                let cmd = "if command -v kitty >/dev/null 2>&1; then kitty --hold bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/ilyamiro/serpantinum/master/install/install.sh)\"'; else ${TERM:-xterm} -hold -e bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/ilyamiro/serpantinum/master/install/install.sh)\"'; fi";
-                                Quickshell.execDetached(["bash", "-c", cmd]);
+                                Updater.runUpdate();
                                 rootObj.dismissHost();
                             }
                         }
@@ -363,19 +360,45 @@ GuideTab {
                 spacing: rootObj.s(12)
 
                 ClickButton {
-                    Layout.preferredWidth: rootObj.s(260)
+                    Layout.preferredWidth: rootObj.s(220)
                     Layout.preferredHeight: rootObj.s(42)
                     horizontalPadding: rootObj.s(14)
                     cornerRadius: ThemeBackend.borderRadius
-                    buttonText: I18n.t("guide.about.github_repo")
+                    buttonText: I18n.t("guide.about.source_code")
                     textFontSize: rootObj.s(13)
-                    buttonIcon: "󰊤"
+                    buttonIcon: "󰊢"
                     iconFontSize: rootObj.s(16)
                     accentColor: ThemeBackend.surface0
                     textColor: ThemeBackend.text
 
-                    onTriggered: Quickshell.execDetached(["xdg-open", "https://github.com/ilyamiro/serpantinum"])
+                    onTriggered: Quickshell.execDetached(["xdg-open", Updater.sourceUrl])
                 }
+
+                ClickButton {
+                    Layout.preferredWidth: rootObj.s(180)
+                    Layout.preferredHeight: rootObj.s(42)
+                    horizontalPadding: rootObj.s(14)
+                    cornerRadius: ThemeBackend.borderRadius
+                    buttonText: I18n.t("guide.about.reinstall")
+                    textFontSize: rootObj.s(13)
+                    buttonIcon: "󰑓"
+                    iconFontSize: rootObj.s(16)
+                    accentColor: ThemeBackend.surface0
+                    textColor: ThemeBackend.text
+
+                    onTriggered: {
+                        Updater.runReinstall();
+                        rootObj.dismissHost();
+                    }
+                }
+            }
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: I18n.t("guide.about.based_on")
+                font.family: ThemeBackend.fontFamily
+                font.pixelSize: rootObj.s(11)
+                color: ThemeBackend.overlay0
             }
         }
     }

@@ -1,12 +1,16 @@
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.request
 
-REPO = "ilyamiro/serpantinum"
-DEFAULT_VER = "2.0.0"
+# Xiuhcóatl se actualiza desde el repositorio de DVG OS (servidor principal y
+# espejo), no desde GitHub: la versión publicada sale de novedades.json.
+PACKAGE = "xiuhcoatl"
+ORIGINS = ("https://dvgos.dvguzman.com", "https://espejo-dvgos.dvguzman.com")
+DEFAULT_VER = "1.0.0"
 
 state_dir = os.path.expanduser("~/.local/state/serpantinum")
 if "--state-dir" in sys.argv:
@@ -52,7 +56,21 @@ if "--delay" in sys.argv:
     print(0)
     sys.exit(0)
 
+def get_package_ver():
+    """Versión instalada con pacman (x.y.z-pkgrel), o vacío si no es un paquete."""
+    try:
+        res = subprocess.run(["pacman", "-Q", PACKAGE], capture_output=True, text=True, timeout=10)
+        if res.returncode == 0:
+            return res.stdout.split()[1]
+    except Exception:
+        pass
+    return ""
+
 def get_local_ver():
+    if package_managed:
+        ver = get_package_ver()
+        if ver:
+            return ver
     if os.path.isfile(state_file):
         try:
             with open(state_file, "r") as f:
@@ -85,19 +103,27 @@ try:
 except Exception:
     pass
 
-local_ver = get_local_ver()
-remote_ver = local_ver
+def get_published():
+    """(versión, notas, origen) publicados en el repositorio de DVG OS."""
+    for origin in ORIGINS:
+        try:
+            req = urllib.request.Request(origin + "/novedades.json",
+                                         headers={"User-Agent": "xiuhcoatl-updater"})
+            with urllib.request.urlopen(req, timeout=5) as res:
+                data = json.loads(res.read(1048576).decode("utf-8"))
+            release = (data.get("packages") or {}).get(PACKAGE) or {}
+            version = str(release.get("version") or "").strip()
+            if version:
+                notes = [str(n)[:500] for n in (release.get("notes") or [])[:10]]
+                return version, notes, origin
+        except Exception:
+            continue
+    return "", [], ""
 
-if not package_managed:
-    try:
-        req = urllib.request.Request(
-            f"https://raw.githubusercontent.com/{REPO}/master/version.txt",
-            headers={"User-Agent": "updater-script"}
-        )
-        res = urllib.request.urlopen(req, timeout=5)
-        remote_ver = res.read().decode("utf-8").strip()
-    except Exception:
-        remote_ver = local_ver
+local_ver = get_local_ver()
+remote_ver, notes, origin = get_published()
+if not remote_ver:
+    remote_ver = local_ver
 
 has_update = parse_v(remote_ver) > parse_v(local_ver)
 
@@ -105,5 +131,8 @@ print(json.dumps({
     "local": local_ver,
     "remote": remote_ver,
     "has_update": has_update,
+    "notes": notes if has_update else [],
+    "origin": origin,
+    "package_managed": package_managed,
     "last_notified": get_last_notified()
-}))
+}, ensure_ascii=False))
