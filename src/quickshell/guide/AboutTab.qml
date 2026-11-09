@@ -107,10 +107,10 @@ GuideTab {
 
                             Text {
                                 text: I18n.t("guide.about.title")
-                                font.family: ThemeBackend.fontFamily
+                                font.family: DvgEstilo.tituloFont
                                 font.weight: Font.Bold
-                                font.pixelSize: rootObj.s(22)
-                                color: ThemeBackend.text
+                                font.pixelSize: rootObj.s(24)
+                                color: DvgEstilo.oro
                                 Layout.alignment: Qt.AlignHCenter
                             }
 

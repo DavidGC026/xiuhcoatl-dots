@@ -197,10 +197,12 @@ GuideTab {
             spacing: rootObj.s(4)
 
             Row {
+                id: titleRow
                 Layout.alignment: Qt.AlignHCenter
                 spacing: 0
 
                 property string mainTitle: I18n.t("guide.about.title")
+                readonly property int titleLen: mainTitle.length
                 property string verText: " v" + (Updater.localVersion !== "..." ? Updater.localVersion : (rootObj.dotsVersion !== "Loading..." && rootObj.dotsVersion !== I18n.t("guide.about.loading") ? rootObj.dotsVersion : "2.0.0"))
                 property string fullText: mainTitle + verText
 
@@ -211,13 +213,15 @@ GuideTab {
                         required property int index
 
                         text: modelData === " " ? "\u00A0" : modelData
-                        font.family: ThemeBackend.fontFamily
-                        font.weight: index < 11 ? Font.Black : Font.Bold
-                        font.pixelSize: index < 11 ? rootObj.s(32) : rootObj.s(14)
-                        color: index < 11 ? ThemeBackend.text : ThemeBackend.subtext0
+                        // DVG OS: el nombre en Cinzel y oro; la versión en la fuente del tema.
+                        readonly property bool isTitle: index < titleRow.titleLen
+                        font.family: isTitle ? DvgEstilo.tituloFont : ThemeBackend.fontFamily
+                        font.weight: isTitle ? Font.Black : Font.Bold
+                        font.pixelSize: isTitle ? rootObj.s(34) : rootObj.s(14)
+                        color: isTitle ? DvgEstilo.oro : ThemeBackend.subtext0
 
                         anchors.bottom: parent.bottom
-                        anchors.bottomMargin: index < 11 ? 0 : rootObj.s(4)
+                        anchors.bottomMargin: isTitle ? 0 : rootObj.s(4)
 
                         transform: Translate {
                             y: Math.sin(welcomeTabRoot.titleWavePhase - index * 0.35) * rootObj.s(2.5)
@@ -227,9 +231,25 @@ GuideTab {
             }
 
             Text {
+                text: I18n.t("guide.welcome.tagline")
+                font.family: ThemeBackend.fontFamily
+                font.pixelSize: rootObj.s(15)
+                color: ThemeBackend.text
+                Layout.alignment: Qt.AlignHCenter
+            }
+
+            FileteHeraldico {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.preferredWidth: rootObj.s(220)
+                Layout.topMargin: rootObj.s(6)
+                Layout.bottomMargin: rootObj.s(6)
+                grosor: rootObj.s(2)
+            }
+
+            Text {
                 text: I18n.t("guide.about.based_on")
                 font.family: ThemeBackend.fontFamily
-                font.pixelSize: rootObj.s(14)
+                font.pixelSize: rootObj.s(12)
                 color: ThemeBackend.subtext0
                 Layout.alignment: Qt.AlignHCenter
             }

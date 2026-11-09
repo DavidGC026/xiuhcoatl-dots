@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Effects
 import "../"
 import "../reusables"
 import "../reusables/buttons"
@@ -20,6 +21,8 @@ Rectangle {
     readonly property real subIndent: popup.compact ? 0 : popup.s(20)
     readonly property real iconBox: popup.s(24)
     readonly property color activeColor: ThemeBackend.mauve
+    // DVG OS: la selección va en carmín y el foco en oro.
+    readonly property color selectColor: DvgEstilo.carmin
     readonly property color idleColor: ThemeBackend.subtext1
     readonly property color hoverFill: Qt.alpha(ThemeBackend.text, 0.06)
 
@@ -65,16 +68,54 @@ Rectangle {
             Layout.preferredHeight: popup.s(40)
             spacing: popup.s(8)
 
-            Text {
+            // DVG OS: logo de Xiuhcóatl en oro junto al título.
+            Item {
+                visible: !popup.compact
+                Layout.leftMargin: popup.s(6)
+                Layout.preferredWidth: popup.s(30)
+                Layout.preferredHeight: popup.s(30)
+                Layout.alignment: Qt.AlignVCenter
+
+                Image {
+                    id: brandLogo
+                    anchors.fill: parent
+                    source: "file://" + Caching.serpantinumDir + "/assets/logo.svg"
+                    sourceSize: Qt.size(width * 2, height * 2)
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                    visible: false
+                }
+                MultiEffect {
+                    anchors.fill: brandLogo
+                    source: brandLogo
+                    colorization: 1.0
+                    colorizationColor: DvgEstilo.oro
+                }
+            }
+
+            ColumnLayout {
                 visible: !popup.compact
                 Layout.fillWidth: true
-                Layout.leftMargin: popup.s(10)
-                horizontalAlignment: I18n.textAlignment
-                text: I18n.t("guide.settings", "Settings")
-                font.family: ThemeBackend.fontFamily
-                font.pixelSize: popup.s(15)
-                font.bold: true
-                color: ThemeBackend.text
+                spacing: 0
+
+                Text {
+                    Layout.fillWidth: true
+                    horizontalAlignment: I18n.textAlignment
+                    text: I18n.t("guide.settings", "Settings")
+                    font.family: ThemeBackend.fontFamily
+                    font.pixelSize: popup.s(15)
+                    font.bold: true
+                    color: ThemeBackend.text
+                }
+                Text {
+                    Layout.fillWidth: true
+                    horizontalAlignment: I18n.textAlignment
+                    text: "Xiuhcóatl · DVG OS"
+                    font.family: ThemeBackend.fontFamily
+                    font.pixelSize: popup.s(10)
+                    color: ThemeBackend.subtext0
+                    elide: Text.ElideRight
+                }
             }
 
             Item { visible: popup.compact; Layout.fillWidth: true }
@@ -97,6 +138,11 @@ Rectangle {
             Item { visible: popup.compact; Layout.fillWidth: true }
         }
 
+        FileteHeraldico {
+            Layout.fillWidth: true
+            grosor: popup.s(2)
+        }
+
         Flickable {
             id: tabsFlickable
             Layout.fillWidth: true
@@ -110,7 +156,7 @@ Rectangle {
                 id: activeHighlight
                 z: -1
                 radius: sidebar.itemRadius(height)
-                color: activeGlass.active ? "transparent" : Qt.alpha(sidebar.activeColor, 0.16)
+                color: activeGlass.active ? "transparent" : Qt.alpha(sidebar.selectColor, 0.30)
                 visible: activeDelegate !== null
                 property bool ready: false
                 Timer { interval: 500; running: true; onTriggered: activeHighlight.ready = true }
@@ -119,9 +165,19 @@ Rectangle {
                     id: activeGlass
                     anchors.fill: parent
                     radius: parent.radius
-                    tintColor: sidebar.activeColor
-                    tintAmount: 0.22
+                    tintColor: sidebar.selectColor
+                    tintAmount: 0.34
                     press: 0.3 + 0.7 * activeHighlight.lift
+                }
+
+                Rectangle {
+                    anchors.left: parent.left
+                    anchors.leftMargin: popup.s(4)
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: popup.s(3)
+                    height: parent.height * 0.5
+                    radius: width / 2
+                    color: sidebar.activeColor
                 }
 
                 readonly property bool isMoving: Math.abs(y - targetY) > 0.5 || Math.abs(subMix - (isSub ? 1 : 0)) > 0.01

@@ -197,7 +197,8 @@
       "by_author": "by @{author}",
       "about": "About",
       "hold_for_tutorial": "Hold for tutorial",
-      "start_tutorial": "Start tutorial"
+      "start_tutorial": "Start tutorial",
+      "tagline": "The DVG OS desktop shell"
     },
     "tutorial": {
       "section_title": "{section} tutorial",

@@ -41,6 +41,7 @@ singleton AppTheming 1.0 singletons/theme/AppTheming.qml
 singleton Matugen 1.0 singletons/theme/Matugen.qml
 singleton Scaler 1.0 singletons/theme/Scaler.qml
 singleton ThemeBackend 1.0 singletons/theme/ThemeBackend.qml
+singleton DvgEstilo 1.0 singletons/dvg/DvgEstilo.qml
 singleton Wallpaper 1.0 singletons/theme/Wallpaper.qml
 
 singleton Gamma 1.0 singletons/environment/Gamma.qml
