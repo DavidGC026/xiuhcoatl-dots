@@ -77,6 +77,18 @@ Item {
         return endTime <= 0 || endTime > Date.now();
     }
 
+    property bool dndActive: {
+        let dummy = configRevision;
+        let n = (typeof Config !== "undefined" && Config.rawSettings) ? Config.rawSettings.notifications : null;
+        return Boolean(n && n.dnd);
+    }
+
+    function toggleDnd() {
+        let n = Object.assign({}, Config.getSetting("notifications", {}));
+        n.dnd = !root.dndActive;
+        Config.setSetting("notifications", n);
+    }
+
     Connections {
         target: (typeof Gamma !== "undefined") ? Gamma : null
         ignoreUnknownSignals: true
@@ -222,7 +234,7 @@ Item {
                 readonly property string itemId: modelData
                 glyph: BarModuleRegistry.menuItemIcon(itemId)
                 glyphYOffset: itemId === "nightlight" ? -1 : 0
-                active: itemId === "nightlight" ? root.nightLightActive : (itemId === "caffeine" ? root.caffeineActive : false)
+                active: itemId === "nightlight" ? root.nightLightActive : (itemId === "caffeine" ? root.caffeineActive : (itemId === "dnd" ? root.dndActive : false))
                 activeColor: itemId === "caffeine" ? Qt.tint(ThemeBackend.peach, "#5c3016") : ThemeBackend.peach
                 onClicked: {
                     if (root.isPreview) return;
@@ -230,6 +242,7 @@ Item {
                     else if (itemId === "launcher") Quickshell.execDetached(["bash", "-c", Caching.serpantinumDir + "/scripts/qs_manager.sh toggle launcher"]);
                     else if (itemId === "nightlight") root.toggleNightLight();
                     else if (itemId === "caffeine") root.setCaffeine(!root.caffeineActive);
+                    else if (itemId === "dnd") root.toggleDnd();
                     else if (itemId === "shuffle") root.shuffleWallpaper(menuItem);
                 }
             }

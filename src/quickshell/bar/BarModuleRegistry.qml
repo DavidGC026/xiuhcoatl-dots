@@ -371,13 +371,14 @@ QtObject {
         types = updated;
     }
 
-    readonly property var menuItemIds: ["settings", "launcher", "nightlight", "caffeine", "shuffle"]
+    readonly property var menuItemIds: ["settings", "launcher", "nightlight", "caffeine", "dnd", "shuffle"]
 
     function menuItemIcon(id) {
         if (id === "settings") return "󰒓";
         if (id === "launcher") return "󰍉";
         if (id === "nightlight") return "󰖔";
         if (id === "caffeine") return "󰅶";
+        if (id === "dnd") return "󰂛";
         if (id === "shuffle") return "󰒝";
         return "";
     }
