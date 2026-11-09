@@ -8,14 +8,19 @@ marca="${XDG_STATE_HOME:-$HOME/.local/state}/dvg-os/hyprland-primer-inicio"
 [[ -f $marca ]] && exit 0
 
 dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
-fondo=/usr/share/backgrounds/dvg-os/escritorio.png
 tema="DVG Carmín y Oro"
+# El fondo de DVG OS (dvg-branding) o, fuera de DVG OS, el de la carpeta de fondos.
+fondo=""
+for f in /usr/share/backgrounds/dvg-os/escritorio.png "$HOME/.local/share/dvg-os/fondos/dvg-os.png"; do
+    [[ -f $f ]] && { fondo=$(realpath "$f"); break; }
+done
 
-# serpantinumd tarda unos segundos en aceptar órdenes después de iniciar sesión.
+# El shell tarda unos segundos en aceptar órdenes después de iniciar sesión: se
+# espera a que responda por IPC antes de cambiar nada.
 listo=""
 for intento in $(seq 60); do
-    if [[ ! -f $fondo ]] || serpantinum set wallpaper "$fondo" >/dev/null 2>&1; then
-        listo="fondo listo en el intento $intento"
+    if serpantinum info wallpaper >/dev/null 2>&1; then
+        listo="shell listo en el intento $intento"
         break
     fi
     sleep 1
@@ -24,6 +29,7 @@ if [[ -z $listo ]]; then
     echo "Xiuhcóatl no respondió; el primer inicio se repetirá en la próxima sesión" >&2
     exit 1
 fi
+[[ -n $fondo ]] && serpantinum set wallpaper "$fondo" >/dev/null 2>&1 && listo+=", fondo $fondo"
 
 # El tema se aplica después del fondo: con el tema fijo, el fondo ya no cambia
 # los colores (Matugen apagado).
