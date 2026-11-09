@@ -13,6 +13,8 @@ Item {
     property bool updateAvailable: false
     property string lastNotifiedVersion: ""
     property var remoteNotes: []
+    // Otros paquetes de DVG OS instalados con versión nueva publicada: [{name, local, remote}].
+    property var dvgUpdates: []
     property bool packageManaged: false
 
     // Xiuhcóatl se instala como paquete de DVG OS: actualizar y reinstalar pasan
@@ -109,19 +111,36 @@ Item {
         ]);
     }
 
+    // Huella de lo que hay por actualizar: no se vuelve a avisar por las mismas versiones.
+    function pendingSignature() {
+        let parts = [];
+        if (root.updateAvailable) parts.push("xiuhcoatl=" + root.remoteVersion);
+        for (let i = 0; i < root.dvgUpdates.length; i++) parts.push(root.dvgUpdates[i].name + "=" + root.dvgUpdates[i].remote);
+        return parts.join(",");
+    }
+
     function sendNotification() {
         let serpDir = (typeof Caching !== "undefined" && Caching.serpantinumDir) ? Caching.serpantinumDir : "";
         let appName = I18n.t("updater.notification.app_name");
-        let actionText = I18n.t("updater.notification.action_open_guide");
-        let notifTitle = I18n.t("updater.notification.update_available_title", { "remote": root.remoteVersion });
-        let notifBody = I18n.t("updater.notification.update_available_body", { "local": root.localVersion });
+        let actionText = I18n.t("updater.notification.action_update");
+        let others = root.dvgUpdates.map(u => u.name + " " + u.remote).join(", ");
+        let notifTitle, notifBody;
+        if (root.updateAvailable) {
+            notifTitle = I18n.t("updater.notification.update_available_title", { "remote": root.remoteVersion });
+            notifBody = I18n.t("updater.notification.update_available_body", { "local": root.localVersion });
+            if (others !== "") notifBody += " " + I18n.t("updater.notification.also_dvg", { "list": others });
+        } else {
+            notifTitle = I18n.t("updater.notification.dvg_title", { "count": root.dvgUpdates.length });
+            notifBody = others;
+        }
         let actionArg = "default=" + actionText;
 
+        // «Actualizar» abre DVG Tools en Actualizaciones; sin DVG Tools, Acerca de.
         let script = 'command -v serpantinum-core >/dev/null 2>&1 || exit 0; ' +
             'ACTION=$(serpantinum-core notify --app "$1" --icon software-update-available --action "$2" -- "$3" "$4"); ' +
-            'if [ "$ACTION" = "default" ] && [ -n "$5" ] && [ -f "$5/scripts/settings.sh" ]; then ' +
-            'bash "$5/scripts/settings.sh" open about; ' +
-            'fi';
+            '[ "$ACTION" = "default" ] || exit 0; ' +
+            'if command -v dvg-software >/dev/null 2>&1; then exec dvg-software --actualizaciones; fi; ' +
+            'if [ -n "$5" ] && [ -f "$5/scripts/settings.sh" ]; then bash "$5/scripts/settings.sh" open about; fi';
         Quickshell.execDetached(["bash", "-c", script, "_", appName, actionArg, notifTitle, notifBody, serpDir]);
     }
 
@@ -251,12 +270,14 @@ Item {
                         if (data.remote) root.remoteVersion = data.remote;
                         root.remoteNotes = Array.isArray(data.notes) ? data.notes : [];
                         root.packageManaged = data.package_managed === true;
+                        root.dvgUpdates = Array.isArray(data.dvg_updates) ? data.dvg_updates : [];
                         if (data.last_notified !== undefined) root.lastNotifiedVersion = data.last_notified;
                         root.reevaluateUpdate();
 
-                        if (root.updateAvailable && root.remoteVersion !== root.lastNotifiedVersion) {
-                            root.lastNotifiedVersion = root.remoteVersion;
-                            root.saveNotifiedVersion(root.remoteVersion);
+                        let signature = root.pendingSignature();
+                        if (signature !== "" && signature !== root.lastNotifiedVersion) {
+                            root.lastNotifiedVersion = signature;
+                            root.saveNotifiedVersion(signature);
                             root.sendNotification();
                         }
                     } catch (e) {}

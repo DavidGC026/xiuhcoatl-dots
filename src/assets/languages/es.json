@@ -1252,8 +1252,11 @@
     "notification": {
       "app_name": "Actualización",
       "action_open_guide": "Abrir guía",
-      "update_available_title": "Actualización disponible: v{remote}",
-      "update_available_body": "Versión actual: v{local}. Haz clic para ver el registro de cambios y actualizar."
+      "update_available_title": "Xiuhcóatl v{remote} disponible",
+      "update_available_body": "Versión actual: v{local}.",
+      "action_update": "Actualizar",
+      "also_dvg": "También de DVG OS: {list}.",
+      "dvg_title": "Actualizaciones de DVG OS ({count})"
     }
   },
   "polkit": {
@@ -2089,7 +2092,10 @@
     "keep_clipboard_sub": "Si está desactivado — se restaura el portapapeles original"
   },
   "datetime": {
-    "full_date": "dddd, d 'de' MMMM"
+    "full_date": "dddd, d 'de' MMMM",
+    "just_now": "Ahora",
+    "minutes_ago": "Hace {mins} min",
+    "yesterday": "Ayer {time}"
   },
   "gov_alerts": {
     "status": {

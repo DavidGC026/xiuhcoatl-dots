@@ -1233,8 +1233,11 @@
     "notification": {
       "app_name": "Update",
       "action_open_guide": "Open guide",
-      "update_available_title": "Update available: v{remote}",
-      "update_available_body": "Current version: v{local}. Click to view changelog and update."
+      "update_available_title": "Xiuhcóatl v{remote} is available",
+      "update_available_body": "Current version: v{local}.",
+      "action_update": "Update",
+      "also_dvg": "Also from DVG OS: {list}.",
+      "dvg_title": "DVG OS updates ({count})"
     }
   },
   "polkit": {

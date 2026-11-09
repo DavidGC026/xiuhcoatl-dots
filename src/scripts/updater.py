@@ -10,6 +10,8 @@ import urllib.request
 # espejo), no desde GitHub: la versión publicada sale de novedades.json.
 PACKAGE = "xiuhcoatl"
 ORIGINS = ("https://dvgos.dvguzman.com", "https://espejo-dvgos.dvguzman.com")
+# Solo para pruebas: XIUHCOATL_NOVEDADES=http://servidor[,http://otro] cambia el origen.
+ORIGINS = tuple(o.rstrip("/") for o in os.environ.get("XIUHCOATL_NOVEDADES", "").split(",") if o) or ORIGINS
 DEFAULT_VER = "1.0.0"
 
 state_dir = os.path.expanduser("~/.local/state/serpantinum")
@@ -103,29 +105,50 @@ try:
 except Exception:
     pass
 
+def get_installed(names):
+    """Versiones instaladas con pacman de los paquetes indicados (los que no estén, se omiten)."""
+    if not names:
+        return {}
+    try:
+        res = subprocess.run(["pacman", "-Q", *names], capture_output=True, text=True, timeout=15)
+        return dict(line.split()[:2] for line in res.stdout.splitlines() if len(line.split()) >= 2)
+    except Exception:
+        return {}
+
 def get_published():
-    """(versión, notas, origen) publicados en el repositorio de DVG OS."""
+    """(versión, notas, origen, paquetes) publicados en el repositorio de DVG OS."""
     for origin in ORIGINS:
         try:
             req = urllib.request.Request(origin + "/novedades.json",
                                          headers={"User-Agent": "xiuhcoatl-updater"})
             with urllib.request.urlopen(req, timeout=5) as res:
                 data = json.loads(res.read(1048576).decode("utf-8"))
-            release = (data.get("packages") or {}).get(PACKAGE) or {}
+            packages = data.get("packages") or {}
+            if not isinstance(packages, dict) or not packages:
+                continue
+            release = packages.get(PACKAGE) or {}
             version = str(release.get("version") or "").strip()
-            if version:
-                notes = [str(n)[:500] for n in (release.get("notes") or [])[:10]]
-                return version, notes, origin
+            notes = [str(n)[:500] for n in (release.get("notes") or [])[:10]]
+            return version, notes, origin, packages
         except Exception:
             continue
-    return "", [], ""
+    return "", [], "", {}
 
 local_ver = get_local_ver()
-remote_ver, notes, origin = get_published()
+remote_ver, notes, origin, packages = get_published()
 if not remote_ver:
     remote_ver = local_ver
 
 has_update = parse_v(remote_ver) > parse_v(local_ver)
+
+# Los demás paquetes de DVG OS instalados con una versión publicada más nueva.
+dvg_updates = []
+others = sorted(n for n in packages if n != PACKAGE and isinstance(packages.get(n), dict))
+installed = get_installed(others)
+for name in others:
+    published = str(packages[name].get("version") or "").strip()
+    if name in installed and published and parse_v(published) > parse_v(installed[name]):
+        dvg_updates.append({"name": name, "local": installed[name], "remote": published})
 
 print(json.dumps({
     "local": local_ver,
@@ -134,5 +157,6 @@ print(json.dumps({
     "notes": notes if has_update else [],
     "origin": origin,
     "package_managed": package_managed,
+    "dvg_updates": dvg_updates,
     "last_notified": get_last_notified()
 }, ensure_ascii=False))
