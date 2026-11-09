@@ -16,7 +16,7 @@
     "width": 100,
     "height": 40,
     "opacity": 100,
-    "style": "fill", 
+    "style": "fill",
     "time": {
       "format": "HH:mm:ss"
     },
@@ -26,16 +26,16 @@
       "left": [
         "left",
         "workspaces",
-        "media" 
+        "media"
       ],
-     "center": [
+      "center": [
         [
           "timedate",
           "info",
           "weather"
         ]
-      ],      
-     "right": [
+      ],
+      "right": [
         "tray",
         [
           "kb",
@@ -45,13 +45,44 @@
           "bat"
         ]
       ]
-    }
+    },
+    "menuItems": [
+      "settings",
+      "launcher",
+      "nightlight",
+      "caffeine",
+      "dnd"
+    ]
   },
   "theme": {
     "fontFamily": "Adwaita Mono",
     "borderRadius": 10,
-    "activePreset": "Matugen",
-    "matugen": true
+    "activePreset": "DVG Carmín y Oro",
+    "matugen": false,
+    "colors": {
+      "base": "#171310",
+      "mantle": "#151210",
+      "crust": "#100D0A",
+      "text": "#F2DFC0",
+      "subtext0": "#C4B8A6",
+      "subtext1": "#E2D8C6",
+      "surface0": "#2A2220",
+      "surface1": "#3A2F2A",
+      "surface2": "#4A3E37",
+      "overlay0": "#6E6159",
+      "overlay1": "#8F8276",
+      "overlay2": "#A79A89",
+      "blue": "#E7C66A",
+      "sapphire": "#F2CC70",
+      "peach": "#C7353E",
+      "green": "#7FA86B",
+      "red": "#C7353E",
+      "mauve": "#E2A72E",
+      "pink": "#D9576A",
+      "yellow": "#F2CC70",
+      "maroon": "#A61B24",
+      "teal": "#8FB89A"
+    }
   },
   "idle": {
     "enabled": true,
@@ -99,7 +130,7 @@
     }
   },
   "notifications": {
-    "dnd": true,
+    "dnd": false,
     "position": "top right",
     "sound": true,
     "soundFile": ""
@@ -127,15 +158,27 @@
     "apps": [
       {
         "name": "Kitty",
-        "comment": "Fast, feature-rich, GPU based terminal",
+        "comment": "Terminal",
         "desktop_id": "kitty",
         "icon": "kitty"
       },
       {
-        "name": "Files",
-        "comment": "Access and organize files",
-        "desktop_id": "ski",
-        "icon": "ski"
+        "name": "Tanatl",
+        "comment": "Archivos",
+        "desktop_id": "com.dvguzman.tanatl",
+        "icon": "com.dvguzman.tanatl"
+      },
+      {
+        "name": "Temoa",
+        "comment": "Navegador",
+        "desktop_id": "com.dvg.browser",
+        "icon": "com.dvg.browser"
+      },
+      {
+        "name": "DVG Tools",
+        "comment": "Software y actualizaciones",
+        "desktop_id": "dvg-software",
+        "icon": "dvg-menu"
       }
     ],
     "overrideBoundsCorrection": false,

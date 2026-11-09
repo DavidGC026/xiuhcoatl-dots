@@ -1,0 +1,28 @@
+{
+  "name": "DVG Carmín y Oro",
+  "isColorFocused": true,
+  "colors": {
+    "base": "#171310",
+    "mantle": "#151210",
+    "crust": "#100D0A",
+    "text": "#F2DFC0",
+    "subtext0": "#C4B8A6",
+    "subtext1": "#E2D8C6",
+    "surface0": "#2A2220",
+    "surface1": "#3A2F2A",
+    "surface2": "#4A3E37",
+    "overlay0": "#6E6159",
+    "overlay1": "#8F8276",
+    "overlay2": "#A79A89",
+    "blue": "#E7C66A",
+    "sapphire": "#F2CC70",
+    "peach": "#C7353E",
+    "green": "#7FA86B",
+    "red": "#C7353E",
+    "mauve": "#E2A72E",
+    "pink": "#D9576A",
+    "yellow": "#F2CC70",
+    "maroon": "#A61B24",
+    "teal": "#8FB89A"
+  }
+}
