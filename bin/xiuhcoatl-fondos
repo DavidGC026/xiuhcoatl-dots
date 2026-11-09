@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Fondos de Xiuhcóatl.
+#   xiuhcoatl-fondos              copia los fondos de DVG a la carpeta de fondos
+#   xiuhcoatl-fondos --coleccion  además descarga la colección de serpantinum
+#                                 (github.com/ilyamiro/shell-wallpapers, ~600 MB)
+#   xiuhcoatl-fondos --carpeta    solo imprime la carpeta de fondos
+# La carpeta es la de Ajustes → Fondos (wallpaperDir), la de $WALLPAPER_DIR o
+# ~/Imágenes/Wallpapers, en ese orden, igual que el selector de fondos.
+set -u
+
+dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+avisar() { serpantinum-core notify --app "Fondos" "$@" >/dev/null 2>&1 || true; }
+
+carpeta="$(serpantinum config get wallpaperDir 2>/dev/null)"
+[[ -z $carpeta || $carpeta == null ]] && carpeta="${WALLPAPER_DIR:-}"
+if [[ -z $carpeta ]]; then
+    imagenes="$(xdg-user-dir PICTURES 2>/dev/null)"
+    [[ -z $imagenes || $imagenes == "$HOME" ]] && imagenes="$HOME/Pictures"
+    carpeta="$imagenes/Wallpapers"
+fi
+if [[ ${1:-} == --carpeta ]]; then
+    echo "$carpeta"
+    exit 0
+fi
+mkdir -p "$carpeta"
+
+# Fondos de DVG: vienen en el paquete (/usr/share/backgrounds/xiuhcoatl) o, en una
+# copia de desarrollo, en fondos/ del repo. Se copian en vez de enlazarse para que cualquier selector los vea.
+origen=/usr/share/backgrounds/xiuhcoatl
+[[ -d $origen ]] || origen="$dir/fondos"
+# Lo que ya está en la carpeta (también por enlace, como en DVG OS) no se repite.
+declare -A ya=()
+while IFS= read -r suma; do ya[$suma]=1; done < <(
+    find -L "$carpeta" -maxdepth 1 -type f -iname '*.png' -exec md5sum {} + 2>/dev/null | cut -d' ' -f1)
+copiados=0
+for f in "$origen"/*.png; do
+    [[ -f $f ]] || continue
+    suma=$(md5sum "$f" | cut -d' ' -f1)
+    [[ -n ${ya[$suma]:-} ]] && continue
+    cp "$f" "$carpeta/dvg-$(basename "$f")" && copiados=$((copiados + 1))
+done
+echo "Fondos de DVG en $carpeta ($copiados nuevos)"
+
+[[ ${1:-} == --coleccion ]] || exit 0
+
+# Colección de serpantinum: se baja del repo de su autor (no la redistribuimos).
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/xiuhcoatl-fondos"
+mkdir -p "$cache"
+avisar --icon folder-download -- "Descargando fondos" "La colección de serpantinum pesa cerca de 600 MB; te aviso al terminar."
+if ! curl -fsSL --retry 3 -o "$cache/coleccion.tar.gz" \
+        https://codeload.github.com/ilyamiro/shell-wallpapers/tar.gz/HEAD; then
+    rm -f "$cache/coleccion.tar.gz"
+    avisar --urgency critical -- "No se pudieron descargar los fondos" "Revisa la conexión y vuelve a correr: xiuhcoatl-fondos --coleccion"
+    exit 1
+fi
+rm -rf "$cache/coleccion" && mkdir -p "$cache/coleccion"
+tar -xzf "$cache/coleccion.tar.gz" -C "$cache/coleccion" --strip-components=1
+nuevos=0
+while IFS= read -r -d '' f; do
+    destino="$carpeta/$(basename "$f")"
+    if [[ ! -f $destino ]]; then
+        cp "$f" "$destino" && nuevos=$((nuevos + 1))
+    fi
+done < <(find "$cache/coleccion" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' \) -print0)
+rm -rf "$cache/coleccion" "$cache/coleccion.tar.gz"
+echo "Colección: $nuevos fondos nuevos en $carpeta"
+avisar --icon folder-pictures -- "Fondos listos" "$nuevos fondos nuevos en $carpeta. Ábrelos con Super+W."

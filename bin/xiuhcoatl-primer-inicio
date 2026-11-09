@@ -11,7 +11,8 @@ dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
 tema="DVG Carmín y Oro"
 # El fondo de DVG OS (dvg-branding) o, fuera de DVG OS, el de la carpeta de fondos.
 fondo=""
-for f in /usr/share/backgrounds/dvg-os/escritorio.png "$HOME/.local/share/dvg-os/fondos/dvg-os.png"; do
+for f in /usr/share/backgrounds/dvg-os/escritorio.png /usr/share/backgrounds/xiuhcoatl/escritorio.png \
+         "$dir/fondos/escritorio.png"; do
     [[ -f $f ]] && { fondo=$(realpath "$f"); break; }
 done
 
@@ -115,6 +116,17 @@ PY
 then
     listo+=", preset DVG OS"
 fi
+
+# Fondos de DVG en la carpeta de fondos, y la colección de serpantinum a un clic
+# (se baja del repo de su autor, ~600 MB, solo si el usuario la pide).
+xiuhcoatl-fondos >/dev/null 2>&1 && listo+=", fondos de DVG"
+(
+    accion=$(serpantinum-core notify --app "Xiuhcóatl" --icon folder-pictures \
+        --action "default=Descargar colección" -- "Más fondos" \
+        "Los fondos de DVG ya están en Super+W. ¿Descargar también la colección de serpantinum (~600 MB)?" 2>/dev/null)
+    [[ $accion == default ]] && xiuhcoatl-fondos --coleccion
+) >/dev/null 2>&1 &
+disown
 
 mkdir -p "$(dirname "$marca")"
 echo "$listo: $(date)" > "$marca"

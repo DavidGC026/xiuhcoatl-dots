@@ -18,6 +18,9 @@ propio de DVG OS:
 - **«No molestar»** en el menú de la barra y con Super+Shift+N, apagado de fábrica.
 - **Atajos en español** con un menú de atajos (Super+F1), grabación de pantalla,
   selector de color, scratchpad y reglas de ventanas.
+- **Fondos de DVG incluidos** (escritorio, castillo y taberna) y `xiuhcoatl-fondos
+  --coleccion` para bajar la colección de serpantinum desde el repo de su autor
+  (~600 MB); el primer inicio lo ofrece con una notificación.
 - **Integración con DVG OS**: Pantallas en red (Super+K y acciones rápidas),
   Tanatl y Temoa en el dock, fondos de DVG, teclado del instalador y primer
   inicio con el preset «DVG OS».
