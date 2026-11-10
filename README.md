@@ -82,6 +82,21 @@ y se guarda una copia del escritorio actual. En otro monitor se puede adaptar la
 distribución. Los atajos pueden ejecutar programas: importa solo los que reconozcas.
 También está disponible `xiuhcoatl-escritorio --help`.
 
+### Relojes Heráldico DVG (1.1.1)
+
+El reloj de escritorio ofrece una esfera de numerales romanos, agujas de oro y
+segundero carmín; se adapta a formato vertical, horizontal y compacto. Se elige
+en **Super+H → Pantalla → Widgets → Abrir editor**: selecciona el reloj y cambia
+su variante a **Heráldico DVG**.
+
+Para la barra, abre **Super+H → Barra → Módulos → Hora y fecha → Estilo** y elige
+**Heráldico DVG**. Su cartela combina Cinzel, fecha marfil y doble filete de oro;
+funciona en barras horizontales y verticales y conserva el formato de hora,
+los segundos y la visibilidad de fecha que hayas configurado.
+
+Ambos usan el reloj compartido del shell y respetan el modo ligero. Los estilos
+anteriores siguen disponibles; la actualización conserva la selección personal.
+
 ## Traer cambios de upstream
 
 ```sh

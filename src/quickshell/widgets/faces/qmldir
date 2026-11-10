@@ -1,6 +1,7 @@
 BatteryFace 1.0 battery/BatteryFace.qml
 ClockFaceAnalog 1.0 clock/ClockFaceAnalog.qml
 ClockFaceDigital 1.0 clock/ClockFaceDigital.qml
+ClockFaceHeraldic 1.0 clock/ClockFaceHeraldic.qml
 ClockFaceMaterial 1.0 clock/ClockFaceMaterial.qml
 ClockFaceMaterialAnalog 1.0 clock/ClockFaceMaterialAnalog.qml
 ClockFaceMaterialLumen 1.0 clock/ClockFaceMaterialLumen.qml

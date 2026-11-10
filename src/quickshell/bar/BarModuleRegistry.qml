@@ -100,6 +100,13 @@ QtObject {
             defaultVariant: "classic",
             face: "faces/timedate/TimeDateFace.qml",
             variants: {
+                "heraldic": {
+                    id: "heraldic",
+                    name: typeof I18n !== "undefined" ? I18n.t("guide.bar.modules.timedate.style.name.heraldic", "Heráldico DVG") : "Heráldico DVG",
+                    desc: typeof I18n !== "undefined" ? I18n.t("guide.bar.modules.timedate.style.heraldic", "Cinzel, carmín y doble filete de oro") : "Cinzel, carmín y doble filete de oro",
+                    icon: "󰥔",
+                    face: "faces/timedate/HeraldicFace.qml"
+                },
                 "classic": {
                     id: "classic",
                     name: typeof I18n !== "undefined" ? I18n.t("guide.bar.modules.timedate.style.name.classic", "Classic") : "Classic",

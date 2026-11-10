@@ -679,6 +679,7 @@ QtObject {
             defaultVariant: "digital",
             variants: {
                 "digital":        { file: "faces/clock/ClockFaceDigital.qml",        icon: "1", label: I18n.t("widgets.variants.digital") },
+                "heraldic":       { file: "faces/clock/ClockFaceHeraldic.qml",       icon: "󰥔", label: I18n.t("widgets.variants.heraldic", "Heráldico DVG") },
                 "analog":         { file: "faces/clock/ClockFaceAnalog.qml",         icon: "2", label: I18n.t("widgets.variants.analog") },
                 "minimal":        { file: "faces/clock/ClockFaceMinimal.qml",        icon: "3", label: I18n.t("widgets.variants.minimal") },
                 "material":       { file: "faces/clock/ClockFaceMaterial.qml",       icon: "4", label: I18n.t("widgets.variants.material") },

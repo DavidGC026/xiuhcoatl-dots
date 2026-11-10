@@ -382,8 +382,10 @@
             "name": {
               "classic": "Clásico",
               "material": "Material",
-              "badge": "Matriz de puntos"
-            }
+              "badge": "Matriz de puntos",
+              "heraldic": "Heráldico DVG"
+            },
+            "heraldic": "Cinzel, carmín y doble filete de oro"
           }
         },
         "info": "Grabación/temporizador",
@@ -457,6 +459,7 @@
         "desc": "Hace que los módulos de la barra tengan un contorno rectangular y reduzcan su tamaño para adaptarse a una apariencia modular"
       },
       "timedate": {
+        "open_calendar": "Abrir calendario",
         "show_date": {
           "title": "Mostrar fecha",
           "desc": "Mostrar el texto de la fecha junto al reloj"
@@ -1830,6 +1833,7 @@
       "materialAnalog": "Material analógico",
       "lockscreen": "Pantalla de bloqueo",
       "stretched": "Estirado",
+      "heraldic": "Heráldico DVG",
       "lumen": "Lumen",
       "lyrics": "Letra",
       "simpleLyrics": "Letra simple"

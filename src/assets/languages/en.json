@@ -381,8 +381,10 @@
             "name": {
               "classic": "Classic",
               "material": "Material",
-              "badge": "Dot Matrix"
-            }
+              "badge": "Dot Matrix",
+              "heraldic": "DVG Heraldic"
+            },
+            "heraldic": "Cinzel, carmine and an engraved gold frame"
           }
         },
         "info": "Recording/timer",
@@ -467,6 +469,7 @@
         "desc": "Makes bar's modules have an outlining rectangle and shrink their size to fit the modular look"
       },
       "timedate": {
+        "open_calendar": "Open calendar",
         "show_date": {
           "title": "Show date",
           "desc": "Display the date text alongside the clock"
@@ -1816,6 +1819,7 @@
       "materialAnalog": "Material Analog",
       "lockscreen": "Lockscreen",
       "stretched": "Stretched",
+      "heraldic": "DVG Heraldic",
       "lumen": "Lumen",
       "lyrics": "Lyrics",
       "simpleLyrics": "Simple Lyrics",
