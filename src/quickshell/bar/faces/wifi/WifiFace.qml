@@ -304,7 +304,7 @@ BarFaceBase {
 
     transform: Translate {
         x: (root.isVertical || root.showLayout) ? 0 : s(60)
-        Behavior on x { NumberAnimation { duration: 800; easing.type: Easing.OutQuint } }
+        Behavior on x { NumberAnimation { duration: DesktopModes.animationDuration(800); easing.type: Easing.OutQuint } }
     }
 
     MouseArea {
@@ -325,7 +325,7 @@ BarFaceBase {
         anchors.centerIn: parent
         spacing: root.isVertical ? s(root.isCompact ? 2 : 3) : s(root.isCompact ? 5 : 6)
         opacity: root.showLayout ? 1.0 : 0.0
-        Behavior on opacity { NumberAnimation { duration: 400; easing.type: Easing.OutCubic } }
+        Behavior on opacity { NumberAnimation { duration: DesktopModes.animationDuration(400); easing.type: Easing.OutCubic } }
 
         Item {
             visible: root.showIcon
@@ -340,8 +340,8 @@ BarFaceBase {
                 font.pixelSize: s(root.isCompact ? 14 : 15)
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: textMouseArea.containsMouse ? Qt.lighter(ThemeBackend.blue, 1.15) : (root.isActive ? ThemeBackend.blue : ThemeBackend.subtext0)
-                Behavior on color { ColorAnimation { duration: 150 } }
+                color: textMouseArea.containsMouse ? Qt.lighter(DvgEstilo.oro, 1.15) : (root.isActive ? DvgEstilo.oro : ThemeBackend.subtext0)
+                Behavior on color { ColorAnimation { duration: DesktopModes.animationDuration(150)} }
             }
         }
 
@@ -352,7 +352,7 @@ BarFaceBase {
             font.pixelSize: root.isVertical ? s(root.isCompact ? 9 : 10) : s(root.isCompact ? 11 : 12)
             font.bold: true
             color: textMouseArea.containsMouse ? Qt.lighter(ThemeBackend.text, 1.15) : ThemeBackend.text
-            Behavior on color { ColorAnimation { duration: 150 } }
+            Behavior on color { ColorAnimation { duration: DesktopModes.animationDuration(150)} }
         }
     }
 
@@ -379,16 +379,17 @@ BarFaceBase {
             iconFontSize: s(root.isCompact ? 14 : 15)
             buttonText: root.showName ? root.effectiveName : ""
             textFontSize: s(root.isCompact ? 11 : 12)
-            accentColor: isActive ? (root.isCompact ? Qt.lighter(ThemeBackend.blue, 1.08) : ThemeBackend.blue) : (root.isCompact ? Qt.lighter(ThemeBackend.surface0, 1.18) : ThemeBackend.surface0)
-            textColor: isActive ? ThemeBackend.base : (root.isCompact ? Qt.lighter(ThemeBackend.text, 1.05) : ThemeBackend.text)
+            accentColor: root.isActive ? DvgEstilo.carmin : ThemeBackend.surface0
+            outlineColor: root.isActive ? DvgEstilo.oro : "transparent"
+            textColor: ThemeBackend.text
 
             property real targetWidth: (root.showIcon || root.showName) ? implicitWidth : 0
             width: targetWidth
-            Behavior on width { NumberAnimation { duration: 480; easing.type: Easing.OutQuint } }
+            Behavior on width { NumberAnimation { duration: DesktopModes.animationDuration(480); easing.type: Easing.OutQuint } }
 
             opacity: initAnimTrigger ? 1.0 : 0.0
-            transform: Translate { y: wifiPill.initAnimTrigger ? 0 : s(15); Behavior on y { NumberAnimation { duration: 620; easing.type: Easing.OutQuint } } }
-            Behavior on opacity { NumberAnimation { duration: 400; easing.type: Easing.OutCubic } }
+            transform: Translate { y: wifiPill.initAnimTrigger ? 0 : s(15); Behavior on y { NumberAnimation { duration: DesktopModes.animationDuration(620); easing.type: Easing.OutQuint } } }
+            Behavior on opacity { NumberAnimation { duration: DesktopModes.animationDuration(400); easing.type: Easing.OutCubic } }
 
             onClicked: if (!root.isPreview) Quickshell.execDetached(["bash", "-c", Caching.serpantinumDir + "/scripts/qs_manager.sh toggle network wifi"])
         }
@@ -406,8 +407,9 @@ BarFaceBase {
             iconFontSize: s(root.isCompact ? 14 : 15)
             buttonText: (!root.showIcon && root.showName) ? (root.effectiveName.length > 3 ? root.effectiveName.substring(0, 3) : root.effectiveName) : ""
             textFontSize: s(root.isCompact ? 9 : 10)
-            accentColor: root.isActive ? (root.isCompact ? Qt.lighter(ThemeBackend.blue, 1.08) : ThemeBackend.blue) : (root.isCompact ? Qt.lighter(ThemeBackend.surface0, 1.18) : ThemeBackend.surface0)
-            textColor: root.isActive ? ThemeBackend.base : (root.isCompact ? Qt.lighter(ThemeBackend.text, 1.05) : ThemeBackend.text)
+            accentColor: root.isActive ? DvgEstilo.carmin : ThemeBackend.surface0
+            outlineColor: root.isActive ? DvgEstilo.oro : "transparent"
+            textColor: ThemeBackend.text
             onClicked: if (!root.isPreview) Quickshell.execDetached(["bash", "-c", Caching.serpantinumDir + "/scripts/qs_manager.sh toggle network wifi"])
         }
     }

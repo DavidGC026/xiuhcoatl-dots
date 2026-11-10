@@ -5,6 +5,7 @@ import "widgets"
 import "notifications/weather"
 
 ShellRoot {
+    readonly property bool desktopLightweight: DesktopModes.lightweightActive
     readonly property bool performanceMode: !!(Config.getSetting("general", {}).performance)
     readonly property bool quickactionsEnabled: Config.getSetting("general", {}).quickactions !== false
     readonly property bool dockEnabled: Config.getSetting("dock", {}).enabled !== false

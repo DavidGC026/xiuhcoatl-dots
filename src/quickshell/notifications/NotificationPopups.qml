@@ -25,7 +25,7 @@ PanelWindow {
         return false;
     }
 
-    visible: (!popupWindow.dndEnabled || popupWindow.hasCriticalPopup) && !NotificationManager.sysPanelOpen && NotificationManager.activePopupsModel.count > 0
+    visible: !DesktopModes.notificationsSuppressed && (!popupWindow.dndEnabled || popupWindow.hasCriticalPopup) && !NotificationManager.sysPanelOpen && NotificationManager.activePopupsModel.count > 0
 
     function storeNotif(uid, notif) {
         NotificationManager.liveNotifs[uid] = notif;

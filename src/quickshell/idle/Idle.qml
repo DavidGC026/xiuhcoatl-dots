@@ -94,10 +94,21 @@ Item {
 
     property bool idleEnabled: idleSettings && idleSettings.enabled !== undefined ? idleSettings.enabled : false
     property bool manualInhibit: idleSettings && idleSettings.manualInhibit !== undefined ? idleSettings.manualInhibit : false
-    property bool isIdleSystemActive: idleEnabled && !manualInhibit
+    property bool isIdleSystemActive: idleEnabled && !manualInhibit && !DesktopModes.idleInhibited
     property bool lockOnSleep: idleSettings && idleSettings.lockOnSleep !== undefined ? idleSettings.lockOnSleep : true
     property bool isDimmed: false
     property bool isLocked: false
+
+    Connections {
+        target: DesktopModes
+        function onIdleInhibitedChanged() {
+            if (!DesktopModes.idleInhibited) return;
+            frameSettleTimer.stop();
+            frameSettleTimer.pendingCallback = null;
+            suspendTimer.stop();
+            idleRoot.teardownVisualStates();
+        }
+    }
 
     property bool isMediaPlaying: {
         try {
@@ -201,6 +212,7 @@ Item {
         repeat: false
         property var pendingCallback: null
         onTriggered: {
+            if (DesktopModes.idleInhibited) { pendingCallback = null; return; }
             if (pendingCallback) {
                 pendingCallback();
                 pendingCallback = null;
@@ -213,6 +225,7 @@ Item {
         interval: 200
         repeat: false
         onTriggered: {
+            if (DesktopModes.idleInhibited) return;
             Quickshell.execDetached(["systemctl", "suspend"]);
         }
     }

@@ -383,7 +383,7 @@ Variants {
                         }
                         transform: Translate {
                             x: verticalWrapper.hideOffsetX
-                            Behavior on x { NumberAnimation { duration: 250; easing.type: Easing.OutQuint } }
+                            Behavior on x { NumberAnimation { duration: DesktopModes.animationDuration(250); easing.type: Easing.OutQuint } }
                         }
                     }
                 }

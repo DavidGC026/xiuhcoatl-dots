@@ -137,3 +137,9 @@ hl.bind(mainMod .. " + SHIFT + Z", function()
   end
   hl.dispatch(hl.dsp.window.center({ window = win }))
 end, d("Espacios: Meter / sacar ventana del scratchpad"))
+
+-- Herramientas de escritorio de Xiuhcóatl.
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("xiuhcoatl msg toggle overview"), d("Shell: Vista general de ventanas y escritorios"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("xiuhcoatl msg toggle equipos"), d("Shell: Mis equipos y sincronización"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("xiuhcoatl msg toggle modos"), d("Shell: Modos presentación y ligero"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("xiuhcoatl msg toggle respaldo"), d("Shell: Guardar y recuperar el escritorio"))

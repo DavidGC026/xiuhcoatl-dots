@@ -2,6 +2,7 @@ pragma Singleton
 import QtQuick
 import Quickshell
 import Quickshell.Services.Notifications
+import "../"
 
 Item {
     id: root
@@ -20,6 +21,13 @@ Item {
     property alias globalNotificationHistory: historyModel
     property alias activePopupsModel: popupsModel
     property alias groupedHistory: groupedHistoryModel
+
+    Connections {
+        target: DesktopModes
+        function onNotificationsSuppressedChanged() {
+            if (DesktopModes.notificationsSuppressed) popupsModel.clear();
+        }
+    }
 
     property var _resolveCache: ({})
     property var manualAliasTable: ({
@@ -390,7 +398,7 @@ Item {
 
             historyModel.insert(0, notifData);
 
-            if (!root.isStartup && !root.sysPanelOpen) {
+            if (!root.isStartup && !root.sysPanelOpen && !DesktopModes.notificationsSuppressed) {
                 let newPopup = {
                     "uid":           currentUid,
                     "latestUid":     currentUid,

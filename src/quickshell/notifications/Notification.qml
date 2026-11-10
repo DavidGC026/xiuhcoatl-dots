@@ -60,6 +60,7 @@ Rectangle {
     property bool _soundPlayed: false
 
     function playPopupSound() {
+        if (DesktopModes.notificationsSuppressed) return;
         if (_soundPlayed) return;
         if (!typeRoot.isPopup) return;
         if (Math.abs(Date.now() - typeRoot.timestamp) > 3000) return;

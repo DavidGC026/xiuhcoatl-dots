@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# export [archivo] | preview archivo | restore archivo --digest SHA256 [--trust-shortcuts] [--map origen=destino]
+set -eu
+dir="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+exec python3 "$dir/src/scripts/desktop/backup.py" "$@"

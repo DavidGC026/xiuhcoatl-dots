@@ -18,6 +18,10 @@ function getWidgetLauncherEntries(i18n) {
     }
 
     return [
+        { id: "overview", name: "Vista general", description: "Buscar ventanas y moverlas entre escritorios", icon: "view-grid", fontIcon: "󰕰" },
+        { id: "equipos", name: "Mis equipos", description: "Computadoras, carpetas y sincronización", icon: "network-workgroup", fontIcon: "󰒋" },
+        { id: "respaldo", name: "Guardar y recuperar el escritorio", description: "Exportar o restaurar tu configuración", icon: "document-save", fontIcon: "󰆓" },
+        { id: "modos", name: "Modos de uso", description: "Presentación y modo ligero para batería", icon: "preferences-system-power-management", fontIcon: "󰌪" },
         {
             id: "wallpaper",
             name: tr("widgets.wallpaper.name", "Wallpaper Picker"),
@@ -68,6 +72,10 @@ function getLayout(name, mx, my, mw, mh, userScale, barPosition) {
     if (!barPosition) barPosition = "top";
 
     let base = {
+        "overview": { w: 1160, h: 740, comp: "overview/Overview.qml", pos: { "top": { anchor: "center" } } },
+        "equipos": { w: 900, h: 680, comp: "equipos/EquiposPanel.qml", pos: { "top": { anchor: "center" } } },
+        "respaldo": { w: 900, h: 680, comp: "respaldo/RespaldoPanel.qml", pos: { "top": { anchor: "center" } } },
+        "modos": { w: 700, h: 580, comp: "modos/ModosPanel.qml", pos: { "top": { anchor: "center" } } },
         "network": { 
             w: 720, h: 600, comp: "network/NetworkPopup.qml", 
             pos: { 
@@ -157,6 +165,12 @@ function getLayout(name, mx, my, mw, mh, userScale, barPosition) {
 
     let finalW = t.w === "fill" ? mw : s(t.w, scale);
     let finalH = t.h === "fill" ? mh : s(t.h, scale);
+
+    // Keep the new desktop tools reachable on laptop displays and at large UI scales.
+    if (["overview", "equipos", "respaldo", "modos"].indexOf(name) !== -1) {
+        finalW = Math.min(finalW, Math.max(240, mw - s(24, scale)));
+        finalH = Math.min(finalH, Math.max(200, mh - s(80, scale)));
+    }
 
     let rx = 0;
     let ry = 0;

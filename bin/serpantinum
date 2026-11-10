@@ -749,6 +749,19 @@ if [[ "$1" == "ipc" ]]; then
 fi
 
 case "$1" in
+    presentacion|ligero)
+        mode="$1"
+        ensure_daemon
+        method=togglePresentation
+        [[ "$mode" == "ligero" ]] && method=toggleLightweight
+        exec quickshell -p "$MAIN_QML" ipc call desktopModes "$method"
+        ;;
+    vista|overview|equipos|respaldo|modos)
+        panel="$1"
+        [[ "$panel" == "vista" ]] && panel=overview
+        ensure_daemon
+        exec "$SERPANTINUM_DIR/scripts/qs_manager.sh" toggle "$panel"
+        ;;
     config)
         shift
         cli_config "$@"

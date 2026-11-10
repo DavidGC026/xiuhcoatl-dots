@@ -366,6 +366,11 @@ PanelWindow {
         let item = comp.createObject(preloaderContainer);
         if (item) {
             item.visible = false;
+            if (item.closeRequested && typeof item.closeRequested.connect === "function") {
+                item.closeRequested.connect(function() {
+                    if (masterWindow.currentActive === name) masterWindow.switchWidget("hidden", "");
+                });
+            }
             widgetCache[name] = item;
         }
         return item;
@@ -465,7 +470,7 @@ PanelWindow {
         if (!result) return null;
 
         let scale = masterWindow.globalUiScale || 1.0;
-        let isFixed = (name === "guide" || name === "wallpaper" || name === "notifications" || name === "system" || name === "hidden");
+        let isFixed = (["guide", "wallpaper", "notifications", "system", "hidden", "overview", "equipos", "respaldo", "modos"].indexOf(name) !== -1);
 
         if (effHidden && !isFixed) {
             let offsetAdjustment = Math.round(46 * scale);
@@ -596,7 +601,7 @@ PanelWindow {
             scale: masterWindow.isVisible ? 1.0 : 0.96
             Behavior on scale {
                 NumberAnimation {
-                    duration: masterWindow.isVisible ? 280 : 160
+                    duration: DesktopModes.animationDuration(masterWindow.isVisible ? 280 : 160)
                     easing.type: masterWindow.isVisible ? Easing.OutCubic : Easing.InCubic
                 }
             }
@@ -605,7 +610,7 @@ PanelWindow {
             visible: masterWindow.isVisible || opacity > 0
             Behavior on opacity {
                 NumberAnimation {
-                    duration: masterWindow.isVisible ? 200 : 140
+                    duration: DesktopModes.animationDuration(masterWindow.isVisible ? 200 : 140)
                     easing.type: Easing.OutCubic
                 }
             }
@@ -637,19 +642,19 @@ PanelWindow {
 
         Behavior on x {
             enabled: !masterWindow.disableMorph
-            NumberAnimation { duration: masterWindow.morphDuration; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: DesktopModes.animationDuration(masterWindow.morphDuration); easing.type: Easing.OutCubic }
         }
         Behavior on y {
             enabled: !masterWindow.disableMorph
-            NumberAnimation { duration: masterWindow.morphDuration; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: DesktopModes.animationDuration(masterWindow.morphDuration); easing.type: Easing.OutCubic }
         }
         Behavior on width {
             enabled: !masterWindow.disableMorph
-            NumberAnimation { duration: masterWindow.morphDuration; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: DesktopModes.animationDuration(masterWindow.morphDuration); easing.type: Easing.OutCubic }
         }
         Behavior on height {
             enabled: !masterWindow.disableMorph
-            NumberAnimation { duration: masterWindow.morphDuration; easing.type: Easing.OutCubic }
+            NumberAnimation { duration: DesktopModes.animationDuration(masterWindow.morphDuration); easing.type: Easing.OutCubic }
         }
     }
 

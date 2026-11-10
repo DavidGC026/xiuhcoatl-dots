@@ -126,7 +126,7 @@ Item {
     property real animCapacity: 0
     Behavior on animCapacity {
         enabled: root.visible
-        NumberAnimation { duration: 1200; easing.type: Easing.OutQuint }
+        NumberAnimation { duration: DesktopModes.animationDuration(1200); easing.type: Easing.OutQuint }
     }
 
     onBatCapacityChanged: {
@@ -266,28 +266,28 @@ Item {
 
     ParallelAnimation {
         id: startupSequence
-        NumberAnimation { target: root; property: "introContent"; to: 1.0; duration: 250; easing.type: Easing.OutCubic }
-        NumberAnimation { target: root; property: "introTop"; from: 0; to: 1.0; duration: 250; easing.type: Easing.OutCubic }
+        NumberAnimation { target: root; property: "introContent"; to: 1.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.OutCubic }
+        NumberAnimation { target: root; property: "introTop"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.OutCubic }
 
         SequentialAnimation {
-            PauseAnimation { duration: 30 }
-            NumberAnimation { target: root; property: "introSliders"; from: 0; to: 1.0; duration: 250; easing.type: Easing.OutCubic }
+            PauseAnimation { duration: DesktopModes.animationDuration(30)}
+            NumberAnimation { target: root; property: "introSliders"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.OutCubic }
         }
         SequentialAnimation {
-            PauseAnimation { duration: 55 }
-            NumberAnimation { target: root; property: "introQuickActions"; from: 0; to: 1.0; duration: 250; easing.type: Easing.OutCubic }
+            PauseAnimation { duration: DesktopModes.animationDuration(55)}
+            NumberAnimation { target: root; property: "introQuickActions"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.OutCubic }
         }
         SequentialAnimation {
-            PauseAnimation { duration: 80 }
-            NumberAnimation { target: root; property: "introNotifs"; from: 0; to: 1.0; duration: 330; easing.type: Easing.OutCubic }
+            PauseAnimation { duration: DesktopModes.animationDuration(80)}
+            NumberAnimation { target: root; property: "introNotifs"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(330); easing.type: Easing.OutCubic }
         }
         SequentialAnimation {
-            PauseAnimation { duration: 105 }
-            NumberAnimation { target: root; property: "introActions"; from: 0; to: 1.0; duration: 330; easing.type: Easing.OutCubic }
+            PauseAnimation { duration: DesktopModes.animationDuration(105)}
+            NumberAnimation { target: root; property: "introActions"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(330); easing.type: Easing.OutCubic }
         }
         SequentialAnimation {
-            PauseAnimation { duration: 130 }
-            NumberAnimation { target: root; property: "introCore"; from: 0; to: 1.0; duration: 340; easing.type: Easing.OutCubic }
+            PauseAnimation { duration: DesktopModes.animationDuration(130)}
+            NumberAnimation { target: root; property: "introCore"; from: 0; to: 1.0; duration: DesktopModes.animationDuration(340); easing.type: Easing.OutCubic }
         }
     }
 
@@ -304,13 +304,13 @@ Item {
     SequentialAnimation {
         id: closeSequence
         ParallelAnimation {
-            NumberAnimation { target: root; property: "introContent"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introTop"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introSliders"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introQuickActions"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introNotifs"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introActions"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
-            NumberAnimation { target: root; property: "introCore"; to: 0.0; duration: 250; easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introContent"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introTop"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introSliders"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introQuickActions"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introNotifs"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introActions"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
+            NumberAnimation { target: root; property: "introCore"; to: 0.0; duration: DesktopModes.animationDuration(250); easing.type: Easing.InCubic }
         }
         ScriptAction {
             script: {
@@ -353,7 +353,7 @@ Item {
                 text: root.isCharging ? "󰂄" : (root.batCapacity > 20 ? "󰁹" : "󰂃")
                 Behavior on color {
                     enabled: root.visible
-                    ColorAnimation { duration: 400 }
+                    ColorAnimation { duration: DesktopModes.animationDuration(400)}
                 }
                 Layout.alignment: Qt.AlignVCenter
             }
@@ -371,7 +371,7 @@ Item {
                     text: Math.round(root.animCapacity) + "%"
                     Behavior on color {
                         enabled: root.visible
-                        ColorAnimation { duration: 400 }
+                        ColorAnimation { duration: DesktopModes.animationDuration(400)}
                     }
                 }
 
@@ -393,7 +393,7 @@ Item {
                     text: timeString
                     Behavior on color {
                         enabled: root.visible
-                        ColorAnimation { duration: 250 }
+                        ColorAnimation { duration: DesktopModes.animationDuration(250)}
                     }
                 }
             }
@@ -431,6 +431,31 @@ Item {
                 anchors.fill: parent
                 anchors.margins: root.s(8)
                 spacing: root.s(5)
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: root.s(4)
+                    Repeater {
+                        model: [
+                            { label: "Ventanas", panel: "overview" },
+                            { label: "Equipos", panel: "equipos" },
+                            { label: "Respaldo", panel: "respaldo" },
+                            { label: "Modos", panel: "modos" }
+                        ]
+                        ClickButton {
+                            required property var modelData
+                            Layout.fillWidth: true
+                            implicitHeight: root.s(32)
+                            horizontalPadding: root.s(5)
+                            buttonText: modelData.label
+                            textFontSize: root.s(11)
+                            accentColor: modelData.panel === "modos" && DesktopModes.presentationActive ? DvgEstilo.carmin : ThemeBackend.surface0
+                            outlineColor: DvgEstilo.oro
+                            textColor: ThemeBackend.text
+                            onClicked: Quickshell.execDetached(["xiuhcoatl", "msg", "open", modelData.panel])
+                        }
+                    }
+                }
 
                 Rectangle {
                     id: userBox
@@ -590,9 +615,9 @@ Item {
 
                         property real wavePhase: 0.0
                         NumberAnimation on wavePhase {
-                            running: root.visible && !root.isDesktop && batteryBox.fillLevel > 0.0 && batteryBox.fillLevel < 1.0
+                            running: !DesktopModes.lightweightActive && root.visible && !root.isDesktop && batteryBox.fillLevel > 0.0 && batteryBox.fillLevel < 1.0
                             loops: Animation.Infinite
-                            from: 0; to: Math.PI * 2; duration: root.isCharging ? 1200 : 2200
+                            from: 0; to: Math.PI * 2; duration: DesktopModes.animationDuration(root.isCharging ? 1200 : 2200)
                         }
 
                         radius: batteryBox.radius

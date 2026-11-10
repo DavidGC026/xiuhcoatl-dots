@@ -42,7 +42,17 @@ ShellRoot {
                 property bool isVideoA: false
                 property string pathB: ""
                 property bool isVideoB: false
-                property bool playbackPaused: false
+                property bool manualPlaybackPaused: false
+                readonly property bool playbackPaused: manualPlaybackPaused || DesktopModes.wallpaperPaused
+                onPlaybackPausedChanged: {
+                    if (playbackPaused) {
+                        if (videoLoaderA.item) videoLoaderA.item.pause();
+                        if (videoLoaderB.item) videoLoaderB.item.pause();
+                    } else {
+                        if (activeLayer === 0 && isVideoA) playA();
+                        if (activeLayer === 1 && isVideoB) playB();
+                    }
+                }
                 property bool snapReadyA: false
                 property bool snapReadyB: false
                 property int snapRevA: 0
@@ -99,11 +109,11 @@ ShellRoot {
                     function onPlaybackChanged(screenName, state) {
                         if (screenName === "all" || screenName === barWindow.screen.name) {
                             if (state === "pause") {
-                                barWindow.playbackPaused = true;
-                                barWindow.stopA();
-                                barWindow.stopB();
+                                barWindow.manualPlaybackPaused = true;
+                                if (videoLoaderA.item) videoLoaderA.item.pause();
+                                if (videoLoaderB.item) videoLoaderB.item.pause();
                             } else if (state === "play") {
-                                barWindow.playbackPaused = false;
+                                barWindow.manualPlaybackPaused = false;
                                 if (barWindow.activeLayer === 0 && barWindow.isVideoA) barWindow.playA();
                                 if (barWindow.activeLayer === 1 && barWindow.isVideoB) barWindow.playB();
                             }
@@ -244,6 +254,7 @@ ShellRoot {
                 }
 
                 function playA() {
+                    if (barWindow.playbackPaused) return;
                     if (videoLoaderA.item && typeof videoLoaderA.item.play === "function") {
                         videoLoaderA.item.play();
                     }
@@ -256,6 +267,7 @@ ShellRoot {
                 }
 
                 function playB() {
+                    if (barWindow.playbackPaused) return;
                     if (videoLoaderB.item && typeof videoLoaderB.item.play === "function") {
                         videoLoaderB.item.play();
                     }
@@ -505,7 +517,7 @@ ShellRoot {
                     property: "transitionProgress"
                     from: 0.0
                     to: 1.0
-                    duration: barWindow.activeDuration
+                    duration: DesktopModes.animationDuration(barWindow.activeDuration)
                     easing.type: Easing.InOutCubic
                     onFinished: barWindow.completeTransition()
                 }
@@ -526,6 +538,7 @@ ShellRoot {
                         anchors.fill: parent
                         function play() { playerA.play(); }
                         function stop() { playerA.stop(); }
+                        function pause() { playerA.pause(); }
 
                         MediaPlayer {
                             id: playerA
@@ -553,6 +566,7 @@ ShellRoot {
                         anchors.fill: parent
                         function play() { playerB.play(); }
                         function stop() { playerB.stop(); }
+                        function pause() { playerB.pause(); }
 
                         MediaPlayer {
                             id: playerB
@@ -637,10 +651,10 @@ ShellRoot {
                         Image {
                             id: imgA
                             anchors.fill: parent
-                            source: !barWindow.isVideoA && barWindow.pathA ? "file://" + barWindow.pathA : ""
+                            source: !barWindow.isVideoA && barWindow.pathA ? "file://" + barWindow.pathA : (DesktopModes.wallpaperPaused && barWindow.snapReadyA ? "file://" + barWindow.layerSnapshotPathA + "?rev=" + barWindow.snapRevA : "")
                             fillMode: Image.PreserveAspectCrop
                             asynchronous: true
-                            visible: !barWindow.isVideoA && barWindow.pathA !== ""
+                            visible: (!barWindow.isVideoA && barWindow.pathA !== "") || (DesktopModes.wallpaperPaused && barWindow.snapReadyA)
                             cache: true
                             sourceSize.width: parent.width > 0 ? Math.ceil(parent.width * (Screen.devicePixelRatio || 1)) : 0
                             sourceSize.height: parent.height > 0 ? Math.ceil(parent.height * (Screen.devicePixelRatio || 1)) : 0
@@ -652,7 +666,7 @@ ShellRoot {
                             active: barWindow.isVideoA && barWindow.pathA !== ""
                             asynchronous: false
                             sourceComponent: videoLayerCompA
-                            visible: barWindow.isVideoA
+                            visible: barWindow.isVideoA && !DesktopModes.wallpaperPaused
                             onLoaded: {
                                 if (item && barWindow.activeLayer === 0 && barWindow.isVideoA && !barWindow.playbackPaused) {
                                     item.play();
@@ -705,10 +719,10 @@ ShellRoot {
                         Image {
                             id: imgB
                             anchors.fill: parent
-                            source: !barWindow.isVideoB && barWindow.pathB ? "file://" + barWindow.pathB : ""
+                            source: !barWindow.isVideoB && barWindow.pathB ? "file://" + barWindow.pathB : (DesktopModes.wallpaperPaused && barWindow.snapReadyB ? "file://" + barWindow.layerSnapshotPathB + "?rev=" + barWindow.snapRevB : "")
                             fillMode: Image.PreserveAspectCrop
                             asynchronous: true
-                            visible: !barWindow.isVideoB && barWindow.pathB !== ""
+                            visible: (!barWindow.isVideoB && barWindow.pathB !== "") || (DesktopModes.wallpaperPaused && barWindow.snapReadyB)
                             cache: true
                             sourceSize.width: parent.width > 0 ? Math.ceil(parent.width * (Screen.devicePixelRatio || 1)) : 0
                             sourceSize.height: parent.height > 0 ? Math.ceil(parent.height * (Screen.devicePixelRatio || 1)) : 0
@@ -720,7 +734,7 @@ ShellRoot {
                             active: barWindow.isVideoB && barWindow.pathB !== ""
                             asynchronous: false
                             sourceComponent: videoLayerCompB
-                            visible: barWindow.isVideoB
+                            visible: barWindow.isVideoB && !DesktopModes.wallpaperPaused
                             onLoaded: {
                                 if (item && barWindow.activeLayer === 1 && barWindow.isVideoB && !barWindow.playbackPaused) {
                                     item.play();

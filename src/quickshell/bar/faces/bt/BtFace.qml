@@ -210,7 +210,7 @@ BarFaceBase {
 
     transform: Translate {
         x: (root.isVertical || root.showLayout) ? 0 : s(60)
-        Behavior on x { NumberAnimation { duration: 800; easing.type: Easing.OutQuint } }
+        Behavior on x { NumberAnimation { duration: DesktopModes.animationDuration(800); easing.type: Easing.OutQuint } }
     }
 
     MouseArea {
@@ -231,7 +231,7 @@ BarFaceBase {
         anchors.centerIn: parent
         spacing: root.isVertical ? s(root.isCompact ? 2 : 3) : s(root.isCompact ? 5 : 6)
         opacity: root.showLayout ? 1.0 : 0.0
-        Behavior on opacity { NumberAnimation { duration: 400; easing.type: Easing.OutCubic } }
+        Behavior on opacity { NumberAnimation { duration: DesktopModes.animationDuration(400); easing.type: Easing.OutCubic } }
 
         Item {
             visible: root.showIcon
@@ -247,7 +247,7 @@ BarFaceBase {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 color: textMouseArea.containsMouse ? Qt.lighter(ThemeBackend.mauve, 1.15) : (root.isBtOn ? ThemeBackend.mauve : ThemeBackend.subtext0)
-                Behavior on color { ColorAnimation { duration: 150 } }
+                Behavior on color { ColorAnimation { duration: DesktopModes.animationDuration(150)} }
             }
         }
 
@@ -258,7 +258,7 @@ BarFaceBase {
             font.pixelSize: root.isVertical ? s(root.isCompact ? 9 : 10) : s(root.isCompact ? 11 : 12)
             font.bold: true
             color: textMouseArea.containsMouse ? Qt.lighter(ThemeBackend.text, 1.15) : ThemeBackend.text
-            Behavior on color { ColorAnimation { duration: 150 } }
+            Behavior on color { ColorAnimation { duration: DesktopModes.animationDuration(150)} }
         }
     }
 
@@ -286,16 +286,17 @@ BarFaceBase {
             iconFontSize: s(root.isCompact ? 14 : 15)
             buttonText: root.showName ? root.btDevice : ""
             textFontSize: s(root.isCompact ? 11 : 12)
-            accentColor: isActive ? (root.isCompact ? Qt.lighter(ThemeBackend.mauve, 1.08) : ThemeBackend.mauve) : (root.isCompact ? Qt.lighter(ThemeBackend.surface0, 1.18) : ThemeBackend.surface0)
-            textColor: isActive ? ThemeBackend.base : (root.isCompact ? Qt.lighter(ThemeBackend.text, 1.05) : ThemeBackend.text)
+            accentColor: root.isBtOn ? DvgEstilo.carmin : ThemeBackend.surface0
+            outlineColor: root.isBtOn ? DvgEstilo.oro : "transparent"
+            textColor: ThemeBackend.text
 
             property real targetWidth: (root.isDesktop || (!root.showIcon && !root.showName)) ? 0 : implicitWidth
             width: targetWidth
-            Behavior on width { NumberAnimation { duration: 480; easing.type: Easing.OutQuint } }
+            Behavior on width { NumberAnimation { duration: DesktopModes.animationDuration(480); easing.type: Easing.OutQuint } }
 
             opacity: initAnimTrigger ? 1.0 : 0.0
-            transform: Translate { y: btPill.initAnimTrigger ? 0 : s(15); Behavior on y { NumberAnimation { duration: 620; easing.type: Easing.OutQuint } } }
-            Behavior on opacity { NumberAnimation { duration: 400; easing.type: Easing.OutCubic } }
+            transform: Translate { y: btPill.initAnimTrigger ? 0 : s(15); Behavior on y { NumberAnimation { duration: DesktopModes.animationDuration(620); easing.type: Easing.OutQuint } } }
+            Behavior on opacity { NumberAnimation { duration: DesktopModes.animationDuration(400); easing.type: Easing.OutCubic } }
 
             onClicked: if (!root.isPreview) Quickshell.execDetached(["bash", "-c", Caching.serpantinumDir + "/scripts/qs_manager.sh toggle network bt"])
         }
@@ -313,8 +314,9 @@ BarFaceBase {
             iconFontSize: s(root.isCompact ? 14 : 15)
             buttonText: (!root.showIcon && root.showName) ? (root.btDevice.length > 3 ? root.btDevice.substring(0, 3) : root.btDevice) : ""
             textFontSize: s(root.isCompact ? 9 : 10)
-            accentColor: root.isBtOn ? (root.isCompact ? Qt.lighter(ThemeBackend.mauve, 1.08) : ThemeBackend.mauve) : (root.isCompact ? Qt.lighter(ThemeBackend.surface0, 1.18) : ThemeBackend.surface0)
-            textColor: root.isBtOn ? ThemeBackend.base : (root.isCompact ? Qt.lighter(ThemeBackend.text, 1.05) : ThemeBackend.text)
+            accentColor: root.isBtOn ? DvgEstilo.carmin : ThemeBackend.surface0
+            outlineColor: root.isBtOn ? DvgEstilo.oro : "transparent"
+            textColor: ThemeBackend.text
             onClicked: if (!root.isPreview) Quickshell.execDetached(["bash", "-c", Caching.serpantinumDir + "/scripts/qs_manager.sh toggle network bt"])
         }
     }

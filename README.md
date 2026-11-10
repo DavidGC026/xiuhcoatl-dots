@@ -42,6 +42,46 @@ En DVG OS viene con el escritorio Hyprland (`dvg-hyprland`). El paquete
 sudo pacman -S xiuhcoatl
 ```
 
+## Herramientas de escritorio (1.1.0)
+
+En el lanzador o en la parte superior del panel del sistema están **Ventanas**,
+**Equipos**, **Respaldo** y **Modos**. También se pueden abrir desde la terminal:
+
+| Herramienta | Comando | Atajo en la configuración nueva |
+| --- | --- | --- |
+| Vista general | `xiuhcoatl vista` | Super+Tab |
+| Mis equipos | `xiuhcoatl equipos` | Super+Shift+E |
+| Guardar y recuperar | `xiuhcoatl respaldo` | Super+Shift+S |
+| Presentación y modo ligero | `xiuhcoatl modos` | Super+Shift+P |
+
+Las configuraciones personales de Hyprland se conservan al actualizar; los atajos
+nuevos se pueden incorporar desde `compositors/hyprland/config/keybinds.lua`.
+La vista general busca por título, aplicación o escritorio. Selecciona una ventana
+y usa Mover para elegir destino; las miniaturas dependen del permiso y soporte de
+captura del compositor. Las ventanas sin captura mantienen su tarjeta seleccionable.
+
+El modo presentación oculta y silencia los avisos (también los críticos), guarda
+su historial e impide la inactividad. Muestra si la protección de suspensión del
+sistema está disponible. Al salir o reiniciar el shell se liberan los inhibidores;
+No molestar y los temporizadores personales conservan su configuración anterior.
+`xiuhcoatl presentacion` alterna este modo.
+
+El modo ligero reduce las animaciones, elimina transparencias y pausa los fondos
+de video. Puede activarse manualmente o automáticamente con batería. Al desactivarse
+se recuperan las preferencias visuales anteriores. `xiuhcoatl ligero` lo alterna.
+
+Mis equipos usa Tailscale y Syncthing cuando están instalados y funcionando. Los
+accesos a carpetas deben existir como marcadores o configurarse en el panel;
+no se adivinan rutas ni se crean recursos compartidos. Los servicios no se instalan
+ni se activan automáticamente.
+
+Los respaldos `.xiuhcoatl.zip` incluyen barra, dock, widgets, paleta, tema y atajos;
+no incluyen aplicaciones ni las imágenes referenciadas. Antes de restaurar se
+muestran el contenido y los atajos, se verifica que el archivo siga siendo el mismo
+y se guarda una copia del escritorio actual. En otro monitor se puede adaptar la
+distribución. Los atajos pueden ejecutar programas: importa solo los que reconozcas.
+También está disponible `xiuhcoatl-escritorio --help`.
+
 ## Traer cambios de upstream
 
 ```sh
